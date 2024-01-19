@@ -1,0 +1,173 @@
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff'); font-weight:700; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff'); font-weight:800; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff'); font-weight:900; font-style:normal; }
+body {
+    font-family:'Pretendard', serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.2;
+    word-break: keep-all;
+}
+.wrapper {
+    width: 1280px; /* 홈페이지넓이 */
+    margin: 0 auto; /* 가운데정렬 */
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul, ol, li {
+    list-style: none; 
+}
+a { /* a태그는 파락색에 언더라인이 기본적으로 생성 */
+    text-decoration: none; /* 언더라인제거 */
+    color: inherit; /* 색상은 누구한테든 상속받음 */
+}
+
+header {
+    height: 100px;
+}
+header .logo {
+    float: left;
+    margin: 25px 0 0 0;
+}
+header .logo a {
+    display: block; /* 로고선택이 잘 안맞을때 a만 다시 같이 잡아줌 */
+}
+header .gmb {
+    float: right;
+}
+header .gmb ul {
+    display: flex;
+}
+header .gmb ul li a {
+    color: #1d1d1d;
+    font-weight: 700;
+    font-size: 22px;
+    padding: 41px 29px 41px 29px; 
+    /* a가 커져야 하므로 패딩을줌 */
+    display: block;
+    /* a태그는 인라인태그 그래서 패딩 제대로 적용 패딩 시키기 위해서는 블럭태그로 변경 */
+} 
+/* a태그에 마우스를 오버했을 때- 가상선택자 */
+header .gmb ul li a:hover {
+    text-decoration: underline;
+}
+
+.visual {
+    /* 경로에서 ../는 폴더 밖으로 나가라는 명령,
+    백그라운드에 아무리 큰 이미지를 넣어도 높이를 주지않으면 
+    이미지와 다르게 해당영역이 존재하는만큼 보인다 */
+    height: 750px;
+    background: url(../images/visual.png) center center no-repeat;
+    /* center center no-repeat = 가운데정렬 사진 반복하지마,
+    배경색 떄문에 그 내부의 글자색상이 달라졌다면 대표색을
+    백그라운드랑 같이 선언해 주는 것이 이해가 쉬움 */
+    color: #fff;
+    text-align: center; /* 글자 상속 */
+}
+.visual h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1;
+    padding: 220px 0 0 0;
+    letter-spacing: -0.02em;
+}
+.visual p {
+    font-size: 35px;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.biz h2 {
+    font-size: 55px;
+    color: #1d1d1d;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.05em; /*대충 포토샵 자간 50*/
+    margin: 45px 0 75px 0;
+}
+.biz h2 strong {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.biz ul li h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px 0 10px 0;
+}
+.biz ul li p {
+    font-size: 20px;
+    font-weight: 400;
+}
+.biz ul li a {
+    border: 1px solid #7d7d7d;
+    padding: 13px 75px 13px 75px;
+    display: inline-block;
+    margin: 17px 0 0 0;
+    font-weight: 700;
+    /* 디스플레이 블럭이면 넓이 100%라는말 > 나를 감싸는 요소의 넓이 100%
+    그럼 a한테 디스플레이 블럭을 주면 li와 넓이가 같아짐 >>나는 패딩만 잘 들어가길 원함>
+    디스플레이 인라인블럭을 줘야함*/
+}
+
+.brand {
+    color: #fff;
+    height: 750px;
+    background: url(../images/brand_bg.png) center center no-repeat;
+    margin: 100px 0 0 0;
+    text-align: right;
+}
+.brand h2 {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    padding: 240px 0 0 0;
+}
+.brand p {
+    /* 만약 포s토샵에서 글자의 색상을 흰색을 주고 오퍼써티를 80% 줬다면
+    글자의 색상을 rgba로준다 */
+    font-size: 22px;
+    font-weight: 400;
+    margin: 15PX 0 18px 0;
+}
+.brand a {
+    padding: 10px 25px 10px 25px;
+    display: inline-block;
+    border: 1PX solid rgba(255,255,255,0.8);
+    /* a태그는 인라인 태그라 패딩이 올바르게 적용되지않음
+    그래서 디스플레이 블럭을 주면 a 태그를 감싸는 요소는 wrepper넓이가 같아짐
+    디스플레이는 얿이 100%라는 이야기이므로 난 패딩만 올바르게주려면 디스플레이 인라인 블럭 
+    a태그에 패딩이나 높이를 주고자 할때는 일단 디스플레이 블럭을 주고 넓이가 너무 넓어지면
+    그때만 디스플레이인라인블럭*/
+}
+
+footer {
+    background-color: #3d3d3d;
+    color: rgba(255,255,255,0.8);
+    height: 130px;
+    font-size: 15px;
+    padding: 30px 0 30px 0;
+    /* 푸터는 나중에 반응형 할 것을 감안해서 위아래 여백을 푸터가 패딩으로 처리 */
+}
+footer .f_nav {
+    display: flex;
+    margin: 0 0 10px 0;
+    /* 카피라이트와의 여백 */
+}
+footer .f_nav li {
+    margin: 0 15px 0 0;
+    /* 각각 li 사이의 여백 */
+}
+footer .copyright {
+    color: rgba(255, 255, 255, 0.8);
+}
