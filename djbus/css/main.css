@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff) format('woff2'), url(../fonts/Pretendard-Regular.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-display: swap;
+    src: local('Pretendard Medium'), url(../fonts/Pretendard-Medium.woff) format('woff2'), url(../fonts/Pretendard-Medium.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff) format('woff2'), url(../fonts/Pretendard-Bold.woff2) format('woff');
+}
+body {
+    font-family:'Pretendard', sans-serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 400;
+    /* line-height: 1.2; */
+    word-break: keep-all;
+    /* letter-spacing: -0.05em; 자간 */
+}
+.wrapper {
+    width: 1280px; /* 홈페이지넓이 */
+    margin: 0 auto; /* 가운데정렬 */
+}
+#wrep {  
+    min-width: 1280px;
+     /* pc형에서 웹퍼 사이즈보다 브라우저 넓이가 적을때 가로 스크롤바가
+     생성> 오른쪽에 백그라운드가 짤리는 현상이 생김> 가로스크롤바 생성시에도
+     홈페이지를 정상적으로 서비스하기위해 최소 넓이를 입력 */
+    /* id="wrap"에 적용되는 스타일 */
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul, ol, li {
+    list-style: none; 
+}
+a { /* a태그는 파락색에 언더라인이 기본적으로 생성 */
+    text-decoration: none; /* 언더라인제거 */
+    color: inherit; /* 색상은 누구한테든 상속받음 */
+}
+
+.header {
+    height: 100px;
+}
+.header .logo {
+    float: left;
+    margin: 20px 0 0 0;
+} 
+.header .gmb {
+    float: right;
+}
+.header .gmb ul {
+    display: flex;
+}
+.header .gmb ul li a {
+    color: #1d1d1d;
+    font-weight: 500;
+    padding: 41px 15px 41px 15px;
+    display: block;
+    /* a태그는 인라인 태그라서 패딩에 적용x 
+    블럭태그로 변경하여 같이 적용시킬것.
+    헤더의 높이가 100이라 패딩도 100px넘지말것 */
+}
+
+.visual {
+    height: 750px; 
+    color: #fff;
+    background: url(../images/visual_bg.png) center center no-repeat
+    /* 배경에 큰 이미지를 넣는다고 이미지가 모두 다 크게 보이는것은 아님
+    배경이 모두 보이려면 반드시 영역에 높이를 줘야함 */
+}
+.visual strong {
+    font-size: 30px;
+    font-weight: 400;
+    padding: 200px 0 0 0;
+    display: block;
+    /* 상단여백의 마진이 적용이 안되서 패딩으로 수정, 여백이 적용되지 않아 블럭설정 */
+}
+.visual h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* 비즈의 아트와 비즈의 에듀 줄 다에게 동시 스타일을 적용할 때 사용
+ , 이를 다중 선택자 */
+.biz .art, .biz .edu {
+    display: flex;  /* 이너와 이미지가 좌우로 배치 */
+}
+.biz .edu {
+    justify-content: flex-end; /* 내부콘텐츠를 감싸는 영역 오른쪽에 붙이기 */
+    text-align: right; 
+}
+.biz .art .inner {
+    margin: 0 0 0 50px;
+}
+.biz .edu .inner {
+    margin: 0 50px 0 0;
+}
+.biz h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 85px 0 5px 0;
+}
+.biz .sub_tit {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+.biz .btn_wrap {
+    margin:  25px 0 85px 0;
+}
+.biz .btn_wrap a {
+    border: 1px solid #6d6d6d;
+    padding: 8px 15px 8px 15px;
+    display: inline-block;
+    /* 패딩값을 적용시키기위해 디스플레이블럭을 주지만 가로100%
+    넓어져서 디스플레이 인라인 블럭으로 변경 의도하지않은 여백도 같이 들어감
+    그 여백을 감안하고 여백을 주면 됨 */
+    
+}
+.biz .art .btn_wrap a {
+    margin: 0 5px 0 0;
+}
+.biz .edu .btn_wrap a {
+    margin: 0 0 0 5px;
+}
