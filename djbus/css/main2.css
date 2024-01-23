@@ -253,7 +253,7 @@ a { /* a태그는 파락색에 언더라인이 기본적으로 생성 */
     display: block;
     top: 4px;
     width: 1px;
-    height: -18px;
+    height: 18px;
     color: rgba(255, 255, 255, 0.6);
     content: ""; /* 에프터를 보이게 하는 값 */
 
