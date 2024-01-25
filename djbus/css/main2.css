@@ -48,6 +48,11 @@ a { /* a태그는 파락색에 언더라인이 기본적으로 생성 */
     text-decoration: none; /* 언더라인제거 */
     color: inherit; /* 색상은 누구한테든 상속받음 */
 }
+address, em {
+    font-style: normal;
+    /* em, address 태그는 기본적으로 글자가 기울어짐 디자인상 기울어짐을 사용하기 위해x
+    최근 기울여 디자인하지x  */
+}
 
 .header {
     height: 100px;
@@ -143,4 +148,136 @@ a { /* a태그는 파락색에 언더라인이 기본적으로 생성 */
 }
 .biz .edu .btn_wrap a {
     margin: 0 0 0 10px;
+}
+
+.bbs {
+    /* 배경이 콘텐츠 높이보다 짧아서 배경 이미지 만큼 높이 못줌- 비쥬얼하고 다름 */
+    background: url(../images/bbs_01.png) center top no-repeat;
+    color: #fff;
+}
+.bbs .notice {
+    display: flex;
+    justify-content: space-between;
+    /* 하위요소 두개를 좌우로 나란히 배치 flex
+       하위요소를 균등하게 영역에 좌우에 딱맞게 배치 space-between */
+}
+.bbs .notice .tit {
+    margin: 160px 0 0 0;
+}
+.bbs .notice .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+}
+.bbs .notice .tit p {
+    margin: 10px 0 25px 0;
+    font-size: 16px;
+}
+.bbs .notice .tit a {
+    border: #fff 1px  solid;
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    /* 패딩 안먹어? 디스플레이블럭 안먹어? 인라인블럭 */
+}
+.bbs .notice ul {
+    margin: 150px 0 0 0;
+    width: 840px;
+    /* ul의 넓이가 디자인보다 작아서 넓이를 줌 */
+}
+.bbs .notice ul li {
+    border-bottom: 1px solid #fff ;
+}
+.bbs .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    /* 제목과 날짜가 좌우 끝에 배치 */
+    line-height: 50px;
+    /* 공지사항 리스트 디자인을 할 때 정확하게 줄간격을 주려고
+    행간을 떨어뜨려 디자인.. 코딩도 정확하게 줄간격을 주기 이해서 행간을 줘버림. */
+    font-size: 23px;
+}
+.bbs .notice ul li a strong {
+    font-Weight: inherit;
+    /* 스트롱 태그에 브라우저가 주는 스타일 말고 내가 스트롱태그를 감싸는 요소에 준 스타일을 상속
+    브라우저가 주는 스타일 무시해! */
+}
+.bbs .notice ul li a span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.bbs .notice ul :last-child {
+    border-bottom: 0;
+} 
+.bbs .vidio {
+    margin: 140px 0 0 0;
+}
+.bbs .vidio h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 40px 0;
+}
+.bbs .vidio ul {
+    display: flex;
+    justify-content: space-between;
+}
+.bbs .vidio ul li {
+    width: 408px;
+    /* li안에 콘텐츠가 많고 넓어, 그럼 넓이 제한 줘야 알아서 글에는 줄바꿈 들어감..
+    왠만하면li는 넓이를 주는 편 */
+}
+.bbs .vidio ul li a strong {
+    font-size: 23px;
+    color: #3d3d3d;
+    font-weight: inherit; /*<<스트롱 상속받지말고 내가 주는거 적용시켜 */
+    margin: 13px 0 0 0;
+    display: block;
+}
+.bbs .vidio ul li a img {
+    /* border: 5px solid #fff;
+    이미지 테두리를 주면 무조건 밖으로 테두리가 생김 */
+    box-shadow: 9px -9px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: #2d2d2d;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 130px 0 0 0;
+    padding: 60px 0 50px 0;
+    /* 푸터는 내부요소의 상단여백 하단여백으로 하지않고 
+    푸터에 패딩을 준다 */
+}
+.footer .f_nav {
+    display: flex;
+}
+.footer .f_nav li {
+    margin: 0 15px 0 15px;
+    /* border-left: 1px solid rgba(255, 255, 255, 0.6);
+    메뉴사이의 선은 보더로 처리가x 위 아래 높이 조절 불가 */
+    position: relative;
+}
+.footer .f_nav li::after {
+    position: absolute;
+    display: block;
+    top: 4px;
+    width: 1px;
+    height: -18px;
+    color: rgba(255, 255, 255, 0.6);
+    content: ""; /* 에프터를 보이게 하는 값 */
+
+}
+.footer .f_nav li:last-child::after{
+    display: none;
+}
+/* li들 중에 privacy라는 클래스명을 가진li */
+.footer .f_nav li.privacy {
+    font-weight: 700;
+}
+.footer .f_info {
+    display: flex;
+    margin: 25px 0 20px 0;
+}
+.footer .f_info span,
+.footer .f_info address {
+    margin: 0 20px 0 0;
+}
+.footer .copyright {
+    color: rgba(255, 255, 255, 0.5);
 }
