@@ -258,7 +258,11 @@ address, em {
     display: block;
     top: 4px;
     width: 1px;
+<<<<<<< HEAD
     height: -18px;
+=======
+    height: 18px;
+>>>>>>> d486b6edc64e79f545ccd431123bec861c805c38
     color: rgba(255, 255, 255, 0.6);
     content: ""; /* 에프터를 보이게 하는 값 */
 
