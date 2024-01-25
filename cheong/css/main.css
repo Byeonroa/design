@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/web/static/Pretendard-Regular.woff) format('woff2'), url(../fonts/web/static/Pretendard-Regular.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-display: swap;
+    src: local('Pretendard Medium'), url(../fonts/web/static/Pretendard-Medium.woff) format('woff2'), url(../fonts/web/static/Pretendard-Medium.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/web/static/Pretendard-Bold.woff) format('woff2'), url(../fonts/web/static/Pretendard-Bold.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-display: swap;
+    src: local('Pretendard SemiBold'), url(../fonts/web/static/Pretendard-SemiBold.subset.woff) format('woff2'), url(../fonts/web/static/Pretendard-SemiBold.subset.woff2) format('woff');
+}
+html, body {
+    font-family:'Pretendard', sans-serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 400;
+    /* line-height: 1.2; */
+    word-break: keep-all;
+    /* letter-spacing: -0.05em; 자간 */
+}
+.wrapper {
+    width: 1280px; /* 홈페이지넓이 */
+    margin: 0 auto; /* 가운데정렬 */
+}
+#wrep {  
+    min-width: 1280px;
+     /* pc형에서 웹퍼 사이즈보다 브라우저 넓이가 적을때 가로 스크롤바가
+     생성> 오른쪽에 백그라운드가 짤리는 현상이 생김> 가로스크롤바 생성시에도
+     홈페이지를 정상적으로 서비스하기위해 최소 넓이를 입력 */
+    /* id="wrap"에 적용되는 스타일 */
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul, ol, li {
+    list-style: none; 
+}
+a { /* a태그는 파락색에 언더라인이 기본적으로 생성 */
+    text-decoration: none; /* 언더라인제거 */
+    color: inherit; /* 색상은 누구한테든 상속받음 */
+}
+address, em {
+    font-style: normal;
+    /* em, address 태그는 기본적으로 글자가 기울어짐 디자인상 기울어짐을 사용하기 위해x
+    최근 기울여 디자인하지x  */
+}
+/* 글자를 두껍게 하고 글자크기를 조정하는 태그-
+바디가 선언한 속성대로적용될 수 있도록 초기화
+브라우저가 기본적으로 적용한 스타일이 적용되지않도록 막기 */
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
