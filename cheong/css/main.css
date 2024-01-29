@@ -131,6 +131,259 @@ h1, h2, h3, h4, h5, h6, strong {
     display: block;
     /* i태그와 span태그 모두 인라인 태그라 줄바꿈이 안됨.
     이때 스판태그에 블럭을 주면 넓이가 100%가 되서줄이바뀜 */
+    line-height: 1.1;
+}
+
+.culture {
+    margin-top: 140px;
+}
+.culture .inner {
+    position: relative;
+    /* more의 absolute 정렬의 기준 */
+}
+.culture h2 {
+    color: #1D1D1D;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: -0.05em;
+}
+.culture ul {
+    display: flex;
+    justify-content: space-between;
+}
+.culture ul li {
+    width: 299px;
+}
+.culture ul li a h3 {
     font-size: 25px;
-    font-weight: 700;  
+    font-weight: 700;
+    margin: 6px 0 8px 0;
+    letter-spacing: -0.05em;
+}
+.culture .more {
+    /* inner를 기준으로 정렬 */
+    position: absolute;
+    right: 0;
+    top: 30px;
+    display: flex;
+    align-items: center;
+    /* 글자와 아이콘 사이즈가 다른 요소가 좌우로 들어갈때
+    서로 위아래 가운데 정렬 하려면 align-items:center */
+    /* border: 1px solid #999;
+    background-color: #ededed;
+    border-radius: 13px;  */
+    /* 좌우만 동그랗게 처리하려면 높이의 절반을 border-radius로 줌
+    border-radius:100% */
+    /* padding: 5px 13px;  */
+    /* 위아래 좌우 여백이 같은 경우 - 위아래값 좌우값 두개만 입력 */
+}
+.culture .more span {
+    margin-right: 10px;
+}
+
+.tour {
+    margin-top: 150px;
+}
+.tour h2 {
+    color: #1D1D1D;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: -0.05em;
+}
+.tour ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tour ul li {
+    width: 190px;
+    /* a가 늘어난만큼 늘어남. li의 높이는 a한테 줌 
+      li사이즈와 a사이즈를 똑같이 주기 위해서 
+      li에 높이를 주고 a에 height:100%를 주면 안되는냐??
+      높이 100%는 안들어가는 경우가 많음
+      (넓이 100%는 됨) */
+    color: #fff;
+}
+.tour ul li.tour01 {
+    background: url(../images/tour01.png) center center no-repeat;
+}
+.tour ul li.tour02 {
+    background: url(../images/tour02.png) center center no-repeat;
+}
+.tour ul li.tour03 {
+    background: url(../images/tour03.png) center center no-repeat;
+}
+.tour ul li.tour04 {
+    background: url(../images/tour04.png) center center no-repeat;
+}
+.tour ul li.tour05 {
+    background: url(../images/tour05.png) center center no-repeat;
+}
+.tour ul li a {
+    height: 294px;
+    display: block;
+    padding: 234px 0 0 0;
+}
+.tour ul li a h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.tour ul li a p {
+    display: none; /* 숨김 */
+}
+/* li.active li태그들 중에서 
+active 클래스를 준 li를 선택하는 선택자 */
+.tour ul li.active {
+    width: 626px;
+}
+.tour ul li.active a {
+    padding: 183px 190px 0 40px;
+}
+.tour ul li.active a h3 {
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+.tour ul li.active a p {
+    /* display:none으로 숨김처리한 것을 
+    다시 나타나게 하려면 display:none을 제외한 
+    그 어떠한 속성을 줘도 나타남.
+    단, 해당 스타일이 적용되기 때문에 맞춰서 줘야함
+    일반적으로 속성이 필요하지 않으면 block을 줌 */
+    display: block;
+}
+.tour .inner {
+    position: relative;
+    /* more absolute 정렬의 기준점 */
+}
+.tour .more {
+    /* inner를 기준으로 정렬 */
+    position: absolute;
+    right: 0;
+    top: 30px;
+    display: flex;
+    align-items: center;
+}
+.tour .more span {
+    margin-right: 10px;
+}
+
+.community {
+    height: 753px;
+    background: url(../images/community_bg.png) center center no-repeat;
+    color: #fff;
+    margin-top: 147px;
+}
+.community .inner {
+    display: flex;
+    padding-top: 180px;
+}
+.community .tit {
+    width: 338px;
+}
+.community .tit h2 {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+.community .tit .sub_tit {
+    font-size: 40px;
+    margin: 15px 0 5px 0;
+}
+.community .notice {
+    width: 517px;
+    height: 319px;
+    border-radius: 20px;
+    background-color: rgba(10, 34, 48, 0.6);
+    padding: 40px 45px 0 45px;
+}
+.community .notice h3 {
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+}
+.community .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.community .notice ul li:last-child {
+    border-bottom: 0; /* 마지막 li는 border 그리지마 */
+}
+.community .notice ul li a {
+    line-height: 38px;
+    display: flex;
+    justify-content: space-between;
+}
+.community .notice ul li a span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.community .service {
+    width: 395px;
+    margin-left: 30px;
+}
+.community .service ul {
+    display: flex;
+    /* flex는 하위요소를 모두다 좌우 한줄로 배치하려는 특징이 있음.
+    그래서 넓이를 줄여서라도 좌우로 배치
+    내 넓이에 따라서 한줄에 들어갈 수 있는 만큼만 들어가고 줄바꿈이 
+    되려면  flex-wrap: wrap; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.community .service ul li {
+    width: 190px;
+    /* li의 사이즈와 a사이즈를 동일하게 주려면
+    li 한테 넓이를 주고 a한테 높이를 주는 것이
+    best */
+    margin-bottom: 15px;
+}
+.community .service ul li a {
+    height: 152px;
+    background-color: rgba(10, 34, 48, 0.6);
+    border-radius: 15px;
+    display: block;
+    padding: 30px 20px 20px 30px;
+    position: relative; /* i태그 absolute 정렬의 기준 */
+}
+.community .service ul li a strong {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+.community .service ul li a i {
+    /* 감싸고 있는 a태그를 기준으로 정렬 */
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+}
+
+.footer {
+    background-color: #2d2d2d;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 50px 0 70px 0;
+}
+.footer .footer_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .f_nav {
+    display: flex;
+}
+.footer .f_nav li {
+    margin-right: 35px;
+}
+.footer .f_nav li.privacy {
+    font-weight: 700;
+}
+.footer .f_info {
+    display: flex;
+    margin: 20px 0;
+}
+.footer .f_info address,
+.footer .f_info span {
+    margin-right: 35px;
 }

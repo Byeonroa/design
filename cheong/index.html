@@ -12,7 +12,7 @@
             <div class="wrapper">
                 <h1 class="logo">
                     <a href="index.html">
-                        <img src="images/photo_icon.svg" alt= "완도군 청산도 로고">
+                        <img src="images/logo.png" alt= "완도군 청산도 로고">
                     </a>
                 </h1>
                 <nav class="gnb">
@@ -39,17 +39,245 @@
                 </div><!--wrappr-->
             </section><!--visual-->
             <section class="culture">
-                <div class="wrapper"></div><!--wrapper-->
+                <div class="wrapper">
+                    <!-- 콘텐츠 요소를 묶어줄때 많이 쓰는 inner class명
+                    clutrue wrapper와 동일한 넓이를 가진 요소가 필요
+                    wrapper는 못쓰니까 inner로 묶어줌.
+                    more를 absolute줄때 정렬의 기준.. -->
+                    <div class="inner">
+                        <h2>청산도 일상풍습</h2>
+                        <!-- <p class="sub_tit"></p> -->
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <img src="images/cluture01.png" alt="하얀 천 사진">
+                                    <h3>장례문화 꽃 상여</h3>
+                                    <p>하얀천을이 자기 명에 가면 천이 처지고 자기 명에 못가면 
+                                        천이 하늘로 뜬다는 설도 있다</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <img src="images/cluture02.png" alt="정월굿 사진">
+                                    <h3>도락리 정월굿</h3>
+                                    <p>정월굿은 마을의 잡귀를 쫓고 풍년과 풍어를 기원하며 
+                                        주민의 무사안일을 염원한다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <img src="images/cluture03.png" alt="갯벌 사진">
+                                    <h3>도락리 갯영 공표</h3>
+                                    <p>마을이 관리하는 갯바탕을 개방구역을 정하여  1일 개방하고 
+                                        주민 모두가 골고루 취 할 수 있게 하는 마을 규칙이다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <img src="images/cluture04.png" alt="한복 사진">
+                                    <h3>청산도 설 풍습</h3>
+                                    <p>초저녁 각 가정에서 상을 차리고 제사를 모시며, 끝나면 큰집으로 
+                                        모여 음식을 먹으며 정담을 나눈다.</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- 웹접근성 때문에 디자인 순서에 따르면 제목 다음에 더보기가 나와야함
+                        하지만 제목과 내용을 보고 더보실래요? 라고 물어봐야하기때문에
+                        반드시 더보기 버튼은 ul li 하단에 배치되어야 합니다. -->
+                        <a href="#n" class="more">
+                            <span>더보기</span>
+                            <i>
+                                <img src="images/icon more.svg" alt="더보기 아이콘">
+                            </i>
+                        </a>
+                    </div><!--inner-->
+                </div><!--wrapper-->
             </section><!--culture-->
             <section class="tour">
-                <div class="wrapper"></div><!--wrapper-->
+                <div class="wrapper">
+                    <!-- 더보기버튼 absolute 정렬의 기준점 -->
+                    <div class="inner">
+                        <h2>청산도 관광명소</h2><!-- <p class="sub_tit"></p> -->
+                        <!-- li가 여러개가 존재하는데
+                        기본적으로 모두 닫힌 상태이고 하나만 열린 상태
+                        이럴때 열린 li에 대부분 on 또는 active 클래스를 줌 
+                        그리고 각각의 li마다 배경이 다름. 
+                        각 li의 내용에 맞춰서 배경이미지가 들어가야함 
+                        li 코딩에서는 li의 순서가 변경되더라도 디자인이 깨지지 
+                        않도록 코딩해야함. 
+                        각각의 li에 이름을 별도로 줘야함. 
+                        절대 li첫번째 두번째 세번째라고 css에서 호출해서 
+                        코딩하면 안됨. -->
+                        <ul>
+                            <li class="active tour01">
+                                <a href="#n">
+                                    <h3>오산낙조</h3>
+                                    <p>하늘은 온통 붉은 홍시되어 수줍게 물들고 금가루 뿌린 듯 반짝이는 바닷물은
+                                        섬사이를 흐르며 장관을 연출한다.</p>
+                                </a>
+                            </li>
+                            <li class="tour02">
+                                <a href="#n">
+                                    <h3>응봉추월</h3>
+                                    <p>하늘은 온통 붉은 홍시되어 수줍게 물들고 금가루 뿌린 듯 반짝이는 바닷물은
+                                        섬사이를 흐르며 장관을 연출한다.</p>
+                                </a>
+                            </li>
+                            <li class="tour03">
+                                <a href="#n">
+                                    <h3>호암숙무</h3>
+                                    <p>하늘은 온통 붉은 홍시되어 수줍게 물들고 금가루 뿌린 듯 반짝이는 바닷물은
+                                        섬사이를 흐르며 장관을 연출한다.</p>
+                                </a>
+                            </li>
+                            <li class="tour04">
+                                <a href="#n">
+                                    <h3>신흥리  해수욕장</h3>
+                                    <p>하늘은 온통 붉은 홍시되어 수줍게 물들고 금가루 뿌린 듯 반짝이는 바닷물은
+                                        섬사이를 흐르며 장관을 연출한다.</p>
+                                </a>
+                            </li>
+                            <li class="tour05">
+                                <a href="#n">
+                                    <h3>국화리단풍길</h3>
+                                    <p>하늘은 온통 붉은 홍시되어 수줍게 물들고 금가루 뿌린 듯 반짝이는 바닷물은
+                                        섬사이를 흐르며 장관을 연출한다.</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- 임시링크 # 새로고침이됨
+                        사실 상관없음 실제링크가 들어갈 꺼니까
+                        하지만 코딩 연습을 할때 귀찮음 
+                        임시링크를 #n으로 바꾸면 새로고침이 안됨
+                        #none 로 주는 회사도 있음 -->
+                        <a href="#n" class="more">
+                            <span>더보기</span>
+                            <i>
+                                <img src="images/icon more.svg" alt="더보기 아이콘">
+                            </i>
+                        </a>
+                    </div>
+                </div><!--wrapper-->
             </section><!--tour-->
             <section class="community">
-                <div class="wrapper"></div><!--wrapper-->
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="tit">
+                            <h2>"청산도는 쉼이다"</h2>
+                            <p class="sub_tit">SLOW CITY</p>
+                            <p>"슬로(SLOW)는 지난 세월을 조용히"<br>
+                                "돌아보는 시간을 갖자는 것입니다."</p>
+                        </div><!--tit-->
+                        <div class="notice">
+                            <h3>공지사항</h3>
+                            <ul>
+                                <li>
+                                    <a href="#n">
+                                        <!-- 제목과 날짜가 좌우로 나뉘어 나타나기 때문에 
+                                            제목은 strong 날짜는 span태그로 묶어줌 -->
+                                        <strong>2023년 봉사활동</strong>
+                                        <span>23.12.28</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <strong>전국 생방송된 청산도 사진한장</strong>
+                                        <span>23.09.19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <strong>청산도 7대 불가사의 진풍경</strong>
+                                        <span>23.07.19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <strong>청산 미래의 아름다움 靑山八景 (청산팔경) 최초공개</strong>
+                                        <span>23.07.12</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <strong>청산도 어찌할꼬~</strong>
+                                        <span>23.06.01</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!--notice-->
+                        <div class="service">
+                           <ul>
+                             <li>
+                                <a href="#n">
+                                    <strong>숙박안내</strong>
+                                    <i>
+                                        <img src="images/service icon01.svg" alt>
+                                    </i>
+                                </a>
+                             </li>
+                             <li>
+                                <a href="#n">
+                                    <strong>교통안내</strong>
+                                    <i>
+                                        <img src="images/service icon02.svg" alt>
+                                    </i>
+                                </a>
+                             </li>
+                             <li>
+                                <a href="#n">
+                                    <strong>식당안내</strong>
+                                    <i>
+                                        <img src="images/service icon03.svg" alt>
+                                    </i>
+                                </a>
+                             </li>
+                             <li>
+                                <a href="#n">
+                                    <strong>행사안내</strong>
+                                    <i>
+                                        <img src="images/service icon04.svg" alt>
+                                    </i>
+                                </a>
+                             </li>
+                           </ul> 
+                        </div><!--service-->
+                    </div><!--inner-->
+                </div><!--wrapper-->
             </section><!--community-->
         </div><!--container-->
         <footer class="footer">
-            <div class="wrapper"></div><!--wrapper-->
+            <div class="wrapper">
+                <div class="footer_wrap">
+                    <!-- 왼쪽에 copyright 오른쪽에 관련사이트를 좌우에
+                    배치하려면 콘텐츠 1:1구성
+                    그래서 왼쪽에 있는 애들(3개) 하나로 묶어줌
+                    오른쪽은 원래 한개..  -->
+                    <div class="inner">
+                        <ul class="f_nav">
+                            <li class="privacy">
+                                <a href="#n">개인정보처리방침</a>
+                            </li>
+                            <li class="privacy">
+                                <a href="#n">이메일무단수집거부</a>
+                            </li>
+                            <li class="privacy">
+                                <a href="#n">저작권안내</a>
+                            </li>
+                        </ul>
+                        <div class="F_info">
+                            <address>전라남도 완도군 청산면 도청리 1143번지</address>
+                            <span>문화전화 061-552-0809</span>
+                        </div><!--F_info-->
+                        <div class="copyright">copyright 2024 cheongsnado.net All rights reserved.</div>
+                    </div><!--inner-->
+                    <div class="family_site">
+                        <strong>FAMILY SITE</strong>
+                        <i>
+                            <img src="images/family_site icon.svg" alt>
+                        </i>
+                    </div><!--family_site-->
+                </div><!--footer_wrap-->
+            </div><!--wrapper-->
         </footer>
     </div><!--wrap-->
 </body>
