@@ -113,6 +113,22 @@ html, body {
     font-size: 0;
     line-height: 0;
 }
+/* header가 스크롤이 되면 jquery에서 header에 fixed라는 클래스를 
+추가할 예정. 그때의 스타일 */
+.header.fixed {
+    color: #1D1D1D;
+    border-bottom: 0;
+    background-color: #fff;
+}
+.header.fixed .logo a {
+    background: url(../images/logo.svg) no-repeat center center / contain;
+}
+.header.fixed .login {
+    background: url(../images/login.svg) no-repeat center center;
+}
+.header.fixed .lang {
+    background: url(../images/lang.svg) no-repeat center center;
+}
 @media screen and (max-width:640px){
     .header {
         height: 50px;
@@ -146,6 +162,9 @@ html, body {
     .header .lang {
         display: none;
     }
+    .header.fixed .gnb .gnb_open {
+        background: url(../images/gnb_open.svg) no-repeat center center;
+    }
 }/* media */
 
 .visual {
@@ -171,14 +190,14 @@ html, body {
     h2태그는 원래 디자인 자체가 visual영역에 위아래 가운데 디자인
     코딩도 위아래 가운데에서 부터 시작해서 여백을 줘야함 */
 .visual h2 {
-    font-size: 80px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 1.2;
     margin-top: 100px;
 }
 .visual p {
     margin-top: 27px;
-    font-size: 20px;
+    font-size: 25px;
 }
 @media screen and (max-width:640px){
     .visual .inner {
@@ -195,5 +214,352 @@ html, body {
 }/*media*/
 
 .service {
-    height: 1000px;
+    margin: 40px 0 40px 0;
 }
+.service h2 {
+    display: none; 
+    /* 웹표준상 제목을 썼지만 디자인에 없는 요소라 숨김 */
+}
+.service ul {
+    display: flex;
+}
+.service ul li {
+    width: 16.66%;
+    /* li가 6개라서 100/6 = 16.66 나눈값  */
+    text-align: center;
+}
+.service ul li a {
+    padding-top: 64px; /* 아이콘이 들어갈 자리 */
+    display: inline-block;
+    position: relative; /* before 정렬 기준 */
+}
+.service ul li a::before {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: calc(50% - 39px);
+    top: 0;
+    content: "";
+    width: 78px;
+    height: 57px;
+}
+.service ul li.service01 a::before {
+    background: url(../images/service01.svg) no-repeat center center;
+}
+.service ul li.service02 a::before {
+    background: url(../images/service02.svg) no-repeat center center;
+}
+.service ul li.service03 a::before {
+    background: url(../images/service03.svg) no-repeat center center;
+}
+.service ul li.service04 a::before {
+    background: url(../images/service04.svg) no-repeat center center;
+}
+.service ul li.service05 a::before {
+    background: url(../images/service05.svg) no-repeat center center;
+}
+.service ul li.service06 a::before {
+    background: url(../images/service06.svg) no-repeat center center;
+}
+@media screen and (max-width:640px){
+    .service {
+        margin: 36px 0 0 0;
+    }
+    .service ul {
+        flex-wrap: wrap; /* 두줄 허용 */
+    }
+    .service ul li {
+        width: 33.33%;
+        margin-bottom: 10px;
+    }
+    .service ul li a {
+        padding-top: 50px; /* 아이콘의 사이즈 줄어서 여백도 바뀜 */
+        word-break: normal; /* 한 단어 줄바꿈 허용 */
+    }
+    .service ul li a::before {
+        left: calc(50% - 27px); /* 50% - 넓이의 반 */
+        width: 53px; /* 아이콘의 사이즈 */
+        height: 46px;
+    }
+    .service ul li a span {
+        display: none;
+    }
+    .service ul li.service01 a::before {
+        background-size: 46px auto; /* 넓이 px 높이는 비율에 맞게 자동 */
+    }
+    .service ul li.service02 a::before {
+        background-size: 39px auto;
+    }
+    .service ul li.service03 a::before {
+        background-size: 49px auto;
+    }
+    .service ul li.service04 a::before {
+        background-size: 39px auto;
+    }
+    .service ul li.service05 a::before {
+        background-size: 30px auto;
+    }
+    .service ul li.service06 a::before {
+        background-size: 39px auto;
+    }
+}/*media*/
+
+.biz {
+    margin: 70px;
+}
+.biz h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #1D1D1D;
+    margin: 0 0 20px 0;
+}
+.biz ul {
+    display: flex; 
+    justify-content: space-between;
+}
+.biz ul li a {
+    /* a에 사이즈를 주면 li는 a사이즈와 동일 */
+    width: 290px;
+    height: 290px;
+    display: block;
+    color: #fff;
+    border-radius: 250px;
+    padding: 65px 20px 0 20px;
+    /* 높이를 준 경우는 왼쪽 오른쪽 위의 여백만 줌
+    하단여백x 어차피 높이를 고정으로 줘서 벼백발색
+    오히려 주면 글자가 늘어날 경우 높이가 바뀔 가능성 있음 */
+    position: relative; /*more 정렬의 기준*/
+    text-align: center;
+}
+.biz ul li.biz01 a,
+.biz ul li.biz03 a {
+    background-color: #4B8BC7;
+}
+.biz ul li.biz02 a,
+.biz ul li.biz04 a {
+    background-color: #0061BC;
+}
+.biz ul li a h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -0.04em;
+}
+.biz ul li a p {
+    color: rgba(255, 255, 255, 0.8);
+}
+.biz ul li a .more {
+    /* 위에 배치된 h3/p태그에 문장이 길이가 길거나 짧아도
+    디자인상 동일한 위치에 배치해야함 상단여백으로배치x
+    포지션앱솔루트로 배치해야함
+    위 컨텐츠가 4줄 5줄이여도 같은 위치에 배치해야함으로 */
+    position: absolute; /* a기준으로 정렬*/
+    left: 0;
+    bottom: 35px;
+    width: 100%;
+}
+.biz ul li a .more span {
+    padding-right: 20px;
+    display:inline-block;
+    position: relative;
+}
+.biz ul li a .more::after {
+    position: absolute;
+    right: 96px;
+    top: 3px;
+    width: 15px; /*아이콘 사이즈*/
+    height: 15px;
+    background: url(../images/biz.more.svg) no-repeat center center;
+    content: ""; /*비포/에프터 선택자가 보이게하는 값*/
+}
+
+@media screen and (max-width:640px) {
+    .biz {
+        margin: 20px;
+    }
+    .biz h2 {
+        font-size: 15px;
+        margin:0 0 15px 0;
+    }
+    .biz ul {
+        display: block; 
+    }
+    .biz ul li a {
+        /* a에 사이즈를 주면 li는 a사이즈와 동일 */
+        width: auto; /*a에 디스플레이블럭이 있어서 넓이를 오토를 주면 넓이100% 들어감*/
+        height: 50px;
+        border-radius: 20px;
+        padding: 5px 20px 0 20px;
+        /* 높이를 준 경우는 왼쪽 오른쪽 위의 여백만 줌
+        하단여백x 어차피 높이를 고정으로 줘서 벼백발색
+        오히려 주면 글자가 늘어날 경우 높이가 바뀔 가능성 있음 */
+        position: relative; /*more 정렬의 기준*/
+    }
+    .biz ul li a h3 {
+        font-size: 15px;
+        font-weight: 700;
+        margin: 8px;
+        letter-spacing: -0.04em;
+        text-align: left;
+    }
+    .biz ul li a p {
+        display: none;
+    }
+    .biz ul li a .more {
+        /* 위에 배치된 h3/p태그에 문장이 길이가 길거나 짧아도
+        디자인상 동일한 위치에 배치해야함 상단여백으로배치x
+        포지션앱솔루트로 배치해야함
+        위 컨텐츠가 4줄 5줄이여도 같은 위치에 배치해야함으로 */
+        position: relative; /* a기준으로 정렬*/
+        padding-left: 10px;
+
+    }
+    .biz ul li a .more span {
+        display: block;
+    }
+    .biz ul li a .more::after {
+        top: 20px;
+        width: 12px; /*아이콘 사이즈*/
+        height: 12px;
+        background-size: 12px auto;
+    }
+}/*media*/
+
+.news {
+    margin-top: 130px;
+}
+.news h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #1D1D1D;
+    margin: 0 0 20px 0;
+}
+.news ul li {
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+.news ul li a {
+    display: flex;
+    align-items: center;
+    line-height: 70px;
+    /*공지사항에 행간을 높이값으로 주면 높이도
+    들어가고 글자도 높이의 중간에 잘 배치됨*/
+    padding: 0 20px 0 20px;
+    font-size: 22px;
+}
+.news ul li a em {
+    font-weight: 700;
+    background-color: #eee;
+    line-height: 29px; /*<<백그라운드색상들어가는만큼*/
+    padding: 0 7px;
+    margin-right: 20px;
+}
+.news ul li a strong {
+    width: 900px;
+    /* 글자가 들어갈 수 있는 최대 넓이 지정 
+    날짜는 자릿수가 딱 정해져 있음
+    왼쪽에 장학공지/일반공지도 자릿수가 정해져있음
+    하지만 제목은 입력한 대로 길 수 도 있고 짧을수도
+    그넓이를 넘어가면 제목을 잘라버리기 위해서 */
+    margin-right: 60px;
+    white-space: nowrap; /*줄바꿈금지*/
+    overflow: hidden; /*넘치는 글자 숨김*/
+    text-overflow: ellipsis; /*글자끝에 ...추가 글자가 반이 짤려서 나타날 수 있기 뺴문에
+    이 현상을 막고 ...을 추가하는방법 점3개를 2개로 변경 불가 점삭제불가*/
+}
+.news .inner {
+    position: relative;
+}
+.news .more {
+    position: absolute;
+    right:20px ;
+    top: 50px;
+}
+.news .more a {
+    display: block;
+    position: relative;
+}
+.news .more a::after {
+    position: absolute;
+    right: -20px;
+    top: 3px;
+    width: 17px;
+    height: 17px;
+    background: url(../images/news.nore.svg) no-repeat center center /100% auto;
+    /* 100% auto or contain pc와 모바일에서 아이콘 사이즈가 변경된다면 백ㄱ그라운드 사이즈를 미리 지정ㅎ는게
+    좋음 컨테인은 영역에서 아이콘이 짤리지않고 꽉 나오게 하는 명령 */
+    content: "";
+}
+@media screen and (max-width:640px){
+    .news {
+        margin-top: 35px;
+    }
+    .news h2 {
+        font-size: 15px;
+        margin: 0 0 25px 0;
+    }
+    .news ul li a {
+        display: flex;
+        align-items: center;
+        line-height: 70px;
+        /*공지사항에 행간을 높이값으로 주면 높이도
+        들어가고 글자도 높이의 중간에 잘 배치됨*/
+        padding: 0 20px 0 20px;
+        font-size: 12px;
+    }
+    .news ul li a em {
+       display: none;
+    }
+    .news ul li a strong {
+        width: calc(100%-80px);
+        /*모바일에서는 제목의 넓이가 디바이스의 넓이에 따라 바뀜 
+        그래서 오른쪽 날짜와 여백값을100%에서 뺴줌
+        날짜와 여백은 고정값이니까*/
+        /* 글자가 들어갈 수 있는 최대 넓이 지정 
+        날짜는 자릿수가 딱 정해져 있음
+        왼쪽에 장학공지/일반공지도 자릿수가 정해져있음
+        하지만 제목은 입력한 대로 길 수 도 있고 짧을수도
+        그넓이를 넘어가면 제목을 잘라버리기 위해서 */
+        margin-right: 60px;
+        white-space: nowrap; /*줄바꿈금지*/
+        overflow: hidden; /*넘치는 글자 숨김*/
+        text-overflow: ellipsis; /*글자끝에 ...추가 글자가 반이 짤려서 나타날 수 있기 뺴문에
+        이 현상을 막고 ...을 추가하는방법 점3개를 2개로 변경 불가 점삭제불가*/
+    }
+    .news .inner {
+        position: relative;
+    }
+    .news .more {
+        position: absolute;
+        right:auto ;
+        top: auto;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .news .more a {
+        border: 0;
+        border-radius: 0;
+        padding: 0 20px 0 0;
+        display: inline-block;
+    }
+    .news .more::after {
+        position: absolute;
+        right: -20px;
+        top: 3px;
+        width: 17px;
+        height: 17px;
+        background: url(../images/news.nore.svg) no-repeat center center /100% auto;
+        /* 100% auto or contain pc와 모바일에서 아이콘 사이즈가 변경된다면 백ㄱ그라운드 사이즈를 미리 지정ㅎ는게
+        좋음 컨테인은 영역에서 아이콘이 짤리지않고 꽉 나오게 하는 명령 */
+        content: "";
+    }
+}/*media*/
+
+.webzine {
+    /* 백그라운드 떄문에 패딩 줌 내부여백이라 백그라운드가 패딩영역까지 배치가능*/
+    padding: 200px 0 130px 0;
+    background: url(../images/wedzin_bg.svg) no-repeat center top 100px/ center;
+}
+
+
+.footer {
+    height: 500px;
+} 
