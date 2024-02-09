@@ -1,0 +1,352 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/web/static/Pretendard-Regular.woff) format('woff2'), url(../fonts/web/static/Pretendard-Regular.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-display: swap;
+    src: local('Pretendard Medium'), url(../fonts/web/static/Pretendard-Medium.woff) format('woff2'), url(../fonts/web/static/Pretendard-Medium.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/web/static/Pretendard-Bold.woff) format('woff2'), url(../fonts/web/static/Pretendard-Bold.woff2) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-display: swap;
+    src: local('Pretendard SemiBold'), url(../fonts/web/static/Pretendard-SemiBold.subset.woff) format('woff2'), url(../fonts/web/static/Pretendard-SemiBold.subset.woff2) format('woff');
+}
+html, body {
+    font-family:'Pretendard', sans-serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 400;
+    /* line-height: 1.2; */
+    word-break: keep-all;
+    /* letter-spacing: -0.05em; 자간 */
+}
+.wrapper {
+    width: 1280px; /* 홈페이지넓이 */
+    margin: 0 auto; /* 가운데정렬 */
+}
+#wrap {  
+    min-width: 1280px;
+     /* pc형에서 웹퍼 사이즈보다 브라우저 넓이가 적을때 가로 스크롤바가
+     생성> 오른쪽에 백그라운드가 짤리는 현상이 생김> 가로스크롤바 생성시에도
+     홈페이지를 정상적으로 서비스하기위해 최소 넓이를 입력 */
+    /* id="wrap"에 적용되는 스타일 */
+}
+/* 1.브라우저 사이즈 640px이하일때만 적용되는 스타일 
+pc버전과 선택자가 동일해야함 선택자가 달라지면 css우선순위가
+변경되어 적용되지 않을 수 있음
+2.모바일은 pc버전스타일을 그대로 상속받기 떄문에 
+변경사항만 스타일을 적용해야한다
+3.모바일 스타일은 pc스타일 아래 선언되어야 한다 
+css는 위에서 아래로 적용되기 떄문*/
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px;
+    }
+    .wrapper {
+        width: auto; /* 홈페이지넓이값 취소 블럭요소라면 100%*/
+        margin: 0 20px 0 20px; /* 모바일에서 죄우에 20px을 준다*/
+    }
+    #wrap {  
+        min-width: 320px;
+         /* pc형에서 웹퍼 사이즈보다 브라우저 넓이가 적을때 가로 스크롤바가
+         생성> 오른쪽에 백그라운드가 짤리는 현상이 생김> 가로스크롤바 생성시에도
+         홈페이지를 정상적으로 서비스하기위해 최소 넓이를 입력 */
+        /* id="wrap"에 적용되는 스타일 */
+    }
+    }
+    /* *태그초기화 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul, ol,  li {
+    list-style: none; 
+}
+a { /* a태그는 파락색에 언더라인이 기본적으로 생성 */
+    text-decoration: none; /* 언더라인제거 */
+    color: inherit; /* 색상은 누구한테든 상속받음 */
+}
+address, em {
+    font-style: normal;
+    /* em, address 태그는 기본적으로 글자가 기울어짐 디자인상 기울어짐을 사용하기 위해x
+    최근 기울여 디자인하지x  */
+}
+/* 글자를 두껍게 하고 글자크기를 조정하는 태그-
+바디가 선언한 속성대로적용될 수 있도록 초기화
+브라우저가 기본적으로 적용한 스타일이 적용되지않도록 막기 */
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.notice {
+    margin: 125px 0 0 0;
+}
+.notice h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 40px;
+}
+.notice h2 strong {
+    color: #1d1d1d;
+}
+.notice ul {
+    display: flex;
+    justify-content: space-between;
+}
+.notice ul li {
+    width: 280px;
+}
+/* a태그안에 많은 요소들이 들어가면 블럭태그를 주는게 좋음 */
+.notice ul li a {
+    display: block;
+}
+.notice ul li a strong {
+    display: block;
+    /* 제목은 스트롱 날짜는 스판, 디자인상 줄바꿈이 필요
+    이때 디스플레이 블럭을 주면 각 요소가 블럭 요소로 바뀌어서 줄바꿈이 들어감 */
+    font-size: 20px;
+    font-weight: 500;
+    color: #1d1d1d;
+    margin: 10px 0 0 0;
+}
+.notice ul li a span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+}
+.notice  .notice_wrap {
+    position: relative ;
+    /* more의정렬의 중심 */
+}
+.notice .more {
+    /* 노틱스랩의 영역을 기준으로 */
+    position: absolute;
+    right: 0;
+    top: 55px;
+}
+.notice .more a {
+    border: 1px solid #555;
+    border-radius: 30px;
+    line-height: 51px;
+    /* 버튼은 라인헤이트의 높이를 갖고
+    글자도 위아래 정렬함 */
+    padding: 0 28px;
+    display: block;
+}
+/* a에 마우스를 오버했을때 */
+.notice .more a:hover {
+    background-color: #555;
+    color: #fff;
+}
+@media screen and (max-width:640px){
+    .notice {
+        margin: 40px 0 0 0;
+    }
+    .notice h2 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+    .notice ul {
+        /* 디스플레이 플렉스를 해제하는 방법은 디스플레이 블럭,
+        인라인블럭도 ㅇㅋ */
+        display: block;
+        justify-content: space-between;
+    }
+    .notice ul li {
+        width: auto;
+        /* 넓이값을 지우고 원래 속성대로 넓이를 갖게하는것 */
+        margin-bottom: 20px;
+    }
+    /* a태그안에 많은 요소들이 들어가면 블럭태그를 주는게 좋음 */
+    .notice ul li a {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        /* 왼쪽에 이미지, 오른쪽에 글자 
+        디스플레이플렉스는 좌우 요소의 높이를 동일하게 하려는 속성이있음
+        이 현상을 막으려면 얼라인아이템플렉스스타트*/
+    }
+    .notice ul li a img {
+        width: 96px;
+        /* 이미지 크기를 조정하려면 반드시 img에 와이드,하이트 줘야함
+        감싸는 요소에 줘도 안들어감.. 넓이나 높이는 하나만줘도 나머지는 알아서 비율 맞춰 들어감
+        그래서 넓이나 높이 하나만 줌 둘다 주면 비율이 꺠짐 */
+    }
+    .notice ul li a .inner {
+        width: calc(100% - 111px);
+        /* 왼쪽의 이미지와 여백은 고정값, 오른쪽 글자는 브라우저 사이즈에따라서 늘고 줄음
+        전체넓이 100%에서 왼쪽 이미지넓이 +여백을 뺸 값잉 글자의 넓이가됨 */
+    }
+    .notice ul li a strong {
+        display: block;
+        /* 제목은 스트롱 날짜는 스판, 디자인상 줄바꿈이 필요
+        이때 디스플레이 블럭을 주면 각 요소가 블럭 요소로 바뀌어서 줄바꿈이 들어감 */
+        font-size: 15px;
+        margin: 0 0 3px 0;
+        /* 제목을 무조건 두줄로 제한 */
+        line-height: 1.2;
+        height: 2.4em; /*행간에 곱하기2한값 단위는 em*/
+        overflow: hidden; /* 높이를 제한했기에 높이에서 벗어나는 글자는 숨김처리*/
+    }
+    .notice .more {
+        /* 노틱스랩의 영역을 기준으로 */
+        position: relative;
+        right: auto;
+        top: auto;
+        /* 해제 오토 */
+        margin: 35px 0 0 0;
+        text-align: center;
+    }
+    .notice .more a {
+        border-radius: 30px;
+        line-height: 48px;
+        /* 버튼은 라인헤이트의 높이를 갖고
+        글자도 위아래 정렬함 */
+        padding: 0 33px;
+        display: inline-block;
+    }
+    /* a에 마우스를 오버했을때 */
+}
+.news {
+    margin: 125px 0 0 0;
+}
+.news h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 40px;
+}
+.news h2 strong {
+    color: #1d1d1d;
+}
+.news ul {
+    display: flex;
+    justify-content: space-between;
+}
+.news ul li {
+    width: 280px;
+}
+/* a태그안에 많은 요소들이 들어가면 블럭태그를 주는게 좋음 */
+.news ul li a {
+    display: block;
+}
+.news ul li a strong {
+    display: block;
+    /* 제목은 스트롱 날짜는 스판, 디자인상 줄바꿈이 필요
+    이때 디스플레이 블럭을 주면 각 요소가 블럭 요소로 바뀌어서 줄바꿈이 들어감 */
+    font-size: 20px;
+    font-weight: 500;
+    color: #1d1d1d;
+    margin: 10px 0 0 0;
+}
+.news ul li a span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+}
+.news  .notice_wrap {
+    position: relative ;
+    /* more의정렬의 중심 */
+}
+.news .more {
+    /* 노틱스랩의 영역을 기준으로 */
+    position: absolute;
+    right: 0;
+    top: 55px;
+}
+.news .more a {
+    border: 1px solid #555;
+    border-radius: 30px;
+    line-height: 51px;
+    /* 버튼은 라인헤이트의 높이를 갖고
+    글자도 위아래 정렬함 */
+    padding: 0 28px;
+    display: block;
+}
+/* a에 마우스를 오버했을때 */
+.news .more a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+@media screen and (max-width:640px){
+    .news {
+        margin: 55px 0 0 0;
+    }
+    .news h2 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+    .news h2 br {
+        display: none;
+        /* br태그를 숨김처리하기에 줄바꿈 적용이 안됨 
+        단독태그라 가능*/
+    }
+    .news ul {
+        flex-wrap: wrap;
+        /* 한줄에 두개씩으로 변경> 그럼 디스플레이플렉스랑 나머지 값은 유지
+        플렉스 랩 변경>줄바꿈 허용> 원래 플렉스는 죽어도 모든 요소를 한줄에 넣으려함 */
+    }
+    .news ul li {
+        width: calc(50% - 8px);
+        /* 한줄에 두개씩 사이에 여백 16px을 고정으로 배치
+        calc 연산자로 계산> 넓이는 % 여백은 px
+        100%/갯수 - 여백/갯수*/
+        margin-bottom: 25px ;
+    }
+    /* a태그안에 많은 요소들이 들어가면 블럭태그를 주는게 좋음 */
+    .news ul li a img {
+        width: 100%;
+        /* 감싸는 요소의 넓이에 꽉 차게 들어감 
+        높이는 비율에 맞게 조정 */
+    }
+    .news ul li a strong {
+        display: block;
+        font-size: 15px;
+        margin: 10px 0 0 0;
+        line-height: 1.2;
+        height: 2.4em;
+        overflow: hidden;
+        
+    }
+    .news ul li a span {
+        font-size: 13px;
+        font-weight: 500;
+        color: #555;
+    }
+    .news  .notice_wrap {
+        position: relative ;
+        /* more의정렬의 중심 */
+    }
+    .news .more {
+        /* 노틱스랩의 영역을 기준으로 */
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 20px 0 50px 0;
+        display: flex;
+        justify-content: center;
+    }
+    .news .more a {
+        border-radius: 30px;
+        line-height: 48px;
+        padding: 0 30px;
+        display: inline-block;
+    }
+    /* a에 마우스를 오버했을때 */
+
+}
