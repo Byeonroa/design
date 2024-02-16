@@ -26,6 +26,15 @@
     font-style:normal; 
 }
 
+*::selection {
+    background-color: #7A563C;
+    color: #fff;
+}
+*::-moz-selection { /* 호환성을 위한 코드 */
+    background-color: #7A563C;
+    color: #fff;
+}
+
 html, body {
     font-family: 'ey1945', serif; /* 서체 serif 명조 sans-serif 고딕 */
     font-size: 15px; /* 크기 */
@@ -46,6 +55,7 @@ html, body {
        짤리는 현상이 생김.  
        가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
        서비스 하기 위해서 최소 넓이를 입력 */
+    /*overflow: hidden; > position: sticky; 주려면 히든 뺴야함*/
 }
 
 /* 640px 이하일때 스타일 - 640이하는 모바일 초과는 탭  */
@@ -366,13 +376,21 @@ html, body {
 .book {
     margin: 120px 0 0 0;
 }
-/* 왼쪽에 타이틀이 작게 있고 오른쪽에 리스트가 콘텐츠 영역 밖으로 나가야함
-그럼 리스트에 아무리 넓이를 줘도 타이틀 공간이 확보가 안됨
-플렉스는 무조건 공간에 구겨넣으려고해서
-왼쪽에 있는 요소를 플로트레프트를 줘서 부소요소로 만듬>
-오른쪽에 있는 이스트는 타이틀을 인식하지 못함
-타이틀은 공간을 차지하지않음  리스트는 왼쪽에 타이틀 공간 포함해서 여백을 줘야함 
-반드시 마진으로*/
+.book .inner {
+    position: relative; /* more 정렬의 기준 */
+}
+/*
+    왼쪽에  tit이 작게 있고
+    오른쪽에 list가 콘텐츠 영역 (wrapper) 밖으로 나가야함
+    그럼 tit에 아무리 넓이를 줘도 tit의 공간이 확보가 안됨
+    flex는 무조건 공간에 구겨서라도 넣으라고 하기 때문에
+    왼쪽에 있는 요소를 float:left를 줘서 부요요소로 만듬
+    (오른쪽있는 list는  tit을 인식하지 못함
+    tit은 공간을 차지하지 않음)
+    list는 왼쪽에 tit공간 포함해서 여백을 줘야함.
+    반드시 margin으로 
+*/
+
 .book .tit {
     float: left;
 }
@@ -380,31 +398,709 @@ html, body {
     color: #1d1d1d;
     font-size: 50px;
     font-weight: 700;
-} 
+    margin: 0 0 7px 0;
+}
 .book .list {
     margin: 0 0 0 327px;
 }
-.book .tit ul {
+.book .list ul {
     display: flex;
     justify-content: space-between;
-    /*list사이즈 콘텐츠 영역의 넓이보다 큰
-    그럼 정상적으로 나타나려면 ul에 넓이를 줘야함
-    li하나에 넓이 299px * li갯수 4 299*4=1196
-    li사이의 여백 28px li갯수 -1 28*3 = 84
-    함 1196+84 = 1280*/
+    /* list의 사이즈 콘텐츠 영역의 넓이보다 큼 
+    그럼 정상적으로 나타나려면 ul에 넓이를 넓이를 줘야함 
+    li하나의 넓이 299px * li갯수 4   299*4 = 1196
+    li 사이의 여백 28px * li갯수 -1  28*3 = 84
+    합 1196 + 84 = 1280 
+    */
+    width: 1280px;
 }
-.book .tit ul li {
+.book .list ul li {
     width: 299px;
 }
-.book .tit ul li a {
-    display: block; /* a태그안에 많은 태그가 존재하면 블럭을 주는게 정신건강에 좋음*/
+.book .list ul li a {
+    display: block; 
+    /* a태그 안에 많은 태그가 존재하면 block을 주는게 좋음 */
 }
-.book .tit ul li a span {
-    display: block;
+.book .list ul li a span {
+    display: block; /* width:100% */
     height: 422px;
-} 
-.book .tit ul li a span img {
+    border: 1px solid #ededed;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.05);
+    overflow: hidden; /* 이미지가 확대 되었을때 밖으로 나가는 것 막기 */
+    transition: 0.5s;
+}
+.book .list ul li a span img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.book .list ul li a:hover span {
+    border: 1px solid #ccc;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+    /* transform: translate(-10px, -10px); */
+}
+.book .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.book .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 22px 0 17px 0;
+}
+.book .list ul li a strong {
+    display: block;
+    margin: 0 0 17px 0;
+    /* 한줄만 허용하는 코드 */
+    white-space: nowrap; /* 줄바꿈 금지 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.book .list ul li a p {
+    /* 여러줄로 줄수를 제한하는 경우 */
+    line-height: 1.2;
+    height: 2.4em; /* 행간 * 줄수 */
+    overflow: hidden;
+}
+.book .more {
+    position: absolute; /* inner를 기준으로 */
+    left: 0;
+    top: 218px;
+}
+.book .more a {
+    width: 144px;
+    line-height: 45px;
+    border: 1px solid #999999;
+    display: block;
+    padding: 0 0 0 17px;
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.2s;
+}
+.book .more a::after {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 18px;
+    top: 16px;
+    width: 20px;
+    height: 9px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='%233d3d3d' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    transition: 0.2s;
+}
+.book .more a:hover {
+    background-color: #7A563C;
+    border: 1px solid #7A563C;
+    color: #fff;
+}
+.book .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    animation-name: more; 
+    animation-duration: 2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear;
+}
+@keyframes more {
+    0% { transform:translate(0, 0) }
+    50% { transform:translate(-10px, 0) }
+    100% { transform:translate(0, 0) }
+}
+
+@media screen and (max-width:640px){
+    .book {
+        margin: 48px 0 0 0;
+        overflow: hidden;
+    }
+    .book .tit {
+        float: none;
+        margin: 0 55px 0 0;
+        /* 오른쪽에 더보기가 존재할 영역을 콘텐츠가 겹치지 않게
+           미리 여백을 잡아줌 */
+    }
+    .book .tit h2 {
+        font-size: 25px;
+        margin: 0 0 5px 0;
+    }
+    .book .tit br { /* br태그를 없애서 줄바꿈을 삭제함 */
+        display: none;
+    }
+    .book .list {
+        margin: 19px 0 0 0;
+        overflow-x: auto;
+    }
+    .book .list ul {
+        /* list의 사이즈 콘텐츠 영역의 넓이보다 큼 
+        그럼 정상적으로 나타나려면 ul에 넓이를 넓이를 줘야함 
+        li하나의 넓이 167px * li갯수 4   167*4 = 668
+        li 사이의 여백 16px * li갯수 -1  16*3 = 48
+        합 668 + 48 = 716
+        */
+        width: 716px;
+    }
+    .book .list ul li {
+        width: 167px;
+    }
+    .book .list ul li a span {
+        height: 237px;
+    }
+    .book .list ul li a h3 {
+        font-size: 17px;
+        margin: 15px 0 12px 0;
+    }
+    .book .list ul li a strong {
+        margin: 0 0 12px 0;
+    }
+    .book .more {
+        /* pc버전에서는 left로 배치, 모바일에서는 right로 배치
+           left와 right가 동시에 선언되면 적용안됨
+           그래서 left를 auto로 해제하고 right를 줘야함 */
+        left: auto;
+        right: 0;
+        top: 5px;
+    }
+    .book .more a {
+        width: 40px;
+        line-height: 38px; /* border때문에 2px 늘어나서 2px 뺌 */
+        border-radius: 100%;
+        padding: 0 0 0 0;
+        text-align: center;
+        font-size: 11px;
+    }
+    .book .more a::after {
+        display: none;
+    }
+}/*media*/
+
+.interview {
+    background-color: #F5F1ED;
+    margin: 200px 0 0 0;
+    padding: 0 0 150px 0;
+}
+.interview .wrapper {
+    position: relative;  
+}
+.interview .tit {
+    padding: 50px 0 0 0;
+    text-align: center;
+}
+.interview .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.interview .list {
+    margin: 77px 0 0 0;
+}
+.interview .list ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /*두번째 li에 상단여백을줘서
+     내리면 모든 li가 길이가 늘어남 두번째 li상단여백+길이만큼
+     늘어남 플렉스는 모든 요소의 길이를 동일하게 맞추려함
+     원래 li의 길이만큼만 나타나게 하려면 반드시 얼라인아이템 속성
+     (어떤값이든 상관없음)*/
+}
+.interview .list ul li {
+    width: 408px;
+    position: relative; /*cnt 정렬의기준*/
+}
+.interview .list ul li:nth-child(2) {
+    margin: 57px 0 0 0;
+}
+
+.interview .list ul li a {
+    display: block;
+}
+.interview .list ul li a .photo {
+    border-radius: 70px 0 70px 0;
+    overflow: hidden;
+    /* 이미지를 감싸는 요소에 border-radius를 주는 경우
+    overflow:hidden;을 꼭줘야 이미지가 짤림 */
+    font-size: 0;
+    line-height: 0;
+}
+/* 디자인상 두번째 li에 스타일이 다르다면 
+css에서도 nth-child로 선택한다. */
+.interview .list ul li:nth-child(2) a .photo {
+    border-radius: 0 70px 0 70px ;
+}
+.interview .list ul li a .photo img {
+    filter: grayscale(100%); /* 흑백 */
+    transition: 0.5s;
+}
+.interview .list ul li a .cnt {
+    position: absolute; /*li가 정렬의기준*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px 15px 40px;
+}
+.interview .list ul li a .cnt h3 {
+    font-size: 25px;
+    font-weight: 700;
+}
+.interview .list ul li a .cnt p {
+    display: none;
+}
+.interview .list ul li a .cnt span {
+    font-size: 0;
+    line-height: 0;
+    width: 35px;
+    height: 35px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='30' fill='%23fff' viewBox='0 -960 960 960' width='30'%3E%3Cpath d='M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z'/%3E%3C/svg%3E");
+    
+}
+/*오버되었을때*/
+.interview .list ul li.active a .photo img {
+    filter: grayscale(0); /* 칼라= 숫자0=단위없음 */
+}
+.interview .list ul li.active a .photo {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.interview .list ul li.active a .cnt {
+    bottom: -100px;
+    width: 299px;
+    height: 155px;
+    display: block; /*플랙스 해제*/
+    padding: 15px 20px 0 20px;
+    background-color: #7D6855;
+    border-radius: 0 40px 0 40px;
+}
+.interview .list ul li:nth-child(2).active a .cnt {
+    border-radius: 40px 0 40px 0;
+}
+.interview .list ul li.active a .cnt p {
+    display: block;
+    margin: 8px 0 10px 0;
+    /*콘텐츠를 3줄로 제한*/
+    line-height: 1.2;
+    height: 3.6em; /*행간*줄수 (단위는 em)*/
+    overflow: hidden;
+}
+.interview .list ul li.active a .cnt span {
+    font-size: 18px;
+    line-height: 1.2;
+    width: auto;
+    height: auto;
+    background: none; /*배경 삭제*/ 
+    display: block; /*넓이100%*/
+    text-align: right;
+    position: relative ;/*before 정렬의 기준*/
+}
+.interview .list ul li.active a .cnt span::before {
+    position: absolute; /*span 기준*/
+    left: 0;
+    top: 11px;
+    width: calc(100% - 6em);
+    /*6em = 즐다 여섯글자 라는 의미 
+    반응형에서 글자의 크기가 변경되면
+    px로 할 경우 계속 글자가 바뀔떄마다
+    넓이를 변경해야함
+    하지만em이라는 간위를 사용하면
+    글자크기가 줄어도 변경을 안해도됨
+    글자의 크기에 상대크기로 글자수의 넓이를 줌*/
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    content: "";
+}
+.interview .more {
+    position: absolute;
+    /*left: calc(50%72px); 가운데정렬*/
+    right: 25px;
+    top: 100px;
+}
+.interview .more a {
+    width: 144px;
+    line-height: 45px;
+    border: 1px solid #999999;
+    display: block;
+    padding: 0 0 0 17px;
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.2s;
+}
+.interview .more a::after {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 18px;
+    top: 16px;
+    width: 20px;
+    height: 9px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='%233d3d3d' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    transition: 0.2s;
+}
+.interview .more a:hover {
+    background-color: #7A563C;
+    border: 1px solid #7A563C;
+    color: #fff;
+}
+.interview .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    animation-name: more; 
+    animation-duration: 2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear;
+}
+
+@media screen and (max-width:640px){
+    .interview {
+        margin: 60PX 0 0 0;
+        padding: 0 0 60px 0;
+    }
+    .interview .tit {
+        padding: 50px 0 0 0;
+        text-align: left;
+    }
+    .interview .tit h2 {
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+    .interview .list {
+        margin: 20px 0 0 0;
+    }
+    
+    .interview .list ul li {
+        width: auto;
+    }
+    .interview .list ul li:nth-child(2),
+    .interview .list ul li:nth-child(3)  {
+        display: none;
+    }
+    
+    .interview .list ul li a {
+        display: block;
+    }
+    .interview .list ul li a .photo img {
+        filter: grayscale(0%); /* 흑백 */
+        width: 100%; /*감싸는 영역의 넓이에 꼭 맞게 사이즈 조정*/
+    }
+        .interview .list ul li a .cnt {
+        bottom: 0;
+        display: block;
+        align-items: center;
+        padding: 0 25px 20px 20px;
+        background-color: #7D6855;
+        border-radius: 50px 0 50px 0;
+        height: 165px;
+    }
+    .interview .list ul li a .cnt h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 20px 0 0 10px;
+    }
+    .interview .list ul li a .cnt p {
+        display: block;
+        margin: 6px 10px 0 10px;
+        line-height: 1.2;
+        height: 2.4em;
+        overflow: hidden;
+    }
+    .interview .list ul li a .cnt span {
+        font-size: 13px;
+        line-height: 1.2;
+        width: auto;
+        height: auto;
+        background: none; 
+        display: block;
+        text-align: right;
+        padding: 32px 10px 0 0;
+    }
+    .interview .list ul li a .cnt span::before {
+        position: absolute;
+        left: 20px;
+        top: 120px;
+        width: 280px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        content: "";
+    }
+    /*li에서 active들어갔을 때 스타일 바뀌는건
+    pc에서만 적용되는 스타일
+    모바일에서 기본 스타일만 존재함- 미디어쿼리 min-width: 641px 로 스타일 선언
+    브ㅏ우저 사이즈 641 이상에서만 해당스타일 적용됨*/
+    @media screen and (max-width:641px){
+        /*오버되었을때*/
+        .interview .list ul li.active a .photo img {
+            filter: grayscale(0); /* 칼라= 숫자0=단위없음 */
+        }
+        .interview .list ul li.active a .photo {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .interview .list ul li.active a .cnt {
+            bottom: -100px;
+            width: 299px;
+            height: 155px;
+            display: block; /*플랙스 해제*/
+            padding: 15px 20px 0 20px;
+            background-color: #7D6855;
+            border-radius: 0 40px 0 40px;
+        }
+        .interview .list ul li:nth-child(2).active a .cnt {
+            border-radius: 40px 0 40px 0;
+        }
+        .interview .list ul li.active a .cnt p {
+            display: block;
+            margin: 8px 0 10px 0;
+            /*콘텐츠를 3줄로 제한*/
+            line-height: 1.2;
+            height: 3.6em; /*행간*줄수 (단위는 em)*/
+            overflow: hidden;
+        }
+        .interview .list ul li.active a .cnt span {
+            font-size: 18px;
+            line-height: 1.2;
+            width: auto;
+            height: auto;
+            background: none; /*배경 삭제*/ 
+            display: block; /*넓이100%*/
+            text-align: right;
+            position: relative ;/*before 정렬의 기준*/
+        }
+        .interview .list ul li.active a .cnt span::before {
+            position: absolute; /*span 기준*/
+            left: 0;
+            top: 11px;
+            width: calc(100% - 6em);
+            /*6em = 즐다 여섯글자 라는 의미 
+            반응형에서 글자의 크기가 변경되면
+            px로 할 경우 계속 글자가 바뀔떄마다
+            넓이를 변경해야함
+            하지만em이라는 간위를 사용하면
+            글자크기가 줄어도 변경을 안해도됨
+            글자의 크기에 상대크기로 글자수의 넓이를 줌*/
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.2);
+            content: "";
+        }
+    }
+    .interview .more {
+        /* pc버전에서는 left로 배치, 모바일에서는 right로 배치
+           left와 right가 동시에 선언되면 적용안됨
+           그래서 left를 auto로 해제하고 right를 줘야함 */
+        left: auto;
+        right: 0;
+        top: 60px;
+    }
+    .interview .more a {
+        width: 40px;
+        line-height: 38px; /* border때문에 2px 늘어나서 2px 뺌 */
+        border-radius: 100%;
+        padding: 0 0 0 0;
+        text-align: center;
+        font-size: 11px;
+    }
+    .interview .more a::after {
+        display: none;
+    }
+}/*media*/
+
+.news {
+    background: url(../images/news_bg.png) no-repeat center center /cover;
+    color: #fff;
+    padding: 0 0 110PX 0;
+}
+.news .tit {
+    position: sticky;
+    top: 100px; /*상단에 고정 되었을 때 상단에서 부터 헤더무시하고
+                아래로 배치되고 싶은 값 -고정되기전엔 영향 없음*/
+    float: left;
+
+}
+.news .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+    padding: 150px 0 10px 0;
+}
+.news .list {
+    margin: 0 0 0 400px; /*tit여백*/
+    padding: 270PX 0 0 0; /*상단의여백*/
+}
+.news .list ul {
+    display: flex;
+    flex-wrap: wrap; /*넌 플렉스의 개가 아니야 여러줄 가능*/
+    justify-content: space-between;
+}
+.news .list ul li {
+    width: 440px;
+    margin-bottom: 110px;
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a h3 {
+    font-size: 25px;
+    padding: 5px 0 10px 0;
+}
+.news .list ul li a span {
+    overflow: hidden;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+}
+.news .list ul li a:hover span img  {
+    transition: 0.5s;
+}
+.news .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .list ul li:nth-child(2n) {
+    margin-top: -140px; /*마진만 -가능 패딩은x*/
+}
+.news .inner {
+    position: relative;
+}
+.news .more {
+    position: absolute;
+    /*left: calc(50%72px); 가운데정렬*/
+    left: 0;
+    top:330px;
+}
+.news .more a {
+    width: 144px;
+    line-height: 45px;
+    border: 1px solid #999999;
+    display: block;
+    padding: 0 0 0 17px;
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.2s;
+}
+.news .more a::after {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 18px;
+    top: 16px;
+    width: 20px;
+    height: 9px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='%233d3d3d' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    transition: 0.2s;
+}
+.news .more a:hover {
+    background-color: #7A563C;
+    border: 1px solid #7A563C;
+    color: #fff;
+}
+.news .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    animation-name: more; 
+    animation-duration: 2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear;
+}
+
+@media screen and (max-width:640px){
+    .news {
+        padding: 0 0 45PX 0;
+    }
+    .news .tit {
+        position: relative;
+        top: auto; /*상단에 고정 되었을 때 상단에서 부터 헤더무시하고
+                    아래로 배치되고 싶은 값 -고정되기전엔 영향 없음*/
+        float: none;
+        margin: 0;
+        padding: 0;
+    }
+    .news .tit h2 {
+        font-size: 25px;
+        font-weight: 400;
+        padding: 60px 0 10px 0;
+    }
+    .news .tit br {
+        display: none;
+    }
+    .news .list {
+        margin: 0; /*tit여백*/
+        padding-top: 30PX; /*상단의여백*/
+        overflow-x: auto;
+    }
+    .news .list ul {
+        flex-wrap: nowrap; /*넌 플렉스의 개가 아니야 여러줄 가능*/
+        /*li의 넓이 111px *li의 갯수 6개 168*6 =1008
+        li사이의 여뱍 16px li의 갯수 -1  16-5= 80
+        1008+80=1088 */
+        width: 1088px;
+    }
+    .news .list ul li {
+        width: 115x;
+        margin-bottom: 0;
+    }
+    .news .list ul li a h3 {
+        font-size: 10px;
+        padding: 5px 0 10px 0;
+    }
+    .news .list ul li a:hover span img  {
+        width: 100%;
+    }
+    .news .list ul li a:hover span img {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+    .news .list ul li:nth-child(2n) {
+        display: none;
+    }
+    .news .inner {
+        position: relative;
+    }
+    .news .more {
+        /* pc버전에서는 left로 배치, 모바일에서는 right로 배치
+           left와 right가 동시에 선언되면 적용안됨
+           그래서 left를 auto로 해제하고 right를 줘야함 */
+        left: auto;
+        right: 0;
+        top: 70px;
+    }
+    .news .more a {
+        width: 40px;
+        line-height: 38px; /* border때문에 2px 늘어나서 2px 뺌 */
+        border-radius: 100%;
+        padding: 0 0 0 0;
+        text-align: center;
+        font-size: 11px;
+    }
+    .news .more a::after {
+        display: none;
+    }
+}
+
+.footer {
+    background-color: #1d1d1d ;
+    color: #fff;
+    padding: 100px 0 110px 0;
+}
+.footer .inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.footer .f_text {
+    float: left;
+    font-size: 25px;
+}
+.footer .strong {
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+}
+.footer .strong + span {
+    margin-top: 55px;
+}
+.footer span {
+    display: block;
+}
+.footer .f_inpo {
+    float: right;
+}
+.footer .capyliht {
+    position: absolute;
 }
