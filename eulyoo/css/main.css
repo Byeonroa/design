@@ -26,6 +26,15 @@
     font-style:normal; 
 }
 
+*::selection {
+    background-color: #7A563C;
+    color: #fff;
+}
+*::-moz-selection { /* 호환성을 위한 코드 */
+    background-color: #7A563C;
+    color: #fff;
+}
+
 html, body {
     font-family: 'ey1945', serif; /* 서체 serif 명조 sans-serif 고딕 */
     font-size: 15px; /* 크기 */
@@ -46,6 +55,7 @@ html, body {
        짤리는 현상이 생김.  
        가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
        서비스 하기 위해서 최소 넓이를 입력 */
+    overflow: hidden;
 }
 
 /* 640px 이하일때 스타일 - 640이하는 모바일 초과는 탭  */
@@ -366,13 +376,21 @@ html, body {
 .book {
     margin: 120px 0 0 0;
 }
-/* 왼쪽에 타이틀이 작게 있고 오른쪽에 리스트가 콘텐츠 영역 밖으로 나가야함
-그럼 리스트에 아무리 넓이를 줘도 타이틀 공간이 확보가 안됨
-플렉스는 무조건 공간에 구겨넣으려고해서
-왼쪽에 있는 요소를 플로트레프트를 줘서 부소요소로 만듬>
-오른쪽에 있는 이스트는 타이틀을 인식하지 못함
-타이틀은 공간을 차지하지않음  리스트는 왼쪽에 타이틀 공간 포함해서 여백을 줘야함 
-반드시 마진으로*/
+.book .inner {
+    position: relative; /* more 정렬의 기준 */
+}
+/*
+    왼쪽에  tit이 작게 있고
+    오른쪽에 list가 콘텐츠 영역 (wrapper) 밖으로 나가야함
+    그럼 tit에 아무리 넓이를 줘도 tit의 공간이 확보가 안됨
+    flex는 무조건 공간에 구겨서라도 넣으라고 하기 때문에
+    왼쪽에 있는 요소를 float:left를 줘서 부요요소로 만듬
+    (오른쪽있는 list는  tit을 인식하지 못함
+    tit은 공간을 차지하지 않음)
+    list는 왼쪽에 tit공간 포함해서 여백을 줘야함.
+    반드시 margin으로 
+*/
+
 .book .tit {
     float: left;
 }
@@ -380,31 +398,223 @@ html, body {
     color: #1d1d1d;
     font-size: 50px;
     font-weight: 700;
-} 
+    margin: 0 0 7px 0;
+}
 .book .list {
     margin: 0 0 0 327px;
 }
-.book .tit ul {
+.book .list ul {
     display: flex;
     justify-content: space-between;
-    /*list사이즈 콘텐츠 영역의 넓이보다 큰
-    그럼 정상적으로 나타나려면 ul에 넓이를 줘야함
-    li하나에 넓이 299px * li갯수 4 299*4=1196
-    li사이의 여백 28px li갯수 -1 28*3 = 84
-    함 1196+84 = 1280*/
+    /* list의 사이즈 콘텐츠 영역의 넓이보다 큼 
+    그럼 정상적으로 나타나려면 ul에 넓이를 넓이를 줘야함 
+    li하나의 넓이 299px * li갯수 4   299*4 = 1196
+    li 사이의 여백 28px * li갯수 -1  28*3 = 84
+    합 1196 + 84 = 1280 
+    */
+    width: 1280px;
 }
-.book .tit ul li {
+.book .list ul li {
     width: 299px;
 }
-.book .tit ul li a {
-    display: block; /* a태그안에 많은 태그가 존재하면 블럭을 주는게 정신건강에 좋음*/
+.book .list ul li a {
+    display: block; 
+    /* a태그 안에 많은 태그가 존재하면 block을 주는게 좋음 */
 }
-.book .tit ul li a span {
-    display: block;
+.book .list ul li a span {
+    display: block; /* width:100% */
     height: 422px;
-} 
-.book .tit ul li a span img {
+    border: 1px solid #ededed;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.05);
+    overflow: hidden; /* 이미지가 확대 되었을때 밖으로 나가는 것 막기 */
+    transition: 0.5s;
+}
+.book .list ul li a span img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.book .list ul li a:hover span {
+    border: 1px solid #ccc;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1);
+    /* transform: translate(-10px, -10px); */
+}
+.book .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.book .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 22px 0 17px 0;
+}
+.book .list ul li a strong {
+    display: block;
+    margin: 0 0 17px 0;
+    /* 한줄만 허용하는 코드 */
+    white-space: nowrap; /* 줄바꿈 금지 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.book .list ul li a p {
+    /* 여러줄로 줄수를 제한하는 경우 */
+    line-height: 1.2;
+    height: 2.4em; /* 행간 * 줄수 */
+    overflow: hidden;
+}
+.book .more {
+    position: absolute; /* inner를 기준으로 */
+    left: 0;
+    top: 218px;
+}
+.book .more a {
+    width: 144px;
+    line-height: 45px;
+    border: 1px solid #999999;
+    display: block;
+    padding: 0 0 0 17px;
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.2s;
+}
+.book .more a::after {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 18px;
+    top: 16px;
+    width: 20px;
+    height: 9px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='%233d3d3d' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    transition: 0.2s;
+}
+.book .more a:hover {
+    background-color: #7A563C;
+    border: 1px solid #7A563C;
+    color: #fff;
+}
+.book .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    animation-name: more; 
+    animation-duration: 2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear;
+}
+@keyframes more {
+    0% { transform:translate(0, 0) }
+    50% { transform:translate(-10px, 0) }
+    100% { transform:translate(0, 0) }
+}
+
+@media screen and (max-width:640px){
+    .book {
+        margin: 48px 0 0 0;
+    }
+    .book .tit {
+        float: none;
+        margin: 0 55px 0 0;
+        /* 오른쪽에 더보기가 존재할 영역을 콘텐츠가 겹치지 않게
+           미리 여백을 잡아줌 */
+    }
+    .book .tit h2 {
+        font-size: 25px;
+        margin: 0 0 5px 0;
+    }
+    .book .tit br { /* br태그를 없애서 줄바꿈을 삭제함 */
+        display: none;
+    }
+    .book .list {
+        margin: 19px 0 0 0;
+        overflow-x: auto;
+    }
+    .book .list ul {
+        /* list의 사이즈 콘텐츠 영역의 넓이보다 큼 
+        그럼 정상적으로 나타나려면 ul에 넓이를 넓이를 줘야함 
+        li하나의 넓이 167px * li갯수 4   167*4 = 668
+        li 사이의 여백 16px * li갯수 -1  16*3 = 48
+        합 668 + 48 = 716
+        */
+        width: 716px;
+    }
+    .book .list ul li {
+        width: 167px;
+    }
+    .book .list ul li a span {
+        height: 237px;
+    }
+    .book .list ul li a h3 {
+        font-size: 17px;
+        margin: 15px 0 12px 0;
+    }
+    .book .list ul li a strong {
+        margin: 0 0 12px 0;
+    }
+    .book .more {
+        /* pc버전에서는 left로 배치, 모바일에서는 right로 배치
+           left와 right가 동시에 선언되면 적용안됨
+           그래서 left를 auto로 해제하고 right를 줘야함 */
+        left: auto;
+        right: 0;
+        top: 5px;
+    }
+    .book .more a {
+        width: 40px;
+        line-height: 38px; /* border때문에 2px 늘어나서 2px 뺌 */
+        border-radius: 100%;
+        padding: 0 0 0 0;
+        text-align: center;
+        font-size: 11px;
+    }
+    .book .more a::after {
+        display: none;
+    }
+}/*media*/
+
+.interview {
+    background-color: #F5F1ED;
+    margin: 135px 0 0 0;
+}
+.interview .tit {
+    padding: 111px 0 0 0;
+    text-align: center;
+}
+.interview .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.interview .list {
+    margin: 77px 0 0 0;
+}
+.interview .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.interview .list ul li {
+    width: 408px;
+}
+.interview .list ul li:nth-child(2) {
+    margin: 57px 0 0 0;
+}
+
+.interview .list ul li a {
+    display: block;
+}
+.interview .list ul li a .photo {
+    border-radius: 70px 0 70px 0;
+    overflow: hidden;
+    /* 이미지를 감싸는 요소에 border-radius를 주는 경우
+    overflow:hidden;을 꼭줘야 이미지가 짤림 */
+    font-size: 0;
+    line-height: 0;
+}
+/* 디자인상 두번째 li에 스타일이 다르다면 
+css에서도 nth-child로 선택한다. */
+.interview .list ul li:nth-child(2) a .photo {
+    border-radius: 0 70px 0 70px 0;
+}
+.interview .list ul li a .photo img {
+    filter: grayscale(100%); /* 흑백 */
 }
