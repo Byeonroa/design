@@ -1103,4 +1103,5 @@ css에서도 nth-child로 선택한다. */
 }
 .footer .capyliht {
     position: absolute;
+    top: 125px;
 }
