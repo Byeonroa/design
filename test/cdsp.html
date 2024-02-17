@@ -246,10 +246,124 @@
                     </table>
                     <div><input type="submit" value="회원가입"><input type="reset" value="취소"></div>
                 </form>
+                <style>
+                h1 {
+                    font-weight: bold;
+                    font-style: italic;
+                }
+                </style>
 
-                
+                <input type="text" tabindex="1">
+                <div tabindex="0"></div>
+                <a href="#n" tabindex="-1"></a>
+
+                <form>
+                    <fieldset>
+                        <legend>필드에 입력형식 힌트주기</legend>
+                        <p><label for="id">아이디</label><input type="text"
+                        id="id" placeholder="아이디" title="아이디입력"></p>
+                        <p><label for="PW">비밀번호</label><input type="password"
+                        id="pw" placeholder="비밀번호" title="비밀번호입력"></p>
+                    </fieldset>
+                </form>
+
+                <form>
+                    <fieldset>
+                        <legend>필수입력 유효성 검사</legend>
+                        <p><label for="id">아이디</label><input type="text"
+                        id="id" placeholder="아이디" title="아이디입력" 
+                        required="required"></p>
+                        <p><label for="PW">비밀번호</label><input type="password"
+                        id="pw" placeholder="비밀번호" title="비밀번호입력"
+                        required="required"></p>
+                        <div><input type="submit" value="확인">
+                    </fieldset>
+                </form>
+
+                <form>
+                    <fieldset>
+                        <legend>자동완성 기능</legend>
+                        <p><label for="id">아이디</label><input type="text"
+                        id="id" placeholder="아이디" autocomplete="off" title="아이디입력" 
+                        required="required"></p>
+                        <p><label for="email">이메일</label><input type="email"
+                        id="email" placeholder="이메일" autocomplete="on" title="이메일입력"
+                        required="required"></p>
+                        <div><input type="submit" value="확인">
+                    </fieldset>
+                </form>
+
+                <form action="#n" method="post">
+                    <fieldset>
+                        <legend>정규식 속성</legend>
+                        <p><label for="tel">휴대폰 번호</label><input type="tel"
+                        id="tel" pattern="￦d{3} - ￦d{3,4} - ￦d{4}" required="required"
+                        title="휴대폰 번호는 숫자 3자리-숫자 3자리에서 4자리-숫자 4자리 입력"></p>
+                        <p><input type="submit" value="확인"></p>
+                    </fieldset>
+                </form>
+
+                <form action="#n" method="post">
+                    <fieldset>
+                        <legend>다중파일 선택</legend>
+                        <p><label for="email">이메일</label><input type="email"
+                        id="email" multiple="multiple" title="이메일 입력">
+                        <label for="file">이메일 찾기</label><input type="file" 
+                        id="file" multiple="multiple"></p>
+                    </fieldset>
+                </form>
+
+                <form>
+                    <fieldset>
+                        <legend>disabled 속성과 readonly</legend>
+                        <p><label for="identification">인증번호</label><input type="text"
+                        id="identification" title="인증번호 입력"><input
+                        type="button" value="이전"><input type="button" value="다음"
+                        disabled="disabled"></p>
+                        <p><label for="book">선택한 책</label><input type="text"
+                        id="book" value="반응형 웹" readonly="readonly"><label
+                        for="quantity">수량</label><input type="number" id="quantity"
+                        min="1" value="1" title="수량입력"></p>
+                    </fieldset>
+                </form>
+
+                <header class="header">헤더</header>
+                <section class="section">본문</section>
+                <footer class="footer">푸터</footer>
+                <style>
+                    .header{
+                        width: 300px;
+                        margin: 0 auto;
+                        border: 1px solid #000;
+                    }
+                    .section{
+                        width: 300px;
+                        margin: 0 auto;
+                        border: 1px solid #333;
+                    }
+                    .footer{
+                        width: 300px;
+                        margin: 0 auto;
+                        border: 1px solid #999;
+                    }
+                </style>
+
+                <div id="p">
+                    <p>헤더</p>
+                    <p>본문</p>
+                    <p>푸터</p>
+                </div>
+                <style>
+                    .p {
+                        width: 300px;
+                        margin: 0 auto;
+                        border: 1px solid #000;
+                    }
+                </style>
+
             </div><!--wrapper-->
         </header>
     </div>
 </body>
+
 </html>
