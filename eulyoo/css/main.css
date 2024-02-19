@@ -1097,6 +1097,8 @@ css에서도 nth-child로 선택한다. */
 }
 .footer span {
     display: block;
+    line-height: 1.4;
+    padding: 5px 0 35px 0;
 }
 .footer .f_inpo {
     float: right;
@@ -1104,4 +1106,45 @@ css에서도 nth-child로 선택한다. */
 .footer .capyliht {
     position: absolute;
     top: 125px;
+    padding: 30px 0;
+}
+.footer .capyliht img {
+    width: 350px;
+    height: 60px;
+}
+
+@media screen and (max-width:640px){
+    .footer {
+        padding: 25px 0 25px 0;
+    }
+    .footer .inner {
+        display: block; /*텍스트 인포 좌우배치 해제*/
+    }
+    .footer .f_text {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    .footer .strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+    }
+    .footer .strong + span {
+        margin-top: 55px;
+    }
+    .footer span {
+        display: block;
+        line-height: 1.2;
+        padding: 5px 0 15px 0;
+    }
+    .footer .capyliht {
+        position: relative;
+        left: auto;
+        top: auto;
+        font-size: 9px;
+    }
+    .footer .capyliht img {
+        width: 213px;
+        height: 36px;
+    }
 }
