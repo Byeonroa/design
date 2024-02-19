@@ -1115,7 +1115,7 @@ css에서도 nth-child로 선택한다. */
 
 @media screen and (max-width:640px){
     .footer {
-        padding: 25px 0 25px 0;
+        padding: 25px;
     }
     .footer .inner {
         display: block; /*텍스트 인포 좌우배치 해제*/
