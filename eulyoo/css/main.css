@@ -154,6 +154,56 @@ html, body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%23FFF'%3E%3Cpath d='M781.692-136.924 530.461-388.155q-30 24.769-69 38.769t-80.692 14q-102.55 0-173.582-71.014t-71.032-173.537q0-102.524 71.014-173.601 71.014-71.076 173.538-71.076 102.523 0 173.6 71.032T625.384-580q0 42.846-14.385 81.846-14.385 39-38.385 67.846l251.231 251.231-42.153 42.153Zm-400.923-258.46q77.308 0 130.962-53.654Q565.385-502.692 565.385-580q0-77.308-53.654-130.962-53.654-53.654-130.962-53.654-77.308 0-130.962 53.654Q196.154-657.308 196.154-580q0 77.308 53.653 130.962 53.654 53.654 130.962 53.654Z'/%3E%3C/svg%3E");
     transition: 0.5s;
 }
+@media screen and (min-width:641px){
+    /* 브라우저 넓이가 641이상일 때 적용 -메뉴가 열렸을때*/
+    .header .menu_over {
+        color: #fff;
+    }
+    .header .menu_over::after {
+        position: absolute; /*헤더 기준*/
+        left: 0;
+        top: 0;
+        z-index: -1; /* 내 정렬의 기준 안에서 제일 아래*/
+        width: 100%;
+        height: 420px;
+        background-color: #7D6855;
+        content: "";
+    }
+    .header .logo a {
+        background: url(../images/logo_w.png) no-repeat center center / contain;
+    }
+    .header .tnb .login {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFF' viewBox='0 -960 960 960' %3E%3Cpath d='M480-492.309q-57.749 0-98.874-41.124-41.125-41.125-41.125-98.874 0-57.75 41.125-98.874 41.125-41.125 98.874-41.125 57.749 0 98.874 41.125 41.125 41.124 41.125 98.874 0 57.749-41.125 98.874-41.125 41.124-98.874 41.124ZM180.001-187.694v-88.922q0-29.384 15.962-54.422 15.961-25.038 42.653-38.5 59.308-29.077 119.654-43.615T480-427.691q61.384 0 121.73 14.538 60.346 14.538 119.654 43.615 26.692 13.462 42.653 38.5 15.962 25.038 15.962 54.422v88.922H180.001ZM240-247.693h480v-28.923q0-12.154-7.039-22.5-7.038-10.346-19.115-16.885-51.692-25.461-105.418-38.577Q534.702-367.693 480-367.693t-108.428 13.115q-53.726 13.116-105.418 38.577-12.077 6.539-19.115 16.885Q240-288.77 240-276.616v28.923Zm240-304.614q33 0 56.5-23.5t23.5-56.5q0-33-23.5-56.5t-56.5-23.5q-33 0-56.5 23.5t-23.5 56.5q0 33 23.5 56.5t56.5 23.5Zm0-80Zm0 384.614Z'/%3E%3C/svg%3E");
+    }
+    .header .tnb .search {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -960 960 960' fill='%23FFF'%3E%3Cpath d='M781.692-136.924 530.461-388.155q-30 24.769-69 38.769t-80.692 14q-102.55 0-173.582-71.014t-71.032-173.537q0-102.524 71.014-173.601 71.014-71.076 173.538-71.076 102.523 0 173.6 71.032T625.384-580q0 42.846-14.385 81.846-14.385 39-38.385 67.846l251.231 251.231-42.153 42.153Zm-400.923-258.46q77.308 0 130.962-53.654Q565.385-502.692 565.385-580q0-77.308-53.654-130.962-53.654-53.654-130.962-53.654-77.308 0-130.962 53.654Q196.154-657.308 196.154-580q0 77.308 53.653 130.962 53.654 53.654 130.962 53.654Z'/%3E%3C/svg%3E");
+    }
+    .header .gnb ul.depth1 {
+        display: none;
+    }
+    .header .tnb {
+        display: none;
+    }
+    .header.fixed .gnb .gnb_open {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 28' fill='%233d3d3d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 21V18.6667H21V21H3ZM3 15.1667V12.8333H21V15.1667H3ZM3 9.33333V7H21V9.33333H3Z' /%3E%3C/svg%3E%0A");
+    }
+    .header.fixed .gnb ul.depth2 {
+        display: block;
+    }
+    .header.fixed .gnb ul.depth1 >li:hover >a::after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 62px;
+        height: 2;
+        background-color: #7D6855;
+        content: "";
+    }
+    .header.fixed .gnb ul.depth2 > li > a:hover {
+        color: #fff;
+        font-weight: 700;
+    }
+}
 /* 브라우저가 스크롤 되었을때 디자인 변경 */
 .header.fixed {
     background-color: #fff;
@@ -204,15 +254,6 @@ html, body {
     }
     .header .gnb .gnb_close {
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='%23FFF' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z'/%3E%3C/svg%3E%0A");
-    }
-    .header .gnb ul.depth1 {
-        display: none;
-    }
-    .header .tnb {
-        display: none;
-    }
-    .header.fixed .gnb .gnb_open {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 28' fill='%233d3d3d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 21V18.6667H21V21H3ZM3 15.1667V12.8333H21V15.1667H3ZM3 9.33333V7H21V9.33333H3Z' /%3E%3C/svg%3E%0A");
     }
 }/* media */
 
@@ -1097,6 +1138,8 @@ css에서도 nth-child로 선택한다. */
 }
 .footer span {
     display: block;
+    line-height: 1.4;
+    padding: 5px 0 35px 0;
 }
 .footer .f_inpo {
     float: right;
@@ -1104,4 +1147,45 @@ css에서도 nth-child로 선택한다. */
 .footer .capyliht {
     position: absolute;
     top: 125px;
+    padding: 30px 0;
+}
+.footer .capyliht img {
+    width: 350px;
+    height: 60px;
+}
+
+@media screen and (max-width:640px){
+    .footer {
+        padding: 25px;
+    }
+    .footer .inner {
+        display: block; /*텍스트 인포 좌우배치 해제*/
+    }
+    .footer .f_text {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    .footer .strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+    }
+    .footer .strong + span {
+        margin-top: 55px;
+    }
+    .footer span {
+        display: block;
+        line-height: 1.2;
+        padding: 5px 0 15px 0;
+    }
+    .footer .capyliht {
+        position: relative;
+        left: auto;
+        top: auto;
+        font-size: 9px;
+    }
+    .footer .capyliht img {
+        width: 213px;
+        height: 36px;
+    }
 }
