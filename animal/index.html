@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" tyep="image/x-icon" href="favicon.svg"><!--favicon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script> <!-- jquery를 작동시키는 파일 js 맨위 선언 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!--swiper를 돌아가게 하는애덜-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <title>동물보호센터</title>
+</head>
+<body>
+    <div id="wrap">
+        <!--메뉴에 마우스를 올리면 header에 menu_over class 추가-->
+        <header class="header">
+            <h1 class="logo">
+                <a href="indexe.html">동물보호센터</a>
+            </h1>
+            <nav class="gnb">
+                <BUtton class="gnb_open">메뉴열기</BUtton>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <!-- 메뉴에 마우스를 올리면 li에 sub_over class추가-->
+                        <li>
+                            <a href="#n">찾습니다</a>
+                            <ul class="depth2">
+                                <li><a href="#n">분실신고</a></li>
+                                <li><a href="#n">구조정보·목격담</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n">구조분양</a>
+                        </li>
+                        <li>
+                            <a href="#n">네트워크</a>
+                        </li>
+                        <li>
+                            <a href="#n">재회성공담</a>
+                        </li>
+                        <li>
+                            <a href="#n">대처방법</a>
+                            <ul class="depth2">
+                                <li><a href="#n">실종시 대처방법</a></li>
+                                <li><a href="#n">구조시 대처방법</a></li>
+                                <li><a href="#n">고양이에대해</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <BUtton class="gnb_close">메뉴닫기</BUtton>
+            </nav>
+            <nav class="tnb">
+                <a href="#n" class="search">검색</a>
+                <!--다른 사이트의 링크를 거는 경우 href="링크" 
+                target="_blank" title="새창" 으로 새창으로 가는 링크임을 고지-->
+                <a href="http://www.dogcat-e.com/index.php?code=apply" 
+                target="_blank" title="새창" class="paper">전단지</a>
+            </nav>
+        </header>
+        <div class="container">
+            <section class="visual">
+                <h2>팝업</h2><!--웹표준/ 섹션태그안에는 무조건 헤딩(제목)태그가 있어야함 -->
+                <div class="swiper"> <!------------- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!------------------------ 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <img src="images/bz_bg01.png" alt="haha">
+                            <div class="visual_text text01">
+                                <p>가족을 기다리는 생명<br>사지말고 입양하세요</p>
+                            </div>
+                        </li> <!--------------- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <img src="images/bz_bg02.png" alt="haha">
+                            <div class="visual_text text02">
+                                <p>자연은 본디 동물들의 터입니다</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/bz_bg03.png" alt="haha">
+                            <div class="visual_text text03">
+                                <p>버려져 마땅한 동물은 없습니다</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>  <!--------------- 컨트롤 요소는 swiper 안에 배치-->
+                        <div class="ctrl_btn">
+                            <button class="prev">이전팝업보기</button>
+                            <button class="next">다음팝업보기</button>
+                            <button class="play">재생</button>
+                            <button class="stop">정지</button>
+                        </div>
+                </div>
+            </section>
+            <section class="lost">
+                <div class="wrapper">
+                    <h2>찾습니다</h2>
+                    <div class="list">
+                        <ul>
+                            <li class="active"><!--탭메뉴 구현할때 보일 li에 active 클래스 줌 클래스가 있어야만  detail 이보임-->
+                                <button>가족을</button>
+                                <div class="betail">
+                                    <ul>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/가족을01.png" alt="dog"></span>
+                                                <h3><strong class="category01">긴급</strong>이레를 찾습니다</h3>
+                                                <p>말티즈 / 수컷 / 3살<br>
+                                                    대전광역시 유성구 도룡동 도룡하우스디6층</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/가족을02.png" alt="dog"></span>
+                                                <h3><strong class="category02">종료</strong>미야를 애타게 찾습니다 </h3>
+                                                <p>스코티시 폴드  / 암컷 / 2살<br>
+                                                    경상남도 진주시 진주문산 한양하이빌 & 땀사우</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/가족을03.png" alt="dog"></span>
+                                                <h3><strong class="category01">긴급</strong>블루를 찾고잇어요</h3>
+                                                <p>블루칙코뉴어 (회색꼬리,통통) / 수컷 / 8살<br>
+                                                    서울특별시 관악구 봉천고개, 성현동 동아아파트,</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/가족을04.png" alt="dog"></span>
+                                                <h3><strong class="category01">긴급</strong>찰떡이를 찾습니다</h3>
+                                                <p>코리안숏헤어 / 암컷 / 4살<br>
+                                                    부산광역시 사상구 감전동 부산은행 맞은편 주택가</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="#n">더보기</a>
+                                </div>
+                            </li>
+                            <li>
+                                <button>주인을</button>
+                                <div class="betail">
+                                    <ul>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/주인을01.png" alt="dog"></span>
+                                                <h3><strong class="category03">목격</strong>전라북도</h3>
+                                                <p>리트리버 / 수컷 / 1년 미만<br>
+                                                    전라북도 김제시 백구면 삼정리 주변 벚꽃길</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/주인을02.png" alt="dog"></span>
+                                                <h3><strong class="category04">구조</strong>서울특별시</h3>
+                                                <p>햄스터 / 성별모름 / 나이모름<br>
+                                                    서울특별시 관악구 신림동 관천로 63 샤르망 오</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/주인을03.png" alt="dog"></span>
+                                                <h3><strong class="category04">구조</strong>경기도</h3>
+                                                <p>토끼 / 암컷 / 나이모름<br>  
+                                                    경기도 화성시 율암길 81-12</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#n">
+                                                <span class="photo"><img src="images/주인을04.png" alt="dog"></span>
+                                                <h3><strong class="category04">구조</strong>대구광역시</h3>
+                                                <p>코리안숏헤어 / 암컷 / 2개월<br>
+                                                    대구광역시 달서구 계명대학교 동문 아트센터 주차장</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="#n">더보기</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section><!--찾습니다-->
+            <section class="msg"></section>
+            <section class="adopt"></section><!--입양-->
+        </div><!--container-->
+        <footer class="footer"></footer>
+    </div><!--wrap-->
+</body>
+</html>
