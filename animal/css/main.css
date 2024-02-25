@@ -368,7 +368,7 @@ html, body {
 .visual .ctrl_btn {
     position: absolute;
     left: 50%;
-    bottom: 35px;
+    bottom: 40px;
     z-index: 10;
     transform: translate(-50%, 0);
     /*나 자신 얿이의 절반*/
@@ -403,6 +403,7 @@ html, body {
     background: url(../images/play.svg);
     background-position: center center;
     background-repeat: no-repeat;
+    display: none;
 }
 .visual .ctrl_btn .stop{
     background: url(../images/stop.svg);
@@ -491,7 +492,10 @@ html, body {
 }
 .lost .list {
     position: relative; /*디테일정렬의 기준*/
-    height: 640px; /*디테일이 포지션앱솔루트라서 공간차지x 높이를  몰라서 감싸는 요소에 높이를 강제로 줌*/  
+    height: 680px;   
+    padding-bottom: 105px;
+    /*디테일이 포지션앱솔루트라서 공간차지x 높이를
+    몰라서 감싸는 요소에 높이를 강제로 줌*/
 }
 .lost .list > ul {
     display: flex;
@@ -512,20 +516,23 @@ html, body {
     left: 0;
     top: 100px;/*탑버튼에서부터측정*/
     width: 100%;
-    display: none;
+    display: none; 
 }
 .lost .list > ul > li.active .detail {
     display: block;
 }
 .lost .list .detail ul {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .lost .list .detail ul li {
     /*100/li의 갯수 = 100/4 ==25%
     li사이의 여백 28*li의 갯수 -1 =28*3=84
     li의 갯수 =84/4=21*/
-    width: calc(25%21px); /*23%*/
+    width: calc(25% - 21px); /*23%*/
+}
+.lost .list > ul > li .detail ul li a {
+    display: block;
 }
 .lost .list > ul > li .detail ul li a .photo {
     display: block;
@@ -542,6 +549,7 @@ html, body {
     font-size: 20px;
     font-weight: 700;
     margin: 10px 0 ;
+    display: flex;
     align-items: center; /*스트롱태그와 옆에 글자가 위아래 가운데정렬이 필요해보일 떄*/
     /*무조건 한줄로*/
     white-space: nowrap; 
@@ -554,17 +562,18 @@ html, body {
     border-radius: 50px;
     padding: 2px 10px;
     margin: 0 5px 0 0;
+    display: inline-block;
 }
-.lost .list > ul > li .detail ul li a h3 strong .category01 {
+.lost .list > ul > li .detail ul li a h3 strong.category01 {
     background-color: #F22C00;
 }
-.lost .list > ul > li .detail ul li a h3 strong .category02 {
+.lost .list > ul > li .detail ul li a h3 strong.category02 {
     background-color: #D9D9D9
 }
-.lost .list > ul > li .detail ul li a h3 strong .category03 {
+.lost .list > ul > li .detail ul li a h3 strong.category03 {
     background-color: #EDBA06;
 }
-.lost .list > ul > li .detail ul li a h3 strong .category04 {
+.lost .list > ul > li .detail ul li a h3 strong.category04 {
     background-color: #00CB2D;
 }
 .lost .list > ul > li .detail ul li a h3 p {
@@ -575,7 +584,7 @@ html, body {
     overflow: hidden; 
 }
 .lost .list > ul > li .detail .more {
-    margin-top: 30px;
+    margin-top: 35px;
     text-align: center;
 }
 .lost .list > ul > li .detail .more a {
@@ -583,11 +592,12 @@ html, body {
     border: 1px solid #fff;
     border-radius: 50px;
     padding: 10px 35px 10px 15px;
+    position: relative;
 }
 .lost .list > ul > li .detail .more a::after {
     position: absolute;
-    left: 665PX;
-    top: 560px;
+    left: 85px;
+    top: 10px;
     width: 30px;
     height: 30px;
     content: "";
@@ -605,6 +615,12 @@ html, body {
     .lost h2 {
         font-size: 40px;
     }
+    .lost .list {
+        height: 620px;
+    }
+    .lost .list .detail ul li:last-child(3) {
+        display: none;
+    }
     .lost .list .detail ul li {
         width: calc(33.33% - 16px); 
     }
@@ -616,7 +632,39 @@ html, body {
     }
 }
 @media screen and (max-width:768px){
-    .lost .list .detail ul li:last-child(2) {
+    .lost .list {
+        height: 500px;
+    }
+    .lost .list .detail ul li:last-child(3) {
         display: none;
     }
-}
+    .lost .list > ul > li .detail ul li a h3 {
+        font-size: 15px;
+        margin: 5px 0;
+    }
+    .lost .list > ul > li .detail ul li a h3 strong {
+        font-size: 15px;
+    }
+    .lost .list > ul > li .detail ul li a h3 p {
+        font-size: 10px;
+    }
+    .lost .list > ul > li .detail .more {
+        margin-top: 25px;
+    }
+    .lost .list > ul > li .detail .more a::after {
+        position: absolute;
+        left: 57px;
+        top: 7px;
+        width: 20px;
+        height: 20px;
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' fill='%23fff' viewBox='0 -960 960 960' width='24'%3E%3Cpath d='M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z'/%3E%3C/svg%3E");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: 1s;
+    }
+    .lost .list > ul > li .detail .more a:hover::after {
+        transform: rotate(360deg);
+    }
+} 

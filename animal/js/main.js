@@ -24,7 +24,7 @@ $(document).ready(function(){
     const swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
         autoplay: {  /* 팝업 자동 실행 */
-            delay: 2500,
+            delay: 1000,
             disableOnInteraction: true,
         },
 
@@ -42,7 +42,30 @@ $(document).ready(function(){
         },
 
     });
-    swiper.autoplay.stop();  /* 일시정지 기능 */
-    swiper.autoplay.start();  /* 재생 기능 */
+    
+    /*.visual .ctrl_btn .stop 정지버튼을 클릭하면
+    팝업은 정지됨, stop버튼 사라짐> play버튼 나타남
+    .visual .ctrl_btn .play 재생버튼 클릭하면
+    팝업은 재생되고 ,stop버튼이 나타나고 play버튼 사라짐*/
+
+    $('.visual .ctrl_btn .stop').on('click', function(){
+        swiper.autoplay.stop(); /*일시정지가능*/
+        $(this).hide()
+        $('.visual .ctrl_btn .play').show()
+    })
+    $('.visual .ctrl_btn .play').on('click', function(){
+        swiper.autoplay.start();  /* 재생 기능 */
+        $(this).hide()
+        $('.visual .ctrl_btn .stop').show()
+    })
 	
+    /*
+    .lost .list > ul > li 클릭하면 
+    li에 active 클래스추가
+    이전에 액티브 클래스가 있던 li의 액티브는 삭제
+    */
+   $('.lost .list > ul > li').on('click', function(){
+    $('.lost .list > ul > li').removeClass('active')
+    $(this).addClass('active')
+   })
 })
