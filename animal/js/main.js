@@ -68,4 +68,34 @@ $(document).ready(function(){
     $('.lost .list > ul > li').removeClass('active')
     $(this).addClass('active')
    })
+
+   /*입양팝업*/
+    const adopt_swiper = new Swiper('.adopt_swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+    loop: true, //마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기
+	breakpoints: {
+            768: {    /* 768px 이상일때 적용 */
+                slidesPerView: 4,
+            },
+        },
+        navigation: {
+            nextEl: 'adopt .next',
+            prevEl: '.adopt .prev',
+        },
+    });
+    /* adopt_swiper.autoplay.stop();  //일시정지 기능
+       adopt_swiper.autoplay.start();  //재생 기능 */
+
+    $('.adopt .ctrl_btn .stop').on('click', function(){
+        adopt_swiper.autoplay.stop(); /*일시정지가능*/
+        $(this).hide()
+        $('.adopt .ctrl_btn .play').show()
+    })
+    $('.adopt .ctrl_btn .play').on('click', function(){
+        adopt_swiper.autoplay.start();  /* 재생 기능 */
+        $(this).hide()
+        $('.adopt .ctrl_btn .stop').show()
+    })
+	
 })
