@@ -479,7 +479,23 @@ html, body {
         margin: 0 5px 0 0;
     }
 }
+.lost .slogan {
+    position: absolute;
+    left: 20px;
+    top: -70px;
+    z-index: 10;
+    mix-blend-mode: difference;/*색상반전*/
+    animation: slogan_rotate;
+    animation-duration:10s; 
+    animation-timing-function:linear;
+    animation-iteration-count:infinite; 
+}
+@keyframes slogan_rotate {
+    0% { transform:translate(0) }
+    100% { transform:translate(360deg) } /* 글자가 움직여서 처음과 동일한 위치가 되는 값 (동일한 문장을 여러번 쓰기 때문에 3-4번째 문장이 다시 시작하는 위치로 하면 됨) */
+    }
 .lost {
+    position: relative; /*슬로건정렬의기준*/
     background-color: #D9AFC3;
     color: #fff;
     padding-bottom: 30px;
@@ -632,6 +648,9 @@ html, body {
 }
 
 @media screen and (max-width:1024px){
+    .lost .slogan  {
+        display: none;
+    }
     .lost {
         padding-bottom: 40px;
     }
