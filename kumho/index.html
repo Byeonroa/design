@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" tyep="image/x-icon" href="favicon.svg">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+<script src="js/main.js"></script>
     <title>금호건설</title>
 </head>
 <body>
@@ -21,18 +26,24 @@
            --- contents.js
         contents --- 서브페이지들이 저장됨
     -->
+    <div class="skipnav">
+        <!-- href="#container" 라고 입력하면 id="#container" 인 요소로 이동
+             href="#gnb" 라고 입력하면 id="#gnb" 인 요소로 이동-->
+        <a href="#container">본문 바로가기</a>
+        <a href="gnb">대메뉴바로가기</a>
+    </div>
     <div id="wrap" class="main">
         <!-- 메뉴상단 고정 : fixed
              pc버전에서 메뉴 오버 : menu_over
              모바일버전일때 메뉴를 클릭해서 열면 : menu_open -->
-        <header class="header menu_over">
+        <header class="header menu_open">
             <h1 class="logo"><a href="index.html">금호건설</a></h1>
-            <nav class="gnb">
+            <nav class="gnb" id="gnb">
                 <button class="gnb_open">메뉴열기</button>
                 <div class="gnb_wrap">
                     <ul class="depth1">
                         <!--연재 선택된 메뉴에는 on 이라는 class추가-->
-                        <li class="on">
+                        <li>
                             <a href="contents/about.html">회사소개</a>
                             <ul class="depth2">
                                 <!--2차메뉴에 마우스를 오버하거나 on class가 추가된 스타일 동일하게 적용-->
@@ -44,7 +55,7 @@
                                 <li><a href="contents/location.html">찾아오시는길</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="on">
                             <a href="contents/esg01.html">ESG</a>
                             <ul class="depth2">
                                 <li><a href="contents/esg01.html">윤리경영</a></li>
@@ -100,13 +111,64 @@
                     target="_blank" title="새창" class="link">어울림</a>
             </nav>
         </header>
-        <div class="container">
-            <section class="visual"></section>
+        <div class="container" id="container">
+            <section class="visual">
+                <h2>팝업</h2>
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <img src="images/main/visual01.png" alt="사진">
+                            <div class="visual_text">
+                                <span>Global Standard for Construction</span>
+                            </div>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    </ul>
+                    <div class="btn_ctrl">
+                        <button class="prev">이전팝업보기</button>
+                        <button class="next">다음팝업보기</button>
+                        <button class="stop">일시정지</button>
+                        <button class="play">재생</button>
+                    </div>
+                </div>
+            </section>
             <section class="biz"></section>
             <section class="news"></section>
             <section class="service"></section>
         </div>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <div class="wrapper">
+                <!-- 그룹사 바로가기 클릭하면 family_site에 on클래스추가
+                     open 버튼 사라짐, close버튼 나타남 ul리스트 나타남 -->
+                <div class="family_site">
+                    <button class="open" title="열기">그룹사 바로가기</button>
+                    <ul>
+                        <li><a href="https://www.kumhobuslines.co.kr/fr/main/main" 
+                               target="_blank" title="새창링크"></a>금호고속</li>
+                        <li><a href="https://www.usquare.co.kr/kor/index.do" 
+                               target="_blank" title="새창링크"></a>금호터미널</li>
+                        <li><a href="http://www.kumhoarts.com/" 
+                               target="_blank" title="새창링크"></a>그금호문화재단</li>
+                        <li><a href="https://flyasiana.com/" 
+                               target="_blank" title="새창링크"></a>아시아나항공</li>
+                        <li><a href="https://www.asianaidt.com/kor/" 
+                               target="_blank" title="새창링크"></a>아시아나IDT</li>
+                    </ul>
+                    <button class="close" title="닫기">그룹사 바로가기</button>
+                </div>
+                <div class="footer_nav">
+                    <ul>
+                        <li><a href="#n"></a>제보실</li>
+                        <li><a href="#n"></a>고객센터</li>
+                        <li><a href="#n"></a>OB사랑방</li>
+                        <li><a href="#n"></a>Contact us</li>
+                        <li><a href="#n"></a>개인정보처리방침</li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    copyright(c) KUMHO E&C ALL RIGHTS RESERVED
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
