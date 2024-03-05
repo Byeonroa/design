@@ -73,14 +73,32 @@ $(document).ready(function(){
       }
    })
 
+   /* ********모바일 메뉴 1차메뉴 a를 클릭하면 
+              a링크는 작동이 안되어야하고 하위메뉴 열어줌******** */
+   $(".header .gnb ul.depth1 > li > a").on("click", function(e){
+      if(device_status == 'mobile'){
+         e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+         $('.header .gnb ul.depth1 > li').removeClass('on')
+         $(this).parent().addClass('on') //toggleClass> 메뉴 다 열림
+      }
+   });
+
+   $('.header .gnb .gnb_open').on('click', function(){
+      $('.header').addClass('menu_open')
+      $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
+   })
+   $('.header .gnb .gnb_close').on('click', function(){
+      $('.header').removeClass('menu_open')
+      $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+   })
+
    /* footer에 그룹사바로가기 링크 열기/닫기 
       .footer .family_site .open 을 클릭하면 family_site 에 on클래스 추가
       .footer .family_site .close 를 클릭하면 family_site 에 on클래스 삭제*/
-   $('.footer .family_site .open').on('click', function(){
-      $('.footer .family_site').addClass('on')
-   })
-   $('.footer .family_site .close').on('click', function(){
-      $('.footer .family_site').removeClass('on')
-   })
-
+      $('.footer .family_site .open').on('click', function(){
+         $('.footer .family_site').addClass('on')
+      })
+      $('.footer .family_site .close').on('click', function(){
+         $('.footer .family_site').removeClass('on')
+      })
 })                                      
