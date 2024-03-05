@@ -52,30 +52,20 @@
     font-weight:900;
     font-style:normal; 
 }
-
 *::selection {
     background-color: #A7141E;
     color: #fff;
 }
 *::-moz-selection { /* 호환성을 위한 코드 */
     background-color: #A7141E;
-    color: #fff; 
+    color: #fff;
 }
-
-/*영문 숫자는 영문 폰트를 사용하고 한글만 한국어폰트를 사용하고 싶을 떄
-영문 폰트로 선택한 폰트는 한국어가 지원되면 안됨 
-둘 다 폰트 파일을 불러오고 import, font-face 
-body에서 폰트를 정의할때 맨먼저 영문폰트를 먼저 선언
-영어,숫자만 영문폰트가 적용되고 한글을 지원하지 않기때문에 다음에 선언한
-한글폰트가 적용됨 폰트패밀리에 여러폰트를 쓰는것은 앞에 폰트가 지원안되면 
-다음폰트, 다음폰트 무한반복*/
-
 html, body {
     font-family: 'Orbitron', 'S-CoreDream', sans-serif; /* 서체 serif 명조 sans-serif 고딕 */
     font-size: 15px; /* 크기 */
-    color: #000; /* 글자색상 */
+    color: #3d3d3d; /* 글자색상 */
     font-weight: 400; /* 글자의 두께 */
-    line-height: 1.25; /* auto */
+    line-height: 1.4; /* auto */
     word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
     word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 */
 }
@@ -85,26 +75,15 @@ html, body {
 }
 #wrap { /* id="wrap"에 적용되는 스타일 */
     width: 100%;
-    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
-       가로스크롤바가 생성되는데 오른쪽에 background가 
-       짤리는 현상이 생김.  
-       가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
-       서비스 하기 위해서 최소 넓이를 입력 */
-    overflow: hidden; /* > position: sticky; 스티커주려면 히든뺴야함 */
+    overflow: hidden;
 }
 
-/* 랩퍼의 사이즈 1280+40px (좌우여백) =1320 */
 @media screen and (max-width:1320px){
     .wrapper { 
         width: auto; 
-        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨 
-           디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에 
-           그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
         margin: 0 20px;  
     }
 }/*media*/
-
-/* 640px 이하일때 스타일 - 640이하는 모바일 초과는 탭  */
 @media screen and (max-width:768px){
     html, body {
         font-size: 13px;
@@ -125,23 +104,23 @@ html, body {
     width: 100%;
     line-height: 50px;
     text-align: center;
-    background-color: #ff1414;
+    background-color: #F51919;
     color: #fff;
     font-size: 17px;
     font-weight: 700;
 }
-.skipnav a[href="#gnb"] { 
-    /* a태그중에서 hrfe="gnb" 인 a태그의 스타일*/
-    background-color: #ff9314;
+.skipnav a[href="#gnb"] {
+    background-color: #1d1d1d;
 }
 .skipnav a:focus {
     top: 100px;
 }
-/* 파일명 : common.css
-   작성자 : ByeonRoa
-   수정자 :
-   작성일 : 2021-02-28
-   수정일 :
-   설  명 : 홈페이지 전체에 공통으로 적용되는 스타일을 저장
-            (header와 footer 스타일을 저장)
+
+/*
+    파일명 : common.css
+    작성자 : 
+    작성일 : 2024.02.28
+    설  명 : 홈페이지 전체에 공통으로 적용되는 스타일을 저장
+             문자스타일 등의 기본스타일만 저장
+
 */
