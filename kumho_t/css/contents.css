@@ -112,3 +112,135 @@
 @media screen and (max-width:768px){
     
 }
+
+/* 회사소개 --연혁-- */
+.cts_history {
+    margin: 25px 0 60px 0;
+}
+.cts_history h2 {
+    display: none;
+}
+.cts_history .year10 {
+    /*<div class="year10 left"></div>
+      <div class="year10 right"></div>
+      이렇게 두개가 있는 경우 위 left하단 여백과  
+      right 상단의 여백은 중복해서 들어가지 않고
+      둘중 제일 큰 여백만 들어감 마진은 위아래 여백이
+      들어가는 경우 큰거에 하나만 들어감*/
+    margin: 130px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.cts_history .year10.right{
+    flex-direction: row-reverse; /*플렉스 반대*/
+}
+.cts_history .year_tit {
+    width: 340px;
+    position: relative;
+}
+.cts_history .year_cnt {
+    width: calc(100% - 540px);
+    position:relative;
+}
+.cts_history .year_cnt::before {
+    position: absolute;
+    left: 103px;
+    top: 12px;
+    width: 1px;
+    height: calc(100% - 12px);
+    /*top밑으로 밀어준 만큼 뺴고 선을 그리기위해
+    그냥 1005 주면 밀어준만큼 하단으로 밀림*/
+    background-color: #A7141E;
+    content: "";
+}
+.cts_history .right .year_cnt::before {
+    left: auto;
+    right: 102px;
+}
+ /*긴 중간선의 마지막 꼬리를 흰색으로 덧칠*/
+.cts_history .year_cnt .year1_group:last-child dl dd:last-child {
+    position: relative;
+}
+.cts_history .year_cnt .year1_group:last-child dl dd:last-child::before {
+    position: absolute;
+    left: -67px;
+    bottom: -16px;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    content: "";
+}
+.cts_history .right .year_cnt .year1_group:last-child dl dd:last-child::before {
+    left: 637px;
+    background-color: #fff;
+}
+.cts_history .year_cnt .year1_group {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.cts_history .year_cnt .year1_group:last-child {
+    margin-bottom: -10px;
+    /*<div class="year_cnt">
+       <div class="year1_group"></div>
+       <div class="year1_group"></div> <--last-child 선택가능
+      </div>
+      */
+}
+.cts_history .right .year_cnt .year1_group {
+    flex-direction: row-reverse
+}
+.cts_history .year_cnt .year1_group h3 {
+    color: #A7141E;
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 1;
+}
+.cts_history .year_cnt .year1_group dl {
+    width: calc(100% - 120px);
+}
+.cts_history .year_cnt .year1_group dt {
+    float: left;
+    /*dd태그는 dt를 없는 것처럼 인식하게됨*/
+    font-size: 25px;
+    line-height: 1;
+    position: relative;
+} 
+.cts_history .right .year_cnt .year1_group dl dt {
+    float: right;
+}
+.cts_history .year_cnt .year1_group dl dt::before {
+    position: absolute;
+    left: -19px;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius:100%;
+    background-color: #A7141E;
+    content: "";
+
+}
+.cts_history .right .year_cnt .year1_group dl dt::before {
+    left: auto;
+    right: -20px;
+}
+.cts_history .year_cnt .year1_group dd {
+    margin: 5px 0 15px 50px; /*dt가 들어갈 자리 반드시 마진만가능*/
+}
+.cts_history .right .year_cnt .year1_group dl dd  {
+    margin:  0 50px 20px 0;
+    text-align: right;
+}
+.cts_history .year_cnt .year1_group dd + dd {
+    /* 만약 dd태그가 두번 연속인 경우에 두번쨰 dd */
+    margin-top: -10px;
+}
+@media screen and (max-width:1320px){
+
+}
+@media screen and (max-width:1024px){
+
+}
+@media screen and (max-width:768px){
+
+}
