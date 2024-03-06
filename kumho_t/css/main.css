@@ -3,7 +3,7 @@
 @import url(layout.css);
 /*
     파일명 : main.css
-    작성자 : 문미영
+    작성자 : 변로아
     작성일 : 2024.02.28
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
@@ -119,7 +119,7 @@
 .biz .tit h2 {
     font-size: 17px;
     font-weight: 700;
-    color: #F51919;
+    color: #A7141E;
 }
 .biz .tit h2 span {
     position: relative;
@@ -325,7 +325,7 @@
 .news .tit h2 {
     font-size: 17px;
     font-weight: 700;
-    color: #F51919;
+    color: #A7141E;
 }
 .news .tit h2 span {
     position: relative;

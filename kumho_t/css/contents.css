@@ -1,6 +1,6 @@
 /*
     파일명 : contents.css
-    작성자 : 문미영
+    작성자 : 변로아
     작성일 : 2024.02.28
     설  명 : 모든 콘텐츠 페이지별 디자인 스타일 저장
 */
@@ -28,7 +28,7 @@
     color: #1d1d1d;
 }
 .cts_greeting p strong span {
-    color: #F51919;
+    color: #A7141E;
 }
 .cts_greeting .ceo {
     position: absolute;
