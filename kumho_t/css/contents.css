@@ -235,12 +235,135 @@
     /* 만약 dd태그가 두번 연속인 경우에 두번쨰 dd */
     margin-top: -10px;
 }
-@media screen and (max-width:1320px){
 
+@media screen and (max-width:1320px){
+    .cts_history .year_tit {
+        width: 263px;
+        position: relative;
+    }
+    .cts_history .year_cnt {
+        width: calc(100% - 540px);
+        position:relative;
+    }
 }
 @media screen and (max-width:1024px){
-
+    .cts_history .year10 {
+        display: block;
+    }
+    .cts_history .year_tit {
+        width: auto;
+    }
+    .cts_history .year_tit .photo {
+        margin: 0 0 40px 0;
+    }
+    .cts_history .year_cnt {
+        width: auto;
+    }
+    .cts_history .year10.right {
+        flex-direction: row;
+    }
+    .cts_history .right .year_cnt::before {
+        right: auto;
+        left: 102px;
+        top: 11px;
+    }
+    .cts_history .right .year_cnt .year1_group {
+        flex-direction: row;
+    }
+    .cts_history .right .year_cnt .year1_group dl dt {
+        float: left;
+    }
+    .cts_history .right .year_cnt .year1_group dl dd  {
+        margin:  0 0 20px 50px;
+        text-align: left;
+    }
+    .cts_history .right .year_cnt .year1_group dl dt::before {
+        right: auto;
+        left: -20px;
+    }
+    .cts_history .right .year_cnt .year1_group:last-child dl dd:last-child::before {
+        left:-68px;
+        background-color: #fff;
+    }
 }
 @media screen and (max-width:768px){
+    .cts_history .right .year_cnt::before {
+        left: auto;
+        right: 625px;
+        top: 11px;
+    }
+    .cts_history .right .year_cnt .year1_group:last-child dl dd:last-child::before {
+        left:-68px;
+        background-color: #fff;
+    }
+}
 
+.cts_ir03 {
+    margin: 95px 0 150px 0;
+}
+.cts_ir03 h2 {
+    font-size: 40px;
+    font-weight: 800;
+}
+.cts_ir03 p {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 15px 0;
+}
+.cts_ir03 .table_wrap {
+    overflow-y: auto;
+    /*모바일에서 테이블이 다 안보일 때 좌우로 스크롤*/
+}
+.cts_ir03 .table_wrap table {
+    width: 100%;
+    border-collapse: collapse; /*테이블태그만 적용되는 거임 - 선을 병합*/
+    border-top: 3px solid #A7141E;
+    text-align: center;
+}
+.cts_ir03 .table_wrap table caption {
+    display: none;
+}
+.cts_ir03 .table_wrap table th,
+.cts_ir03 .table_wrap table td {
+    border: 1px solid #A7141E;
+}
+.cts_ir03.table_wrap table th span {
+    font-size: 20px;
+}
+/*
+.cts_ir03 .table_wrap table th,
+.cts_ir03 .table_wrap table td
+라스트 차일드, 퍼스트차일드로 좌우 사이드 선 없애기 쌉가능
+*/
+.cts_ir03 .table_wrap table tbody th,
+.cts_ir03 .table_wrap table tbody td {
+    font-size: 20px;
+    padding: 10px 20px 10px 10px;
+}
+.cts_ir03 .table_wrap table thead th,
+.cts_ir03 .table_wrap table thead td {
+    font-size: 26px;
+    background-color: #F4F4F4;
+    padding: 10px 20px 10px 10px;
+}
+
+@media screen and (max-width:768px){
+    .cts_ir03 {
+        margin: 60px 0 100px 0;
+    }
+    .cts_ir03 h2 {
+        font-size: 30px;
+    }
+    .cts_ir03 p {
+        font-size: 25px;
+        margin: 10px 0;
+    }
+    .cts_ir03 .table_wrap table tbody th,
+.cts_ir03 .table_wrap table tbody td {
+    font-size: 18px;
+}
+.cts_ir03 .table_wrap table thead th,
+.cts_ir03 .table_wrap table thead td {
+    font-size: 18px;
+}
 }
