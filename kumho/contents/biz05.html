@@ -8,7 +8,7 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/contents.js"></script>
-    <title>건축사업 - 사업분야 - 금호건설</title>
+    <title>사업실적검색 - 사업분야 - 금호건설</title>
 </head>
 <body>
     <div class="skipnav">
@@ -60,11 +60,11 @@
                         <li class="on" data-menu="on">
                             <a href="biz01.html"><span>사업분야</span></a>
                             <ul class="depth2">
-                                <li class="on" data-menu="on"><a href="biz01.html"><span>건축사업</span></a></li>
+                                <li><a href="biz01.html"><span>건축사업</span></a></li>
                                 <li><a href="biz02.html"><span>토목사업</span></a></li>
                                 <li><a href="biz03.html"><span>주택사업</span></a></li>
                                 <li><a href="biz04.html"><span>플랜트/환경사업</span></a></li>
-                                <li><a href="biz05.html"><span>사업실적검색</span></a></li>
+                                <li class="on" data-menu="on"><a href="biz05.html"><span>사업실적검색</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -105,7 +105,7 @@
             <div class="sub_visual sub3">
                 <div class="wrapper">
                     <div class="sub_tit">
-                        <h1>건축사업</h1> <!--현재메뉴명-->
+                        <h1>사업실적검색</h1> <!--현재메뉴명-->
                         <p>WILL CHALLENGE THE WORLD'S BEST</p>
                     </div>
                 </div>
@@ -113,15 +113,41 @@
             <nav class="lnb"> <!--local navigation bar-->
                 <ul>
                     <!--현재 선택된 메뉴에 on클래스 추가-->
-                    <li class="on" data-menu="on"><a href="biz01.html"><span>건축사업</span></a></li>
+                    <li><a href="biz01.html"><span>건축사업</span></a></li>
                     <li><a href="biz02.html"><span>토목사업</span></a></li>
                     <li><a href="biz03.html"><span>주택사업</span></a></li>
                     <li><a href="biz04.html"><span>플랜트/환경사업</span></a></li>
-                    <li><a href="biz05.html"><span>사업실적검색</span></a></li>
+                    <li class="on" data-menu="on"><a href="biz05.html"><span>사업실적검색</span></a></li>
                 </ul>
             </nav>
             <div class="contents" id="contents">
                 <!-- 콘텐츠 내용 -->
+                <div class="cts_biz05">
+                    <div class="wrapper">
+                        <div class="search_group">
+                            <form action="">
+                                <!--모든 입력양식은 폼테그 안에 들어와야 함 단 폼태그가
+                                    없을수도있으니 div처럼쓰지마셈 이 테그가 없다고 생각해
+                                    id, class붙이면 작살남~
+                                -->
+                                <fieldset>
+                                    <!--회원정보와 부가정보를 받는다면 정봉의 묶음이라고 보면됨-->
+                                    <legend>검색</legend><!--이 폼의 역할 써야 스크린리더가 읽어줌-->
+                                    <div class="search">
+                                        <!--label은 <input type="text">의 제목
+                                            label에는 for infut id를 동일한 단어를 써줘서 
+                                            그입력창의 제목이라는 것을 표시 submit버튼은 필요x value써줌  -->
+                                        <label for="keyword">검색어</label>
+                                        <input type="text" id="keyword" placeholder="검색어를 입력해 주세요.">
+                                        <!--검색어입력/ placeholder="검색어를 입력해 주세요." -->
+                                        <input type="submit" value="검색">
+                                        <!--검색어전송버튼 엔터가능 / value="제출,검색,확인,전송 등"-->
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <footer class="footer">

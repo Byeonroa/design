@@ -367,3 +367,92 @@
     font-size: 18px;
 }
 }
+
+/*사업실적검색 > 사업분야*/
+.cts_biz05 {
+    margin: 90px 0;
+}
+.cts_biz05 .search_group .search {
+    max-width: 844px; /*최대넓이*/
+    width: 100%;
+    /*max-width: 844px; / width: 100%;
+    넓이가 기본적으로 100%인데 감싸는 영역의 넓이의 100%
+    감싸는 영역이 늘어나서 많이 넓ㅇ어져서 해당요소의 넓이도
+    844px 이상으로 늘어날거같으면 그 이상은 안늘어나게하는 코드 */
+    height: 70px;
+    border: 2px solid #A7141E;
+    border-radius: 50px;
+    margin: 0 auto; /*넓이가 있는 블럭요소를 가운데정렬*/
+    position: relative; /*search::before 기준*/
+    padding: 0 0 0 106px;
+    display: flex;
+    align-items: center;/*상하좌우*/
+}
+.cts_biz05 .search_group .search:hover {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2) ;
+}
+.cts_biz05 .search_group .search::before {
+    position: absolute;
+    left: 35px;
+    top: 0;
+    font-size: 40px;
+    font-weight: 900;
+    color: #A7141E;
+    content: "K";
+}
+.cts_biz05 .search_group .search label {
+    display: none; /*숨김*/
+}
+.cts_biz05 .search_group .search input[type="text"] {
+    font-size: 30px;
+    color: black;
+    width: calc(100% - 106px);
+    border: 0;
+    outline: 0; /*포커스되면 나오는 테두리 없앰*/
+}
+
+.cts_biz05 .search_group .search input[type="text"]::placeholder {
+    font-size: 30px;
+    font-weight: 400;
+    color: rgba(167, 20, 30, 0.2);
+}
+.cts_biz05 .search_group .search input[type="submit"] {
+    border: 0;
+    background-color: transparent;
+    font-size: 0;
+    line-height: 0;
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.334 3.33301C26.614 3.33301 33.334 10.053 33.334 18.333C33.334 26.613 26.614 33.333 18.334 33.333C10.054 33.333 3.33398 26.613 3.33398 18.333C3.33398 10.053 10.054 3.33301 18.334 3.33301ZM18.334 29.9997C24.7798 29.9997 30.0007 24.7788 30.0007 18.333C30.0007 11.8872 24.7798 6.66634 18.334 6.66634C11.8882 6.66634 6.66732 11.8872 6.66732 18.333C6.66732 24.7788 11.8882 29.9997 18.334 29.9997ZM32.4762 30.1182L37.1902 34.8322L34.8332 37.1892L30.1192 32.4752L32.4762 30.1182Z' fill='%23A7141E'/%3E%3C/svg%3E%0A");
+    margin-left: 30px;
+}
+
+@media screen and (max-width:1024px) {
+    .cts_biz05 {
+        margin: 80px 0;
+    }
+    .cts_biz05 .search_group .search {
+        height: 60px;
+    }
+    .cts_biz05 .search_group .search::before {
+        font-size: 35px;
+    }
+    .cts_biz05 .search_group .search input[type="text"] {
+        font-size: 25px;
+    }
+    .cts_biz05 .search_group .search input[type="text"]::placeholder {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:768px) {
+    .cts_biz05 {
+        margin: 70px 0;
+    }
+    .cts_biz05 .search_group .search input[type="submit"] {
+        width: 35px;
+        height: 35px;
+    }
+}
