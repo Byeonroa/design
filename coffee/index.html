@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/main.css">
+    <!--스위퍼라이브러리-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
     <title>Paul Bassett</title>
 </head>
 <body>
     <div id="wrap">
-        <header>
+        <!--스크롤을 아래로 내리면 숨겨짐, 올리면 나타남
+            스크롤을 아래로 내렸을 때 header의 높이가 변함
+        스크롤을 내린 상태에서 보일 때 fixed 클래스 추가
+        pc버전에서 메뉴를 오버했을 떄 : menu_over 
+        모바일에서 메뉴를 클릭했을 때 : menu_open
+        -->
+        <header class="menu_open">
             <div class="wrapper">
                 <div class="head_top">
                     <h1 class="logo"><a href="index.html">풀바셋</a></h1>
@@ -32,6 +45,7 @@
                         <button class="gnb_open">메뉴열기</button>
                         <div class="gnb_wrap">
                             <ul class="depth1">
+                                <!--에뉴에 마우스 오버-->
                                 <li>
                                     <a href="#n"><span>ABOUT US</span></a>
                                     <ul class="depth2">
@@ -88,7 +102,33 @@
             </div>
         </header>
         <div class="container">
-            <section class="visual"></section>
+            <section class="visual">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <img src="images/main/visual_popup01.png" alt="QUALITY NEVER COMPROMISED" class="popup_pc">
+                                <img src="images/main/visual_popup_m01.png" alt="QUALITY NEVER COMPROMISED" class="popup_m" >
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <img src="images/main/visual_popup02.png" alt="PAULBASSETT BEVERAGE" class="popup_pc">
+                                <img src="images/main/visual_popup_m02.png" alt="PAULBASSETT BEVERAGE" class="popup_m" >
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <img src="images/main/visual_popup03.png" alt="Bleu Ocean Ade" class="popup_pc">
+                                <img src="images/main/visual_popup_m03.png" alt="Bleu Ocean Ade" class="popup_m" >
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    </ul>
+                    <div class="swiper-pagination"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="swiper-button-prev"></button>
+                    <button class="swiper-button-next"></button>
+                </div>
+            </section>
             <section class="product"></section>
             <section class="brand"></section>
             <section class="social"></section>
