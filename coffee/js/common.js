@@ -60,7 +60,7 @@ $(document).ready(function(){
         device_chk() //문서가 리사이즈될때마다 1번씩 실행
     })
 
-    $('header .gnb .depth1 > li').on('mouseenter', function(){
+    $('header .gnb .depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             $('header .gnb .depth1 > li').removeClass('on')
             $(this).addClass('on')
@@ -72,6 +72,11 @@ $(document).ready(function(){
             $('header .gnb .depth1 > li').removeClass('on')
             $('header').removeClass('menu_over')
         }
+    })
+    $('header .gnb .depth1 > li:last-child > li:last-child > a').on('focusout', function(){
+        if(device_status == 'pc')
+        $('header .gnb .depth1 > li').removeClass('on')
+        $('header').removeClass('menu_over')
     })
 
 })//$(document).ready

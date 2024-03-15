@@ -1069,3 +1069,12 @@ css에서는 input:checked 표시 [checked]로 잡지말것 */
         height: 15px;
     }
 }
+
+/*찾아오시는 길*/
+.cts_location {
+    margin: 80px 0;
+}
+.cts_location h2 {
+    font-size: 40px;
+    font-weight: 800;
+}

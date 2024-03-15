@@ -68,8 +68,222 @@
 }
 
 .product {
-    height: 1000px;
+    margin: 90px 0 90px 0;  
 }
+.product h2 {
+    font-size: 2.941rem;
+    font-weight: 900;
+    color: #183833;
+    text-align: center;
+}
+.product .list ul {
+    align-items: flex-end;
+}
+.product .list ul li a{
+    display: block;
+    position: relative;
+    text-align: center;
+    padding: 0 0 30px 0;
+    transition: 0.5s;
+}
+.product .list ul li a .photo {
+    display: block;
+    transition: 0.5s;
+}
+.product .list ul li a .tit {
+    display: block;
+    font-size: 1.471rem;
+}
+.product .list ul li a .name {
+    display: block;
+    font-size: 1.294rem;
+    padding-bottom: 10px;
+    font-family: 'Bright', 'serif';
+}
+.product .list ul li a .info {
+    display: block;
+    font-size: 1.176rem;
+    font-family: 'Bright', 'serif';
+}
+.product .list ul li a::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 300px;
+    border: 5px solid transparent;
+    border-radius: 20%;
+    background-image: linear-gradient(rgba(238, 226, 208, 1), rgba(238, 226, 208, 1)), 
+    linear-gradient(to bottom, #183833 0%,  #000 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    content: "";
+    transition: 0.5s;
+}
+/*왼쪽요소- active*/
+.product .list ul li.swiper-slide-active a::before {
+    background: linear-gradient(#183833, #000)
+}
+.product .list ul li.swiper-slide-active a .tit,
+.product .list ul li.swiper-slide-active a .name,
+.product .list ul li.swiper-slide-active a .info {
+    color: #EEE2D0;
+}
+
+
 .brand {
-    height: 1000px;
+    background-color: #183833;
+    position: relative;
+}
+.brand .photo {
+    position: absolute;
+    left: calc(50% - 110px);
+    top: 135px;
+    width: calc(50% + 110px);
+    height: 500px;
+    overflow: hidden;
+    border-radius: 250px 0 0 250px ;
+}
+.brand .photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.brand .inner {
+    width: 600px;
+    padding: 135px 0 0 0;
+}
+.brand .inner h2 {
+    font-size: 2.941rem;
+    font-weight: 900;
+    color: #EEE2D0;
+    font-family: 'Bright', 'serif';
+}
+.brand .inner p {
+    font-size: 1.176rem;
+    line-height: 30px;
+    color: #EEE2D0;
+    padding: 10px 0 80px 0;
+}
+.brand .list ul {
+    display: flex;
+    padding-bottom: 180px;
+}
+.brand .list ul li {
+    width: 10%;
+    text-align: center;
+}
+.brand .list ul li strong {
+    display: block;
+    color: #EEE2D0;
+}
+
+@media screen and (max-width:1640px){
+    .brand .photo {
+        left: auto;
+        right: 0;
+        width: calc(100% - 700px);
+    }
+}
+@media screen and (max-width:1024px){
+    .brand .inner {
+        width: auto;
+        padding: 50px 0 0 0;
+        position: relative;
+        z-index: 10;
+    }
+    .brand h2 {
+        color: #EEE2D0;
+        padding: 0 20px;
+    }
+    .brand p {
+        display: none;
+    }
+    .brand .photo {
+        display: none;
+    }
+    .brand ul {
+        background-color: #183833;
+    }
+    .brand .list ul {
+        padding: 20px 20px 60px 20px;
+    }
+    .brand .list ul li {
+        width: 100%;
+    }
+    .brand .list ul li:ntn-child(even) {
+        border-right-width: 0 ;
+    }
+}
+
+.social {
+    margin: 100px 0 80px 0;
+}
+.social h2 {
+    font-size:2.941rem ;
+    line-height: 1;
+    font-family: 'Bright', 'serif';
+    margin: 0 0 25px 0;
+    text-align: center;
+    color: #183833;
+}
+.social .sns ul {
+    display: flex;
+    justify-content: center;
+}
+.social .sns ul li a {
+    display: block;
+    padding: 0 10px;
+    color: #183833;
+    position: relative;
+    margin-bottom: 50px ;
+}
+.social .sns ul li a::before {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #183833;
+    content: "";
+}
+.social .list ul li a {
+    display: block;
+}
+.social .list ul li a .photo {
+    position: relative;
+}
+.social .list ul li a .photo img {
+    width: 100%;
+}
+.social .list ul li a .cate {
+    position: absolute;
+    left: 250px;
+    bottom: 90px;
+}
+.social .list ul li a strong {
+    display: block;
+    margin: 10px 0 0 0 ;
+    text-align: left;
+    font-size: 0.882rem;
+    color:#183833 ;
+    font-weight: 900;
+}
+.social .list ul li a em {
+    display: block;
+    font-size:0.882rem ;
+    color: #183833;
+}
+
+@media screen and (max-width:1024px){
+    .m_skip {
+        display: none;
+    }
+}
+
+.footer {
+    height: 700px;
+    background-color: #183833;
 }
