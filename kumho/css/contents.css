@@ -1206,6 +1206,6 @@ css에서는 input:checked 표시 [checked]로 잡지말것 */
     }
     .cts_location a::after {
         right: 12px;
-        top: 8px;
+        top: 4px;
     }
  }
