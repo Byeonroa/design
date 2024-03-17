@@ -1084,6 +1084,7 @@ css에서는 input:checked 표시 [checked]로 잡지말것 */
 }
 .cts_location .flex {
     display: flex;
+    justify-content: space-between;
 }
 .cts_location .add {
     width: 50%;
@@ -1114,7 +1115,9 @@ css에서는 input:checked 표시 [checked]로 잡지말것 */
     font-size:1.176rem ;
     color: #666;
 }
-.cts_location a {
+.cts_location span a {
+    top: 15px;
+    text-wrap: nowrap;
     position: relative;
     border: 1px solid #A7141E;
     border-radius: 50px;
@@ -1122,7 +1125,7 @@ css에서는 input:checked 표시 [checked]로 잡지말것 */
     padding: 7px 40px 7px 15px;
     color: #fff;
 }
-.cts_location a::after {
+.cts_location span a::after {
     right: 11px;
     top: 6px;
     width: 20px;
@@ -1145,9 +1148,6 @@ css에서는 input:checked 표시 [checked]로 잡지말것 */
     .cts_location .map {
         margin: 20px 0 60px 0;
     }
-    .cts_location .flex {
-        justify-content: space-between;
-    }
     .cts_location .add {
         width: 45%;
     }
@@ -1165,9 +1165,6 @@ css에서는 input:checked 표시 [checked]로 잡지말것 */
     } 
     .cts_location .bus em {
         font-size: 1.100rem;
-    }
-    .cts_location .care {
-        margin: 20px 0;
     }
     .cts_location .care span {
         font-size:1.100rem ;
@@ -1198,10 +1195,7 @@ css에서는 input:checked 표시 [checked]로 잡지말것 */
         font-size: 0.706rem;
     }
     .cts_location .care {
-        display: flex;
-        justify-content: space-between;
         margin: 20px 0;
-        padding: 0 0 0 20px;
     }
     .cts_location .care span {
         font-size: 0.765rem;
