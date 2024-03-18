@@ -79,4 +79,11 @@ $(document).ready(function(){
         $('header').removeClass('menu_over')
     })
 
+    //top버튼
+    $('aside button ').on('click', function(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500)
+    })
+
 })//$(document).ready

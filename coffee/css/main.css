@@ -217,6 +217,26 @@
         border-right-width: 0 ;
     }
 }
+@media screen and (max-width:500px){
+    .brand .list ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 20px 50px 20px;
+    }
+    .brand .list ul li {
+        width: 40%;
+        text-align: center;
+    }
+    .brand .list ul li img {
+        width: 30px;
+        height: 30px;
+    }
+    .brand .list ul li strong {
+        font-size: 11px;
+        display: block;
+        color: #EEE2D0;
+    }
+}
 
 .social {
     margin: 100px 0 80px 0;
@@ -272,6 +292,7 @@
     font-weight: 900;
 }
 .social .list ul li a em {
+    width: 286px;
     display: block;
     font-size:0.882rem ;
     color: #183833;
@@ -283,7 +304,145 @@
     }
 }
 
-.footer {
-    height: 700px;
+footer {
+    border-top: 1px solid #183833;
     background-color: #183833;
+    color: #EEE2D0;
+    text-align: center;
+}
+footer .f_logo {
+    margin: 45px 0 20px 0;
+}
+footer .f_logo img {
+    width: 140px;
+    height: 60px;
+}
+footer .f_link ul {
+    display: flex;
+    justify-content: center;
+} 
+footer .f_link ul li {
+    width: 190px;
+    margin-left: 10px;
+}
+footer .f_link ul li a {
+    display: block;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #E80A4D;
+    color: #EEE2D0;
+}
+footer .f_link ul li a span {
+    padding-top: 14px;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    padding-left: 26px;
+}
+footer .f_link ul li a span::before {
+    position: absolute;
+    left: -4px;
+    top: 13px;
+    width: 23px;
+    height: 23px;
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+}
+footer .f_link ul li.link01 a span::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='20' viewBox='0 0 14 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2V18H12V2H2ZM1 0H13C13.5523 0 14 0.44772 14 1V19C14 19.5523 13.5523 20 13 20H1C0.44772 20 0 19.5523 0 19V1C0 0.44772 0.44772 0 1 0ZM7 15C7.5523 15 8 15.4477 8 16C8 16.5523 7.5523 17 7 17C6.4477 17 6 16.5523 6 16C6 15.4477 6.4477 15 7 15Z' fill='%23EEE2D0'/%3E%3C/svg%3E%0A");
+}
+footer .f_link ul li.link02 a span::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='18' viewBox='0 0 20 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 10V2H4V10C4 11.1046 4.89543 12 6 12H12C13.1046 12 14 11.1046 14 10ZM3 0H18C19.1046 0 20 0.89543 20 2V5C20 6.10457 19.1046 7 18 7H16V10C16 12.2091 14.2091 14 12 14H6C3.79086 14 2 12.2091 2 10V1C2 0.44772 2.44772 0 3 0ZM16 2V5H18V2H16ZM0 16H18V18H0V16Z' fill='%23EEE2D0'/%3E%3C/svg%3E%0A");
+}
+footer .f_link ul li.link03 a span::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='19' viewBox='0 0 20 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 13H18V2H2V13ZM11 15V17H15V19H5V17H9V15H0.9918C0.44405 15 0 14.5511 0 13.9925V1.00748C0 0.45107 0.45531 0 0.9918 0H19.0082C19.556 0 20 0.44892 20 1.00748V13.9925C20 14.5489 19.5447 15 19.0082 15H11Z' fill='%23EEE2D0'/%3E%3C/svg%3E%0A");
+}
+footer .f_nav {
+    margin-bottom: 20px;
+}
+footer .f_nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer .f_nav ul li {
+    margin: 20px 42px 20px 0;
+    position: relative;
+}
+footer .f_nav ul li::after {
+    position: absolute;
+    right: -20px;
+    top: 5px;
+    width: 1px;
+    height: 10px;
+    background-color: #EEE2D0;
+    content: "";
+}
+footer .f_nav ul li:last-child {
+    margin-right: 0;
+}
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .f_info {
+    display: inline-block;
+}
+footer .copyright {
+    text-align: right;
+    margin: 40px 0 0 0;
+    padding: 20px 100px;
+    background-color: #EEE2D0;
+    color: #183833;
+}
+aside {
+    margin: -65px 65px 0 0;
+    float: right;
+    width: 60px;
+    height:60px;
+    border-radius: 100%;
+    background-color: #183833;
+}
+aside button {
+    color: #EEE2D0;
+    margin: 19px 0px 0 14px;
+}
+
+@media screen and (max-width:1024px){
+    footer .f_logo {
+        margin: 30px 0 15px 0;
+    } 
+    footer .f_link ul li {
+        width: 170px;
+    }
+    footer .f_link ul li a {
+        height: 40px;
+    }
+    footer .f_link ul li a span {
+        padding-top: 10px;
+        font-size: 16px;
+    }
+    footer .f_link ul li a span::before {
+        top: 10px;
+        width: 20px;
+        height: 20px;
+    }
+    aside button {
+        margin: 23px 0px 0 19px;
+    }
+}
+@media screen and (max-width:500px){
+    footer .f_link ul li a span::before {
+        left: 4px;
+        top: 10px;
+        width: 18px;
+        height: 18px;
+    }
+    aside {
+        margin: -65px 30px 0 0;
+    }
+    aside button {
+        margin: 23px 0px 0 19px;
+    }
 }
