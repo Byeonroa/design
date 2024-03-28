@@ -1,0 +1,69 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+/*
+    파일명 : main.css
+    작성자 : 변로아
+    작성일 : 2024.03.28
+    설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
+*/
+
+.visual h2 {
+    display: none;
+}
+.visual .swiper {
+    height:800px;
+}
+.visual .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; }
+.visual .visual_txt {
+    position: absolute; /* swiper-slide */
+    right: calc(50% - 640px);
+    top: 190px;
+}
+.visual .visual_txt span {
+    display: block;
+    color: #fff;
+    font-size: 2.941rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: right;
+}
+.visual .quick_menu {
+    position: absolute;
+    left: calc(50% - 640px);
+    bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.visual .quick_menu a  {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #3B3E8A;
+    border-radius: 30PX;
+    margin-right: 10px;
+    padding: 5px 15px 5px 10px;
+}
+.visual .quick_menu a:first-child {
+    border: 1px solid #3B3E8A;
+    background-color: #3B3E8A;
+    color: #fff;
+}
+@media screen and (max-width:1600px){
+    .visual .visual_txt span {
+        font-size: 2.824rem;
+    }
+}
+@media screen and (max-width:1320px){
+    .visual .swiper {
+        height:600px;
+    }
+    .visual .visual_txt span {
+        font-size: 2.647rem;
+    }
+    .visual .visual_txt {
+        right: calc(50% - 490px);
+    }
+    .visual .quick_menu {
+        left: calc(50% - 490px);
+    }
+}
