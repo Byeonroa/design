@@ -1,0 +1,261 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+/*
+    파일명 : main.css
+    작성자 : 변로아
+    작성일 : 2024.03.28
+    설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
+*/
+
+.visual h2 {
+    display: none;
+}
+.visual .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; }
+.visual .visual_txt {
+    position: absolute; /* swiper-slide */
+    right: calc(50% - 640px);
+    top: 270px;
+}
+.visual .visual_txt span {
+    display: block;
+    color: #fff;
+    font-size: 2.941rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: right;
+}
+.visual .quick_menu {
+    position: absolute;
+    left: calc(50% - 640px);
+    bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.visual .quick_menu a  {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #3B3E8A;
+    border-radius: 30PX;
+    margin-right: 10px;
+    padding: 5px 15px 5px 10px;
+}
+.visual .quick_menu a:first-child {
+    border: 1px solid #3B3E8A;
+    background-color: #3B3E8A;
+    color: #fff;
+}
+@media screen and (max-width:1600px){
+    .visual .visual_txt {
+        right: calc(50% - 450px);
+        top: 240px;
+    }
+    .visual .visual_txt span {
+        font-size: 2.141rem;
+    }
+    .visual .quick_menu {
+        left: calc(50% - 510px);
+        bottom: 40px;
+    }
+}
+@media screen and (max-width:1320px){
+    .visual .visual_txt {
+        right: calc(50% - 340px);
+        top: 180px;
+    }
+    .visual .visual_txt span {
+        font-size: 1.500rem;
+    }
+    .visual .quick_menu {
+        left: calc(50% - 420px);
+        bottom: 30px;
+    }
+    .visual .quick_menu a  {
+        font-size: 0.800rem;
+        padding: 5px 15px 5px 10px;
+    }
+}
+@media screen and (max-width:1024px){
+    .visual .visual_txt {
+        right: calc(50% - 270px);
+        top: 130px;
+    }
+    .visual .visual_txt span {
+        font-size: 1.500rem;
+    }
+    .visual .quick_menu {
+        left: calc(50% - 310px);
+        bottom: 20px;
+    }
+}
+@media screen and (max-width:768px){
+    .visual .visual_txt {
+        right: calc(50% - 160px);
+        top: 90px;
+    }
+    .visual .quick_menu {
+        display: none;
+    }
+}
+@media screen and (max-width:500px){
+    .visual .visual_txt {
+        right: calc(50% - 130px);
+        top: 80px;
+    }
+}
+
+.s_move {
+    padding: 100px 0;
+    background-color: #221E41;
+    color: #fff;
+}
+.s_move .tit {
+    position: sticky;
+    top: 100px;
+    float: left;
+    margin-right: 160px;
+}
+.s_move .tit h2 {
+    font-size: 2.353rem;
+    font-weight: 700;
+}
+.s_move .tit p {
+    margin: 7px 0 40px 0;
+}
+.s_move .more a {
+    width: 144px;
+    line-height: 45px;
+    display: block;
+    padding: 0 0 0 12px;
+    position: relative; 
+}
+.s_move .more a::after {
+    position: absolute; 
+    right: 12px;
+    top: 12px;
+    width: 19px;
+    height: 19px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.99996 0.666992C13.6 0.666992 17.3333 4.40032 17.3333 9.00032C17.3333 13.6003 13.6 17.3337 8.99996 17.3337C4.39996 17.3337 0.666626 13.6003 0.666626 9.00032C0.666626 4.40032 4.39996 0.666992 8.99996 0.666992ZM8.99996 8.16699H5.66663V9.83366H8.99996V12.3337L12.3333 9.00032L8.99996 5.66699V8.16699Z' fill='white'/%3E%3C/svg%3E ");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+}
+.s_move .more a:hover {
+    border: 1px solid #fff;
+    border-radius: 50px;
+}
+.s_move .tit span img {
+    margin-top: 100px;
+}
+.s_move .list ul {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+}
+.s_move .list ul li {
+    width: 390px;
+    height: auto;
+    margin-bottom: 100px;
+}
+.s_move .list ul li a {
+    display: block;
+}
+.s_move .list ul li a h3 {
+    font-size: 1.471rem;
+    margin: -51px 0 0px 20px;
+    position: relative;
+}
+.s_move .list ul li a h3::after {
+    position: absolute; 
+    right: 12px;
+    top: 7px;
+    width: 19px;
+    height: 19px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.99996 0.666992C13.6 0.666992 17.3333 4.40032 17.3333 9.00032C17.3333 13.6003 13.6 17.3337 8.99996 17.3337C4.39996 17.3337 0.666626 13.6003 0.666626 9.00032C0.666626 4.40032 4.39996 0.666992 8.99996 0.666992ZM8.99996 8.16699H5.66663V9.83366H8.99996V12.3337L12.3333 9.00032L8.99996 5.66699V8.16699Z' fill='white'/%3E%3C/svg%3E ");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+}
+.s_move .list ul li a span {
+    display: block;
+}
+.s_move .list ul li a:hover span img  {
+    transition: 0.5s;
+}
+.s_move .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.s_move .list ul li:nth-child(2n) {
+    margin-top: 80px; 
+}
+@media screen and (max-width:1600px){
+    .s_move {
+        padding: 120px 0;
+    }
+    .s_move .inner {
+        margin: auto 40px;
+    }
+    .s_move .tit {
+        margin-right: 140px;
+    }
+    .s_move .tit h2 {
+        font-size: 2.000rem;
+    }
+    .s_move .tit p {
+        font-size: 0.800rem;
+    }
+    .s_move .more a {
+        font-size: 0.800rem;
+        line-height: 34px;
+    }
+    .s_move .more a::after {
+        top: 7px;
+    }
+    .s_move .tit span img {
+        margin-top: 90px;
+    }
+    .s_move .list ul {
+        display: block
+    }
+    .s_move .list ul {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-around;
+    }
+    .s_move .list ul li {
+        width: 390px;
+        height: auto;
+        margin-bottom: 100px;
+    } 
+    .s_move .list ul li a h3 {
+        font-size: 1.471rem;
+        margin: -51px 0 0px 20px;
+        position: relative;
+    }
+    .s_move .list ul li a h3::after {
+        position: absolute; 
+        right: 12px;
+        top: 7px;
+        width: 19px;
+        height: 19px;
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.99996 0.666992C13.6 0.666992 17.3333 4.40032 17.3333 9.00032C17.3333 13.6003 13.6 17.3337 8.99996 17.3337C4.39996 17.3337 0.666626 13.6003 0.666626 9.00032C0.666626 4.40032 4.39996 0.666992 8.99996 0.666992ZM8.99996 8.16699H5.66663V9.83366H8.99996V12.3337L12.3333 9.00032L8.99996 5.66699V8.16699Z' fill='white'/%3E%3C/svg%3E ");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 20px auto;
+    }
+    .s_move .list ul li a span {
+        display: block;
+    }
+    .s_move .list ul li a:hover span img  {
+        transition: 0.5s;
+    }
+    .s_move .list ul li a:hover span img {
+        transform: scale3d(1.2, 1.2, 1);
+    }
+    .s_move .list ul li:nth-child(2n) {
+        margin-top: 80px; 
+    }
+}
