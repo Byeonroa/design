@@ -24,7 +24,39 @@ $(document).ready(function(){
 		prevEl: '.swiper-button-prev',  
 	},
 
-});
-swiper.autoplay.stop();  /* 일시정지 기능 */
-swiper.autoplay.start();  /* 재생 기능 */
+	});
+	swiper.autoplay.stop();  /* 일시정지 기능 */
+	swiper.autoplay.start();  /* 재생 기능 */
+
+	let device_status
+    let window_w
+    function device_chk(){
+        window_w = $(window).width()
+        if(window_w > 1024){ //pc버전
+            device_status = 'pc'
+        }else{ //모바일
+            device_status = 'mobile'
+        }
+        console.log(device_status)
+    }
+    device_chk() //문서가 로딩되고 1번 실행
+    $(window).resize(function(){
+        device_chk() //문서가 리사이즈될때마다 1번씩 실행
+    })
+
+    $('.s_life .list ul li').on('mouseenter', function(){
+        if(device_status == 'pc'){
+            $('.s_life .list ul li').removeClass('on')
+            $('.s_life .list ul li').addClass('off')
+            $(this).removeClass('off')
+            $(this).addClass('on')
+        }
+    })
+    $('.s_life .list ul').on('mouseleave', function(){
+        if(device_status == 'pc'){
+            $('.s_life .list ul li').removeClass('on')
+            $('.s_life .list ul li').removeClass('off')
+        }
+    })
+
 }) //$(document).ready

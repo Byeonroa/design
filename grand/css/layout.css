@@ -356,3 +356,225 @@
         left: calc(50% - 90px);
     }
 }
+
+.footer {
+    background-color: #221E41;
+    color: #fff;
+    padding: 40px 0 60px 0 ;
+}
+.footer .f_top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.footer .f_top .call .call01,
+.footer .f_top .call2 .call03 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.footer .f_top .call .call02 {
+    font-size: 0.882rem;
+    font-weight: 400;
+}
+.footer .f_top .call2 .call04 {
+    font-size: 1.300rem ;
+    font-weight: 700;
+}
+.footer .f_top .call2 {
+    margin: 0px 0 0 -480px;
+}
+.footer .f_top .f_link ul  {
+    display: flex;
+    justify-content: space-around;
+}
+.footer .f_top .f_link .link01,
+.footer .f_top .f_link .link02 {
+    display: block;
+    border: 1px solid #3B3E8A;
+    background-color: #3B3E8A;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 50px;
+    padding: 8px 38px 8px 18px;
+    position: relative;
+    margin-bottom: 8px;
+}
+.footer .f_top .f_link .link01::after,
+.footer .f_top .f_link .link02::after {
+    position: absolute;
+    right: 19px;
+    top: 14px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.83333 0V1.66667H1.66667V13.3333H13.3333V9.16667H15V14.1667C15 14.6269 14.6269 15 14.1667 15H0.833333C0.3731 15 0 14.6269 0 14.1667V0.833333C0 0.3731 0.3731 0 0.833333 0H5.83333ZM12.1548 1.66667H8.33333V0H15V6.66667H13.3333V2.84517L7.5 8.6785L6.3215 7.5L12.1548 1.66667Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.footer .f_top .f_link .link01 {
+    margin-right: 10px;
+}
+.footer .f_nav ul {
+    display: flex;
+    flex-wrap: wrap; /* 두줄 허용 */
+}
+.footer .f_nav ul li {
+    margin: 40px 20px 30px 0 ;
+    position: relative; /* after정렬의 기준 */
+}
+.footer .f_nav ul li span {
+    font-weight: 700;
+}
+.footer .f_info span {
+    line-height: 30px;
+}
+.footer .mark {
+    float: right;
+    display: flex
+}
+.footer .mark .f_logo {
+    margin-top: -66px;
+}
+.footer .mark .FTC {
+    margin-top: -100px;
+}
+.footer .copyright {
+    float: right;
+    margin-top: -33px;
+    color: rgba(255,255,255,0.6);
+}
+
+@media screen and (max-width:1320px){
+    .footer {
+        padding: 30px 0 40px 0 ;
+    }
+    .footer .f_top {
+        text-wrap: nowrap;
+    }
+    .footer .f_top .call .call01,
+    .footer .f_top .call2 .call03 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    .footer .f_top .call .call01 {
+        margin-bottom: 10px;
+        margin-right: -50px;
+    }
+    .footer .f_top .call2 {
+        margin: 0px 0 0 -300px;
+    }
+    .footer .f_top .f_link .link01,
+    .footer .f_top .f_link .link02 {
+        font-size: 1rem;
+        padding: 8px 38px 8px 18px;
+        margin-bottom: 8px;
+    }
+    .footer .f_top .f_link .link01::after,
+    .footer .f_top .f_link .link02::after {
+        right: 19px;
+        top: 11px;
+        width: 15px;
+        height: 15px;
+    }
+}
+@media screen and (max-width:1024px){
+    .footer .f_top .call2 {
+        margin: 0 0 0 60px;
+    }
+    .footer .f_top .call .call01 {
+        margin-bottom: 10px;
+    }
+    footer .f_link {
+        margin-top: 5px;
+        padding-bottom: 20px;
+    }
+    .footer .f_top .f_link .link01::after,
+    .footer .f_top .f_link .link02::after {
+        width: 13px;
+        height: 13px;
+        top: 8px;
+    }
+    .footer .f_nav ul li {
+        margin: 20px 20px 20px 0 ;
+    }
+    .footer .mark {
+        margin-bottom: -10px;
+        margin-top: -20px;
+    }
+    .footer .copyright {
+        margin-top: -20px;
+    }
+}
+@media screen and (max-width:768px){
+    .footer {
+        padding: 25px 0 20px 0 ;
+    }
+    .footer .f_top .call2 {
+        margin: 0 0 0 30px;
+    }
+    .footer .f_top .call .call02 {
+        margin-bottom: 10px;
+    }
+    footer .f_link {
+        margin-top: 0px;
+        padding-bottom: 10px;
+    }
+    .footer .f_top .f_link .link01,
+    .footer .f_top .f_link .link02 {
+        font-size: 1.100rem;
+        padding: 6px 30px 6px 11px;
+    margin-bottom: 5px;
+    }
+    .footer .f_top .f_link .link01::after,
+    .footer .f_top .f_link .link02::after {
+        right: 15px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+    }
+    .footer .mark .f_logo {
+        margin-top: -65px;
+        margin-right: 18px;
+    }
+}
+@media screen and (max-width:500px) {
+    .footer .mark img {
+        width: 100%;
+    }
+    .footer .mark .f_logo {
+        width: 50%;
+        margin-top: -55px;
+        margin-right: -99px;
+    }
+    .footer .mark .FTC {
+        width: 50%;
+        margin-top: -60px;
+    }
+    .footer .mark {
+        margin-bottom: -10px;
+        margin-top: -10px;
+        margin-right: -20px;
+    }
+}
+@media screen and (max-width:360px){
+    .footer .f_top .call2 {
+        margin: 0 5px 0 10px;
+    }
+    .footer .f_top .f_link .link01, .footer .f_top .f_link .link02 {
+        font-size: 1.000rem;
+        padding: 6px 21px 6px 7px;
+        margin-bottom: 5px;
+    }
+    .footer .f_top .f_link .link01::after, .footer .f_top .f_link .link02::after {
+        right: 7px;
+        top: 6px;
+        width: 9px;
+        height: 9px;
+    }
+    .footer .f_top .f_link .link01 {
+        margin-right: 3px;
+    }
+}

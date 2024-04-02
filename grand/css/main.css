@@ -124,7 +124,7 @@
 }
 .s_move .more a {
     width: 144px;
-    line-height: 45px;
+    line-height: 40px;
     display: block;
     padding: 0 0 0 12px;
     position: relative; 
@@ -153,8 +153,12 @@
     flex-wrap: wrap; 
     justify-content: space-around;
 }
+.s_move ul img {
+    width: 100%;
+    object-fit: contain;
+}
 .s_move .list ul li {
-    width: 390px;
+    width: 45%;
     height: auto;
     margin-bottom: 100px;
 }
@@ -180,12 +184,6 @@
 }
 .s_move .list ul li a span {
     display: block;
-}
-.s_move .list ul li a:hover span img  {
-    transition: 0.5s;
-}
-.s_move .list ul li a:hover span img {
-    transform: scale3d(1.2, 1.2, 1);
 }
 .s_move .list ul li:nth-child(2n) {
     margin-top: 80px; 
@@ -216,46 +214,607 @@
     .s_move .tit span img {
         margin-top: 90px;
     }
-    .s_move .list ul {
-        display: block
-    }
-    .s_move .list ul {
-        display: flex;
-        flex-wrap: wrap; 
-        justify-content: space-around;
+    .s_move ul img {
+        width: 100%;
+        object-fit: contain;
     }
     .s_move .list ul li {
-        width: 390px;
-        height: auto;
-        margin-bottom: 100px;
+        width: 45%;
     } 
     .s_move .list ul li a h3 {
-        font-size: 1.471rem;
-        margin: -51px 0 0px 20px;
-        position: relative;
+        font-size: 1.000rem;
+        margin:-48px 0 0px 15px;
     }
-    .s_move .list ul li a h3::after {
-        position: absolute; 
-        right: 12px;
+}
+@media screen and (max-width:1320px){
+    .s_move .inner {
+        margin: auto 50px;
+    }
+    .s_move .tit {
+        margin-right: 100px;
+    }
+    .s_move .tit h2 {
+        font-size: 1.800rem;
+    }
+    .s_move .tit p {
+        font-size: 0.700rem;
+    }
+    .s_move .more a {
+        font-size: 0.700rem;
+        line-height: 34px;
+    }
+    .s_move .more a::after {
         top: 7px;
-        width: 19px;
-        height: 19px;
-        content: "";
-        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.99996 0.666992C13.6 0.666992 17.3333 4.40032 17.3333 9.00032C17.3333 13.6003 13.6 17.3337 8.99996 17.3337C4.39996 17.3337 0.666626 13.6003 0.666626 9.00032C0.666626 4.40032 4.39996 0.666992 8.99996 0.666992ZM8.99996 8.16699H5.66663V9.83366H8.99996V12.3337L12.3333 9.00032L8.99996 5.66699V8.16699Z' fill='white'/%3E%3C/svg%3E ");
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 20px auto;
     }
-    .s_move .list ul li a span {
-        display: block;
+    .s_move .tit span img {
+        margin-top: 90px;
     }
-    .s_move .list ul li a:hover span img  {
-        transition: 0.5s;
+    .s_move ul img {
+        width: 100%;
+        object-fit: contain;
     }
-    .s_move .list ul li a:hover span img {
-        transform: scale3d(1.2, 1.2, 1);
+    .s_move .list ul li {
+        width: 45%;
+    } 
+    .s_move .list ul li a h3 {
+        font-size: 1.000rem;
+        margin:-48px 0 0px 15px;
+    }
+}
+@media screen and (max-width:1024px){
+    .s_move {
+        padding: 100px 0 0 0;
+    }
+    .s_move .tit {
+        margin-right: 20px;
+    }
+    .s_move .tit span img {
+        width: 70%;
+    }
+    .s_move ul img {
+        width: 100%;
+    }
+    .s_move .list ul li {
+        width: 45%;
+    } 
+}
+@media screen and (max-width:768px){
+    .s_move {
+        padding: 40px 0 50px 0;
+    }
+    .s_move .tit {
+        position: static;
+        top: 100px;
+        float: left;
+        margin-right: 0;
+    }
+    .s_move .tit h2 {
+        font-size: 1.800rem;
+    }
+    .s_move .tit p {
+        font-size:1.300rem;
+        margin: 7px 0 0 0;
+    }
+    .s_move .more a {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .s_move .more a {
+        font-size: 0.800rem;
+        line-height: 20px;
+        width: 70px;
+    }
+    .s_move .more a::after {
+        right: 7px;
+        top: 3px;
+        width: 13px;
+        height: 13px;
+        background-size: 13px auto;
+    }
+    .s_move .tit span img {
+        margin-top: 0;
+    }
+    .s_move .tit span img {
+        width: 60%;
+        margin-top: 140px;
+    }
+    .s_move ul img {
+        width: 100px;
+    }
+    .s_move .list ul {
+        margin-left: -10px;
+        padding-top: 10px;
+        justify-content: center;
+    }
+    .s_move ul img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+    }
+    .s_move .list ul li {
+        width: 50%;
+        height: 80px;
+    }  
+    .s_move .list ul li {
+        margin-bottom: 0;
     }
     .s_move .list ul li:nth-child(2n) {
-        margin-top: 80px; 
+        margin-top: 0; 
+    }
+    .s_move .list ul li a h3 {
+        margin: -20px 0 0px 10px;
+    }
+    .s_move .list ul li a h3::after {
+        right: 10px;
+        top: -2px;
+        width: 14px;
+        height: 14px;
+        background-size: 14px auto;
+    }
+}
+@media screen and (max-width:500px){
+    .s_move {
+        padding: 40px 0 50px 0;
+    }
+    .s_move .inner {
+        margin: 0;
+    }
+    .s_move .tit {
+        width: 30%;
+    }
+    .s_move .tit h2 {
+        font-size: 1.500rem;
+    }
+    .s_move .tit p {
+        font-size: 0.600rem;
+        margin: 7px 0 0 0;
+    }
+    .s_move .more a {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .s_move .more a {
+        font-size: 0.700rem;
+        line-height: 20px;
+        width: 70px;
+    }
+    .s_move .more a::after {
+        right: 7px;
+        top: 3px;
+        width: 13px;
+        height: 13px;
+        background-size: 13px auto;
+    }
+    .s_move .tit span img {
+        margin-top: 0;
+    }
+    .s_move .tit span img {
+        width: 70%;
+        margin-top: 140px;
+    }
+    .s_move ul img {
+        width: 100px;
+    }
+    .s_move .list ul {
+        margin-left: -10px;
+        padding-top: 10px;
+        justify-content: center;
+    }
+    .s_move ul img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+    }
+    .s_move .list ul li {
+        width: 50%;
+        height: 80px;
+    }  
+    .s_move .list ul li {
+        margin-bottom: 0;
+    }
+    .s_move .list ul li:nth-child(2n) {
+        margin-top: 0; 
+    }
+    .s_move .list ul li a h3 {
+        margin: -20px 0 0px 10px;
+    }
+    .s_move .list ul li a h3::after {
+        right: 10px;
+        top: -2px;
+        width: 14px;
+        height: 14px;
+        background-size: 14px auto;
+    }
+}
+
+.s_life {
+    padding: 100px 0;
+    color: #221E41;
+}
+.s_life .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.s_life .tit h2 {
+    font-size: 2.353rem;
+    font-weight: 700;
+}
+.s_life .tit p {
+    margin: 7px 0 40px 0;
+}
+.s_life .more a {
+    top: 70px;
+    line-height: 30px;
+    display: block;
+    padding: 0 30px 0 0;
+    position: relative; 
+}
+.s_life .more a::after {
+    position: absolute; 
+    right: 3px;
+    top: 6px;
+    width: 19px;
+    height: 19px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.0001 1.66699C14.6001 1.66699 18.3334 5.40033 18.3334 10.0003C18.3334 14.6003 14.6001 18.3337 10.0001 18.3337C5.40008 18.3337 1.66675 14.6003 1.66675 10.0003C1.66675 5.40033 5.40008 1.66699 10.0001 1.66699ZM10.0001 9.16699H6.66675V10.8337H10.0001V13.3337L13.3334 10.0003L10.0001 6.66699V9.16699Z' fill='%233B3E8A'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+}
+.s_life .more a:hover {
+    border: 1px solid #221E41;
+    border-radius: 50px;
+    padding: 0 35px 0 10px;
+}
+.s_life .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.s_life .list ul li {
+    width: 20%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 2px;
+    color: #fff;
+    position: relative; 
+    transition: 0.5s;
+}
+.s_life .list ul li:last-child {
+    margin-right: 0;
+}
+.s_life .list ul li.list01 {
+    background-image: url(../images/list01.png);
+}
+.s_life .list ul li.list02 {
+    background-image: url(../images/list02.png);
+}
+.s_life .list ul li.list03 {
+    background-image: url(../images/list03.png);
+}
+.s_life .list ul li.list04 {
+    background-image: url(../images/list04.png);
+}
+.s_life .list ul li.list05 {
+    background-image: url(../images/list05.png);
+}
+.s_life .list ul li::before {
+    position: absolute; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+    content: "";
+    transition: 0.5s;
+}
+.s_life .list ul li a {
+    height: 590px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 20px 20px 20px;
+    position: relative;
+    z-index: 10;
+}
+.s_life .list ul li a strong {
+    display: block;
+    font-size: 1.300rem;
+    line-height: 40px;
+}
+.s_life .list ul li a span {
+    display: none;
+}
+.s_life .list ul li.on {
+    width: 50%;
+    text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.s_life .list ul li.on a span {
+    display: block;
+    font-size: 1.765rem;
+}
+.s_life .list ul li.on::before {
+    opacity: 0;
+}
+.s_life .list ul li.off {
+    color: rgba(255,255,255,0.8);
+    white-space: nowrap;
+    overflow: hidden;
+}
+.s_life .list ul li.off::before {
+    opacity: 0.7;
+}
+@media screen and (max-width:1600px){
+    .s_life .tit h2 {
+        font-size: 2.000rem;
+    }
+    .s_life .tit p {
+        font-size: 0.800rem;
+    }
+    .s_life .more a {
+        font-size: 0.800rem;
+        line-height: 30px;
+        padding: 0 30px 0 0;
+    }
+    .s_life .more a::after {
+        right: 3px;
+        top: 6px;
+        width: 19px;
+        height: 19px;
+        background-size: 20px auto;
+    }
+    .s_life .more a:hover {
+        padding: 0 35px 0 10px;
+    }
+    .s_life .list ul li a {
+        height: 500px;
+    }
+    .s_life .list ul li a strong {
+        display: block;
+        font-size: 1.200rem;
+        line-height: 40px;
+    }
+    .s_life .list ul li.on a span {
+        font-size: 1.465rem;
+    }
+}
+@media screen and (max-width:1024px){
+    .s_life .tit h2 {
+        font-size: 1.800rem;
+    }
+    .s_life .tit p {
+        font-size: 0.700rem;
+    }
+    .s_life .more a {
+        top: 40px;
+        width: 80px;
+        font-size: 0.700rem;
+        line-height: 34px;
+    }
+    .s_life .list ul li a strong {
+        font-size: 1.000rem;
+    }
+    .s_life .list ul {
+        flex-wrap: wrap; 
+    }
+    .s_life .list ul li {
+        width:100%;
+        margin-bottom: 2px;
+        justify-content: center;
+    }
+    .s_life .list ul li:nth-child(2) {
+        margin-right: 0;
+    }
+    .s_life .list ul li a {
+        height: 300px;
+        padding-bottom: 20px;
+    }
+}
+@media screen and (max-width:768px){
+    .s_life .more a {
+        top: 40px;
+        width: 80px;
+        font-size: 1.300rem;
+        line-height: 20px;
+    }
+    .s_life .more a::after {
+        right: 3px;
+        top: 2px;
+        width: 16px;
+        height: 16px;
+        background-size: 16px auto;
+    }
+    .s_life .list ul li a {
+        height: 150px;
+        padding-bottom: 10px;
+    }
+    .s_life .tit p {
+        font-size: 1.300rem;
+    }
+    .s_life .list ul li a strong {
+        font-size: 1.300rem;
+    }
+}
+@media screen and (max-width:500px){
+    .s_life {
+        padding: 50px 0;
+        color: #221E41;
+    }
+}
+
+.riview {
+    margin: 70px 0;
+
+}
+.riview .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.riview .tit h2 {
+    font-size: 2.353rem;
+    font-weight: 700;
+}
+.riview .tit p {
+    margin: 7px 0 40px 0;
+}
+.riview .more a {
+    top: 70px;
+    line-height: 30px;
+    display: block;
+    padding: 0 30px 0 0;
+    position: relative; 
+}
+.riview .more a::after {
+    position: absolute; 
+    right: 3px;
+    top: 6px;
+    width: 19px;
+    height: 19px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.0001 1.66699C14.6001 1.66699 18.3334 5.40033 18.3334 10.0003C18.3334 14.6003 14.6001 18.3337 10.0001 18.3337C5.40008 18.3337 1.66675 14.6003 1.66675 10.0003C1.66675 5.40033 5.40008 1.66699 10.0001 1.66699ZM10.0001 9.16699H6.66675V10.8337H10.0001V13.3337L13.3334 10.0003L10.0001 6.66699V9.16699Z' fill='%233B3E8A'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+}
+.riview .more a:hover {
+    border: 1px solid #221E41;
+    border-radius: 50px;
+    padding: 0 35px 0 10px;
+}
+.riview .list ul {
+    display: flex;
+    justify-content: space-around;
+}
+.riview .list ul li {
+    width: 31%;
+}
+.riview .list ul li img {
+    width: 100%;
+}
+.riview .list h3 {
+    font-size: 1.400rem;
+    font-weight: 700;
+    color: #3B3E8A;
+    text-wrap: nowrap;
+    margin: 15px 0 10px 0;
+    overflow: hidden;
+}
+.riview .list p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    height: 61px;
+}
+.riview .list span {
+    font-size: 1rem;
+    color: #5E5E5E;
+    margin-right: 10px;
+}
+.riview .list strong {
+    font-size: 1rem;
+    color: #FFD600;
+}
+@media screen and (max-width:1600px){
+    .riview .tit h2 {
+        font-size: 2.000rem;
+    }
+    .riview .tit p {
+        font-size: 0.800rem;
+    }
+    .riview .more a {
+        font-size: 0.800rem;
+        line-height: 30px;
+        padding: 0 30px 0 0;
+    }
+    .riview .more a::after {
+        right: 3px;
+        top: 6px;
+        width: 19px;
+        height: 19px;
+        background-size: 20px auto;
+    }
+    .riview .more a:hover {
+        padding: 0 35px 0 10px;
+    }
+}
+@media screen and (max-width:1320px){
+    .riview .list h3 {
+        font-size: 1.300rem;
+    }
+    .riview .list p {
+        font-size: 0.900rem;
+        margin-bottom: 15px;
+    }
+    .riview .list span {
+        font-size: 0.900rem;
+    }
+    .riview .list strong {
+        font-size: 0.900rem;
+    }
+}
+@media screen and (max-width:1024px){
+    .riview .tit h2 {
+        font-size: 1.800rem;
+    }
+    .riview .list p {
+        font-size: 0.800rem;
+        margin-bottom: 10px;
+    }
+    .riview .list span {
+        font-size: 0.900rem;
+    }
+    .riview .list strong {
+        font-size: 0.900rem;
+    }
+    .riview .more a {
+        top: 40px;
+    }
+    .riview .list h3 {
+        font-size: 1.200rem;
+    }
+    .riview .list p {
+        margin-bottom: 0;
+    }
+    .riview .list span {
+        font-size: 0.800rem;
+        height: 40px;
+    }
+    .riview .list strong {
+        font-size: 0.800rem;
+    }
+}
+@media screen and (max-width:768px){
+    .riview .tit p {
+        margin: 7px 0 20px 0;
+    }
+    .riview .list h3 {
+        margin: 10px 0 6px 0;
+    }
+    .riview .more a {
+        top: 20px;
+        width: 80px;
+        font-size: 1.300rem;
+        line-height: 20px;
+    }
+    .riview .more a::after {
+        right: 5px;
+        top: 2px;
+        width: 15px;
+        height: 15px;
+        background-size: 14px auto;
+    }
+    .riview .list p {
+        height: 30px;
+    }
+}
+@media screen and (max-width:768px){
+    .riview {
+        margin: 30px 0;
+    }
+    .riview .list ul li:last-child {
+        display: none;
+    }
+    .riview .list ul li {
+        width: 45%;
     }
 }
