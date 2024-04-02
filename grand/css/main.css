@@ -824,3 +824,15 @@
         width: 45%;
     }
 }
+@media screen and (max-width:360px){
+    .riview .list span {
+        font-size: 1.000rem;
+    }
+    .riview .tit p {
+        font-size: 1.000rem;
+    }
+    .footer .f_top .call .call02 {
+        font-size: 1.000rem;
+        font-weight: 400;
+    }
+}
