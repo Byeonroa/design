@@ -59,4 +59,6 @@ $(document).ready(function(){
         }
     })
 
+    var sticky = new Sticky('[data-sticky]');
+
 }) //$(document).ready

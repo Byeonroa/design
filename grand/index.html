@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/sticky.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
     <title>그랜드익스프레스</title>
@@ -134,12 +135,14 @@
             </section>
             <section class="s_move">
                 <div class="wrapper">
-                    <div class="inner">
+                    <div class="inner" data-sticky-container>
                         <div class="tit">
-                            <h2>이사서비스</h2>
-                            <p>고객님의 소중한 이삿짐을<br>안전하게 옮겨드립니다</p>
-                            <div class="more"><a href="#n">자세히보기</a></div>
-                            <span><img src="images/lion.png" alt="캐릭터"></span>
+                            <div data-sticky data-sticky-wrap data-margin-top="100">
+                                <h2>이사서비스</h2>
+                                <p>고객님의 소중한 이삿짐을<br>안전하게 옮겨드립니다</p>
+                                <div class="more"><a href="#n">자세히보기</a></div>
+                                <span><img src="images/lion.png" alt="캐릭터"></span>
+                            </div>
                         </div>
                         <div class="list">
                             <ul>
