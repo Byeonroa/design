@@ -99,8 +99,8 @@
 }
 @media screen and (max-width:500px){
     .visual .visual_txt {
-        right: calc(50% - 130px);
-        top: 80px;
+        right: calc(50% - 150px);
+        top: 110px;
     }
 }
 
@@ -363,10 +363,10 @@
         width: 30%;
     }
     .s_move .tit h2 {
-        font-size: 1.500rem;
+        font-size: 1.800rem;
     }
     .s_move .tit p {
-        font-size: 0.600rem;
+        font-size: 1.300rem;
         margin: 7px 0 0 0;
     }
     .s_move .more a {
@@ -374,12 +374,12 @@
         margin-top: 20px;
     }
     .s_move .more a {
-        font-size: 0.700rem;
+        font-size: 1.300rem;
         line-height: 20px;
-        width: 70px;
+        width: 85px;
     }
     .s_move .more a::after {
-        right: 7px;
+        right: 6px;
         top: 3px;
         width: 13px;
         height: 13px;
@@ -417,6 +417,7 @@
     }
     .s_move .list ul li a h3 {
         margin: -20px 0 0px 10px;
+        font-size: 1.300rem;
     }
     .s_move .list ul li a h3::after {
         right: 10px;
@@ -813,7 +814,7 @@
         height: 30px;
     }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:500px){
     .riview {
         margin: 30px 0;
     }
@@ -822,6 +823,22 @@
     }
     .riview .list ul li {
         width: 45%;
+    }
+    .riview .tit p {
+        font-size: 1.300rem;
+    }
+    .riview .list h3 {
+        font-size: 1.300rem;
+    }
+    .riview .list p {
+        font-size: 1.100rem;
+        margin-bottom: 10px;
+    }
+    .riview .list span {
+        font-size: 1.100rem;
+    }
+    .riview .list strong {
+        font-size: 1.100rem;
     }
 }
 @media screen and (max-width:360px){
