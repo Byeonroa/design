@@ -103,6 +103,15 @@
         top: 110px;
     }
 }
+@media screen and (max-width:360px){
+    .visual .swiper-slide img {
+        margin-top: 50px;
+    }
+    .visual .visual_txt {
+        right: calc(50% - 150px);
+        top: 90px;
+    }
+}
 
 .s_move {
     padding: 100px 0;
