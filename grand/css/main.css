@@ -71,7 +71,6 @@
         bottom: 30px;
     }
     .visual .quick_menu a  {
-        font-size: 0.800rem;
         padding: 5px 15px 5px 10px;
     }
 }
@@ -164,11 +163,9 @@
 }
 .s_move ul img {
     width: 100%;
-    object-fit: contain;
 }
 .s_move .list ul li {
     width: 45%;
-    height: auto;
     margin-bottom: 100px;
 }
 .s_move .list ul li a {
@@ -210,11 +207,7 @@
     .s_move .tit h2 {
         font-size: 2.000rem;
     }
-    .s_move .tit p {
-        font-size: 0.800rem;
-    }
     .s_move .more a {
-        font-size: 0.800rem;
         line-height: 34px;
     }
     .s_move .more a::after {
@@ -223,15 +216,11 @@
     .s_move .tit span img {
         margin-top: 90px;
     }
-    .s_move ul img {
-        width: 100%;
-        object-fit: contain;
-    }
     .s_move .list ul li {
         width: 45%;
     } 
     .s_move .list ul li a h3 {
-        font-size: 1.000rem;
+        font-size: 1rem;
         margin:-48px 0 0px 15px;
     }
 }
@@ -245,11 +234,7 @@
     .s_move .tit h2 {
         font-size: 1.800rem;
     }
-    .s_move .tit p {
-        font-size: 0.700rem;
-    }
     .s_move .more a {
-        font-size: 0.700rem;
         line-height: 34px;
     }
     .s_move .more a::after {
@@ -258,15 +243,10 @@
     .s_move .tit span img {
         margin-top: 90px;
     }
-    .s_move ul img {
-        width: 100%;
-        object-fit: contain;
-    }
     .s_move .list ul li {
         width: 45%;
     } 
     .s_move .list ul li a h3 {
-        font-size: 1.000rem;
         margin:-48px 0 0px 15px;
     }
 }
@@ -279,9 +259,6 @@
     }
     .s_move .tit span img {
         width: 70%;
-    }
-    .s_move ul img {
-        width: 100%;
     }
     .s_move .list ul li {
         width: 45%;
@@ -309,7 +286,6 @@
         margin-top: 20px;
     }
     .s_move .more a {
-        font-size: 0.800rem;
         line-height: 20px;
         width: 70px;
     }
@@ -561,15 +537,14 @@
 .s_life .list ul li.off::before {
     opacity: 0.7;
 }
+.ms_life {
+    display: none;
+}
 @media screen and (max-width:1600px){
     .s_life .tit h2 {
         font-size: 2.000rem;
     }
-    .s_life .tit p {
-        font-size: 0.800rem;
-    }
     .s_life .more a {
-        font-size: 0.800rem;
         line-height: 30px;
         padding: 0 30px 0 0;
     }
@@ -599,13 +574,9 @@
     .s_life .tit h2 {
         font-size: 1.800rem;
     }
-    .s_life .tit p {
-        font-size: 0.700rem;
-    }
     .s_life .more a {
         top: 40px;
         width: 80px;
-        font-size: 0.700rem;
         line-height: 34px;
     }
     .s_life .list ul li a strong {
@@ -650,6 +621,9 @@
     }
     .s_life .list ul li a strong {
         font-size: 1.300rem;
+    }
+    .ms_life {
+        display: block;
     }
 }
 @media screen and (max-width:500px){
@@ -717,28 +691,21 @@
     overflow: hidden;
 }
 .riview .list p {
-    font-size: 1rem;
     margin-bottom: 20px;
     height: 61px;
 }
 .riview .list span {
-    font-size: 1rem;
     color: #5E5E5E;
     margin-right: 10px;
 }
 .riview .list strong {
-    font-size: 1rem;
     color: #FFD600;
 }
 @media screen and (max-width:1600px){
     .riview .tit h2 {
         font-size: 2.000rem;
     }
-    .riview .tit p {
-        font-size: 0.800rem;
-    }
     .riview .more a {
-        font-size: 0.800rem;
         line-height: 30px;
         padding: 0 30px 0 0;
     }
@@ -758,14 +725,7 @@
         font-size: 1.300rem;
     }
     .riview .list p {
-        font-size: 0.900rem;
         margin-bottom: 15px;
-    }
-    .riview .list span {
-        font-size: 0.900rem;
-    }
-    .riview .list strong {
-        font-size: 0.900rem;
     }
 }
 @media screen and (max-width:1024px){
@@ -773,14 +733,7 @@
         font-size: 1.800rem;
     }
     .riview .list p {
-        font-size: 0.800rem;
         margin-bottom: 10px;
-    }
-    .riview .list span {
-        font-size: 0.900rem;
-    }
-    .riview .list strong {
-        font-size: 0.900rem;
     }
     .riview .more a {
         top: 40px;
@@ -792,11 +745,7 @@
         margin-bottom: 0;
     }
     .riview .list span {
-        font-size: 0.800rem;
         height: 40px;
-    }
-    .riview .list strong {
-        font-size: 0.800rem;
     }
 }
 @media screen and (max-width:768px){
@@ -846,19 +795,9 @@
     .riview .list span {
         font-size: 1.100rem;
     }
-    .riview .list strong {
-        font-size: 1.100rem;
-    }
 }
 @media screen and (max-width:360px){
-    .riview .list span {
-        font-size: 1.000rem;
-    }
-    .riview .tit p {
-        font-size: 1.000rem;
-    }
     .footer .f_top .call .call02 {
-        font-size: 1.000rem;
         font-weight: 400;
     }
 }

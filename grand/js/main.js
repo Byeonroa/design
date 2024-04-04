@@ -61,4 +61,9 @@ $(document).ready(function(){
 
     var sticky = new Sticky('[data-sticky]');
 
+    $('.ms_life ul li').on('click', function(){
+        $('.ms_life ul li').removeClass('on')
+        $(this).addClass('on')
+    })
+
 }) //$(document).ready

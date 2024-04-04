@@ -53,7 +53,7 @@ html, body {
 }/*media*/
 @media screen and (max-width:768px){
     html, body {
-        font-size: 8px;
+        font-size: 13px;
     }
 }
 
