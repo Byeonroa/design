@@ -7,4 +7,138 @@
     작성일 : 2024.03.28
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
+.visual h2 {
+    display: none;
+}
+.swiper { 
+    height:800px 
+}
+.swiper-slide img {
+    display:block; 
+    width:100%;
+    height:100%;
+    object-fit:cover; 
+}
 
+.course {
+    margin-top: 130px;
+}
+.course h3 {
+    text-align: center;
+    font-size: 2.353rem;
+}
+.course p {
+    text-align: center;
+    font-size: 1.176rem;
+    margin-bottom: 30px;
+}
+.course ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.course ul li {
+    width: 298px;
+    height: 250px;
+    margin-top: 15px;
+}
+.course ul li img {
+    border-radius: 30px;
+}
+.course ul li span {
+    font-size: 1.176rem;
+}
+.course ul li a {
+    position: relative;
+}
+.course ul li a::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20x;
+    height: 20px;
+    font-size: 0;
+    line-height: 0;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.16675 9.16675V4.16675H10.8334V9.16675H15.8334V10.8334H10.8334V15.8334H9.16675V10.8334H4.16675V9.16675H9.16675Z' fill='black'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.event {
+    margin-top: 130px;
+}
+.event h3 {
+    text-align: center;
+    font-size: 2.353rem;
+}
+.event p {
+    text-align: center;
+    font-size: 1.176rem;
+    margin-bottom: 30px;
+}
+.event a img.img02 {
+    margin-top: 20px;
+}
+.event a img.img01 {
+    margin: -350px 0 0 850px;
+}
+
+.news {
+    margin-top: 130px;
+    background-color: #F8F8F8;
+    height: 800px;
+}
+.news h3 {
+    padding-top: 115px;
+    text-align: center;
+    font-size: 2.353rem;
+}
+.news p.pi {
+    text-align: center;
+    font-size: 1.176rem;
+    margin-bottom: 30px;
+}
+.news ul {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.news ul li {
+    width: 300px;
+}
+.news ul li p {
+    margin: 10px 0;
+}
+.news ul li span {
+    color: #5D5D5D;
+}
+.news ul li a img {
+    border-radius: 30px;
+}
+
+
+aside.quick {
+    position: fixed;
+    right: 50px;
+    bottom: 85px;
+    z-index: 100;
+}
+aside.quick a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+}
+aside.quick a::before {
+    position: absolute;
+    right: -20px;
+    top: -170px;
+    width: 179px;
+    height: 219px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    content: "";
+    background-image: url(../images/quick.png);
+}

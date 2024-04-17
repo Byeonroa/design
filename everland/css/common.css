@@ -1,7 +1,7 @@
 @charset "utf-8"; /* 이css문서는 UTF-8방식으로 인코딩 되어 있습니다. */
 
 /* 한글웹폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500&display=swap');
 
 *::selection {
     background-color: #FFECEC;
@@ -26,52 +26,10 @@ html, body {
     margin: 0 auto;  /* 가운데 정렬 */
 }
 #wrap { /* id="wrap"에 적용되는 스타일 */
-    width: 100%;
+    min-width: 1280px;
     overflow: hidden;
 }
 
-@media screen and (max-width:1320px){
-    .wrapper { 
-        width: auto; 
-        margin: 0 20px;  
-    }
-}/*media*/
-@media screen and (max-width:1024px){
-    html, body {
-        font-size: 15px;
-    }
-}/*media*/
-@media screen and (max-width:768px){
-    html, body {
-        font-size: 13px;
-    }
-}
-
-.skipnav {
-    position: absolute;
-    left: 0;
-    top: -100px;
-    z-index: 1000000000000;
-    width: 100%;
-}
-.skipnav a {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    line-height: 50px;
-    text-align: center;
-    background-color: #F51919;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 700;
-}
-.skipnav a[href="#gnb"] {
-    background-color: #1d1d1d;
-}
-.skipnav a:focus {
-    top: 100px;
-}
 
 /*
     파일명 : common.css

@@ -2,9 +2,10 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
@@ -61,12 +62,188 @@
                             </ul>
                         </li>
                     </ul>
-                    <button class="gnb_open">메뉴열기</button>
-                    <button class="gnb_close">메뉴닫기</button>
-                    <button class="gnb_login">로그인</button>
                 </div>
             </div><!--head_sub-->
+            <div class="gnb">
+                <div class="wrapper">
+                    <button class="gnb_open">메뉴열기</button>
+                        <div class="gnb_wrap">
+                            <ul class="depth1">
+                                <li>
+                                    <a href="#n">예약</a>
+                                    <ul class="depth2">
+                                        <li><a href="#n">스마트예약</a></li>
+                                        <li><a href="#n">기업단체예약</a></li>
+                                        <li><a href="#n">학생단체예약</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n">이용안내</a>
+                                    <ul class="depth2">
+                                        <li><a href="#n">공지사항</a></li>
+                                        <li><a href="#n">공연시간</a></li>
+                                        <li><a href="#n">편의시설</a></li>
+                                        <li><a href="#n">교통정보</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n">고객센터</a>
+                                    <ul class="depth2">
+                                        <li><a href="#n">FAQ</a></li>
+                                        <li><a href="#n">분실물찾기</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n">프로그램</a>
+                                    <ul class="depth2">
+                                        <li><a href="#n">동물사랑단</a></li>
+                                        <li><a href="#n">식물사랑단</a></li>
+                                        <li><a href="#n">이큐브스쿨</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!--gnb_wrap-->
+                    <button class="gnb_close">메뉴닫기</button>
+                </div>
+            </div><!--gnb-->
+            <div class="tnb">
+                <div class="wrapper">
+                    <a class="login">로그인</a>
+                </div>
+            </div>
         </header>
+        <div class="container">
+            <section class="visual">
+                <h2>팝업</h2>
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <img src="images/popup01.png" alt="팝업사진">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/popup02.png" alt="팝업사진">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/popup03.png" alt="팝업사진">
+                        </li>
+                    </ul>
+                </div>
+            </section><!--visual-->
+            <section class="course">
+                <div class="wrapper">
+                    <h3>에버랜드 BEST 코스</h3>
+                    <p>지금 에버랜드에서 가장 인기있는 best코스를 소개합니다</p>
+                    <ul>
+                        <li>
+                            <img src="images/course1.png" alt="코스사진">
+                            <span>눈치게임 성공하는 코스</span>
+                            <a href="#n">더보기</a>
+                        </li>
+                        <li>
+                            <img src="images/course2.png" alt="코스사진">
+                            <span>인생샷 남기기 좋은 코스</span>
+                            <a href="#n">더보기</a>
+                        </li>
+                        <li>
+                            <img src="images/course3.png" alt="코스사진">
+                            <span>캐스트가 추천하는 연인 코스</span>
+                            <a href="#n">더보기</a>
+                        </li>
+                        <li>
+                            <img src="images/course4.png" alt="코스사진">
+                            <span>다 즐기고 가는 코스</span>
+                            <a href="#n">더보기</a>
+                        </li>
+                        <li>
+                            <img src="images/course5.png" alt="코스사진">
+                            <span>주토피아 힐링코스</span>
+                            <a href="#n">더보기</a>
+                        </li>
+                        <li>
+                            <img src="images/course6.png" alt="코스사진">
+                            <span>마지막까지 행복가득 코스</span>
+                            <a href="#n">더보기</a>
+                        </li>
+                        <li>
+                            <img src="images/course7.png" alt="코스사진">
+                            <span>포기할 수 없는 짜릿한 코스</span>
+                            <a href="#n">더보기</a>
+                        </li>
+                        <li>
+                            <img src="images/course8.png" alt="코스사진">
+                            <span>매직랜드 올인원 코스</span>
+                            <a href="#n">더보기</a>
+                        </li>
+                    </ul>
+                </div>
+            </section><!--course-->
+            <section class="event">
+                <h3>공연 & 이벤트</h3>
+                <p>다양하고 풍선한 에버랜드 공연과 행사를 함께 즐기세요</p>
+                <a href="#n"><img class="img02" src="images/event02.png" alt="이벤트사진"></a>
+                <a href="#n"><img class="img01" src="images/event01.png" alt="이벤트사진"></a>
+                <span><a href="#n">more</a></span>
+            </section><!--event-->
+            <section class="news">
+                <h3>에버랜드 NEWS</h3>
+                <p class="pi">에버랜드의 모든 소식을 전해드려요<p>
+                <ul>
+                    <li>
+                        <a href="#n">
+                            <img src="images/news01.png" alt="뉴스사진">
+                            <p>알록 달록 튤립이 가득한 정원으로 변신하는 2024 에버랜드 튤립축제</p>
+                            <span>2024-04-10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <img src="images/news02.png" alt="뉴스사진">
+                            <p>주토피아 사파리 기린 꼬리 털 만져보기 체험!</p>
+                            <span>2024-03-29</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <img src="images/news03.png" alt="뉴스사진">
+                            <p>푸바오 4월3일 떠난다… 에버랜드 장미원 앞에서 작별 인사</p>
+                            <span>2024-03-27</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <img src="images/news04.png" alt="뉴스사진">
+                            <p>놀이기구-관람차 보수정비로 인한 3시간 중단공지 </p>
+                            <span>2024-03-20</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <img src="images/news05.png" alt="뉴스사진">
+                            <p>최대 규모의 사자 방사로 사자 무리의 영역이 대폭 확대</p>
+                            <span>2024-03-12</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#n">
+                            <img src="images/news06.png" alt="뉴스사진">
+                            <p>에버랜드를 한 눈에 담을 수 있는 롤링 엑스 트레인 점검완료</p>
+                            <span>2024-02-28</span>
+                        </a>
+                    </li>
+                </ul>
+                <span><a href="#n">more</a></span>
+            </section><!--news-->
+            <section class="content">
+                <ul>
+                    <li>
+                        <h3>에버랜드 친구들</h3>
+                    </li>
+                </ul>
+            </section>
+        </div><!--container-->
+        <aside class="quick">
+            <a href="#n"><span>예약하기</span></a>
+        </aside>
     </div><!--wrap-->
 </body>
 </html>
