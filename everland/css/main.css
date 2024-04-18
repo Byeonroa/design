@@ -23,7 +23,7 @@
 .course {
     margin-top: 130px;
 }
-.course h3 {
+.course h2 {
     text-align: center;
     font-size: 2.353rem;
 }
@@ -45,31 +45,35 @@
 .course ul li img {
     border-radius: 30px;
 }
-.course ul li span {
+.course ul li h3 {
     font-size: 1.176rem;
 }
-.course ul li a {
+.course ul li a h3 {
+    font-size: 1.176rem;
+    display: block;
     position: relative;
 }
-.course ul li a::after {
+.course ul li a h3::after {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 20x;
+    right: 5px;
+    width: 20px;
     height: 20px;
-    font-size: 0;
-    line-height: 0;
     content: "";
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.16675 9.16675V4.16675H10.8334V9.16675H15.8334V10.8334H10.8334V15.8334H9.16675V10.8334H4.16675V9.16675H9.16675Z' fill='black'/%3E%3C/svg%3E ");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: contain;
+    background-size: 20px auto;
+    transition: 1s;
 }
+.course ul li a h3:hover::after {
+    transform: rotate(360deg);
+} 
 
 .event {
     margin-top: 130px;
 }
-.event h3 {
+.event h2 {
     text-align: center;
     font-size: 2.353rem;
 }
@@ -84,13 +88,35 @@
 .event a img.img01 {
     margin: -350px 0 0 850px;
 }
+.event .more a {
+    display: block;
+    position: relative;
+    margin-left: 900px;
+    margin-top: 50px;
+}
+.event .more a::after {
+    position: absolute;
+    top: -4px;
+    left: 45px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.16675 9.16675V4.16675H10.8334V9.16675H15.8334V10.8334H10.8334V15.8334H9.16675V10.8334H4.16675V9.16675H9.16675Z' fill='black'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px auto;
+    transition: 1s;
+}
+.event .more a:hover::after {
+    transform: rotate(360deg);
+} 
 
 .news {
-    margin-top: 130px;
+    margin-top: 170px;
     background-color: #F8F8F8;
     height: 800px;
 }
-.news h3 {
+.news h2 {
     padding-top: 115px;
     text-align: center;
     font-size: 2.353rem;
@@ -106,7 +132,7 @@
     justify-content: space-evenly;
 }
 .news ul li {
-    width: 300px;
+    width: 250px;
 }
 .news ul li p {
     margin: 10px 0;
@@ -114,10 +140,168 @@
 .news ul li span {
     color: #5D5D5D;
 }
-.news ul li a img {
+.news ul li a .photo {
     border-radius: 30px;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+.news ul li a .photo img {
+    transition: 0.5s;
+    display: block;
+    object-fit: cover;
+}
+.news ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .more a {
+    display: block;
+    position: relative;
+    margin-left: 900px;
+    margin-top: 90px;
+}
+.news .more a::after {
+    position: absolute;
+    top: -4px;
+    left: 45px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.16675 9.16675V4.16675H10.8334V9.16675H15.8334V10.8334H10.8334V15.8334H9.16675V10.8334H4.16675V9.16675H9.16675Z' fill='black'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px auto;
+    transition: 1s;
+}
+.news .more a:hover::after {
+    transform: rotate(360deg);
+} 
+
+.cont {
+    margin-top: 130px;
+    height:760px;
+}
+.cont ul {
+    display: flex;
+}
+.cont ul li.friend {
+    width: 517px;
+    height: 650px;
+}
+.cont .friend  .swiper {
+    height: 640px;
+    margin-right: 20px;
+}
+.cont ul li .cont01,
+.cont ul li .cont02 {
+    display: flex;
+    margin-bottom: 15px;
+}
+.cont .cont01 .cont01_img img {
+    height: 310px;
+}
+.cont ul li .cont01 .cont01_box,
+.cont ul li .cont02 .cont02_box {
+    width: 300px;
+    height: 310px;
+    background-color: #FFECEC;
+    padding: 40px;
+}
+.cont ul li .cont01 .cont01_box h5,
+.cont ul li .cont02 .cont02_box h5 {
+    font-size: 2.300rem;
+    font-weight: 500;
+}
+.cont ul li .cont01 .cont01_box h6,
+.cont ul li .cont02 .cont02_box h6 {
+    font-size: 1.176rem;
+    margin: 10px 0 110px 0;
+}
+.cont ul li .cont01 .cont01_box a {
+    float: right;
+}
+.cont ul li .cont02 .cont02_box a {
+    float: left;
+}
+.cont .cont01 a,
+.cont .cont02 a {
+    display: block;
+    position: relative;
+}
+.cont .cont01 a::after,
+.cont .cont02 a::after {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.16675 9.16675V4.16675H10.8334V9.16675H15.8334V10.8334H10.8334V15.8334H9.16675V10.8334H4.16675V9.16675H9.16675Z' fill='black'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px auto;
+    transition: 1s;
+}
+.cont .cont01 a:hover::after,
+.cont .cont02 a:hover::after  {
+    transform: rotate(360deg);
 }
 
+.cont .cont02 .cont02_img iframe {
+    width: 435px;
+}
+
+.sns h2 {
+    font-size: 2.353rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.sns h2 span {
+    color: #FF0000;
+}
+.sns ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+.sns ul li {
+    width: 280px;
+    height: 270px;
+    border-radius: 30px;
+    background-color: #F8F8F8;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.25);
+}
+.sns ul li span img {
+    padding: 40px 0 0 120px;
+}
+.sns ul li p {
+    font-size: 1.294rem;
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+.sns ul li a {
+    color: #fff;
+    background-color:  #4676ED;
+    border-radius: 30px;
+    margin-left: 77px;
+    padding: 10px 30px;
+}
+.sns ul li:nth-child(2) a {
+    background-color:  #CB228C;
+}
+.sns ul li:nth-child(3) a {
+    background-color:  #DA0000;
+}
+.sns ul li:last-child a {
+    background-color:  #010201;
+}
+
+.footer {
+    height: 600px;
+    background-color: #010201;
+}
 
 aside.quick {
     position: fixed;
@@ -142,3 +326,4 @@ aside.quick a::before {
     content: "";
     background-image: url(../images/quick.png);
 }
+

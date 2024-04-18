@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    const swiper = new Swiper('.swiper', { 
+    const visual_swiper = new Swiper('.visual .swiper', { 
 
 	effect: "fade", 
 
