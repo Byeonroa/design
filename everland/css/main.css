@@ -7,6 +7,7 @@
     작성일 : 2024.03.28
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
+
 .visual h2 {
     display: none;
 }
@@ -132,7 +133,7 @@
     justify-content: space-evenly;
 }
 .news ul li {
-    width: 250px;
+    width: 290px;
 }
 .news ul li p {
     margin: 10px 0;
@@ -274,7 +275,7 @@
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.25);
 }
 .sns ul li span img {
-    padding: 40px 0 0 120px;
+    padding: 40px 0 0 100px;
 }
 .sns ul li p {
     font-size: 1.294rem;
@@ -286,7 +287,7 @@
     background-color:  #4676ED;
     border-radius: 30px;
     margin-left: 77px;
-    padding: 10px 30px;
+    padding: 10px 30px 7px 30px;;
 }
 .sns ul li:nth-child(2) a {
     background-color:  #CB228C;
@@ -296,11 +297,6 @@
 }
 .sns ul li:last-child a {
     background-color:  #010201;
-}
-
-.footer {
-    height: 600px;
-    background-color: #010201;
 }
 
 aside.quick {

@@ -118,6 +118,7 @@
     background-size: contain;
 }
 .header .head_sub ul.depth1 {
+    z-index: 100;
     position: absolute;
     display: flex;
     left: calc(50% - 180px);
@@ -147,36 +148,210 @@
     font-weight: 500;
 }
 
-.header .gnb_wrap {
-    display: none;
-}
-.header .gnb .gnb_open,
-.header .gnb .gnb_close {
-    float: right;
-    margin-top: -27px;
-    margin-right: 50px;
-}
-.header .gnb .gnb_close {
-    display: none;
-}
-
 .header .tnb a {
     float: right;
-    display: block;
+    margin: -25px 0 0 0;
     position: relative;
-    margin: -25px 0 0 0
+    font-size: 0;
+    line-height: 0;
 }
 .header .tnb .login::after {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 30x;
+    top: -9px;
+    right: 9px;
+    width: 30px;
     height: 30px;
-    font-size: 0;
-    line-height: 0;
     content: "";
     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 27.5H22.5V25C22.5 22.9289 20.8211 21.25 18.75 21.25H11.25C9.17894 21.25 7.5 22.9289 7.5 25V27.5H5V25C5 21.5483 7.79822 18.75 11.25 18.75H18.75C22.2017 18.75 25 21.5483 25 25V27.5ZM15 16.25C10.8579 16.25 7.5 12.8921 7.5 8.75C7.5 4.60786 10.8579 1.25 15 1.25C19.1421 1.25 22.5 4.60786 22.5 8.75C22.5 12.8921 19.1421 16.25 15 16.25ZM15 13.75C17.7614 13.75 20 11.5114 20 8.75C20 5.98857 17.7614 3.75 15 3.75C12.2386 3.75 10 5.98857 10 8.75C10 11.5114 12.2386 13.75 15 13.75Z' fill='black'/%3E%3C/svg%3E ");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
 }
+
+.header .gnb ul {
+    display: none;
+    position: absolute;
+    z-index: 100;
+}
+header .gnb ul li a {
+    display: block;
+    line-height: 35px;
+}
+header .gnb ul li a:hover {
+    font-weight: 400;
+}
+.header .gnb .gnb_open,
+.header .gnb .gnb_close {
+    position: relative;
+    float: right;
+    margin: -30px 50px 0 0px;
+    font-size: 0;
+    line-height: 0;
+}
+.header .gnb .gnb_open::after,
+.header .gnb .gnb_close::after {
+    position: absolute;
+    right: 3px;
+    top: -5px;
+    width: 30px;
+    height: 30px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.header .gnb .gnb_open::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 5H26.25V7.5H3.75V5ZM11.25 13.75H26.25V16.25H11.25V13.75ZM3.75 22.5H26.25V25H3.75V22.5Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+.header .gnb .gnb_close::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.2324 15L3.49121 5.25885L5.25897 3.49109L15.0001 13.2321L24.7412 3.49109L26.509 5.25885L16.7679 15L26.509 24.741L24.7412 26.5089L15.0001 16.7678L5.25897 26.5089L3.49121 24.741L13.2324 15Z' fill='black'/%3E%3C/svg%3E%0A");
+}
+.header .gnb .gnb_close {
+    display: none;
+}
+.header .gnb.on .gnb_open {
+    display: none;
+}
+.header .gnb.on .gnb_close {
+    display: block;
+}
+.header .gnb.on {
+    background-color: #fff;
+    width: 100%;
+    height: 400px;
+}
+.header .gnb.on ul.depth1 {
+    display: block;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-right: 180px;
+    margin-top: 40px;
+}
+.header .gnb.on ul.depth1 > li > a {
+    font-size: 1.471rem;
+    font-weight: 400;
+}
+.header .gnb.on ul.depth2 {
+    display: block;
+}
+.header .gnb.on ul.depth1 > li {
+    width: 320px;
+    height: 300px;
+}
+.header .gnb.on ul.depth1 > li:nth-child(5) {
+    margin-top: -180px;
+}
+.header .gnb.on ul.depth1 > li:nth-child(6) {
+    margin-top: -150px;
+}
+
+
+.footer {
+    font-size: 1.176rem;
+}
+.footer .f_top {
+    height: 42px;
+    background-color: #FFECEC;
+    display: flex;
+}
+.footer .f_top .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.footer .f_top .wrapper::before {
+    position: absolute;
+    width: 1304px;
+    height: 270px;
+    left: 0;
+    top: 128px;
+    background-image: url(../images/footer_img.png);
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .f_top .call {
+    margin-top: 12px;
+    font-weight: 400;
+}
+.footer .f_top .family_site {
+    margin-top: 3px;
+}
+.footer .f_top .family_site ul {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 37px;
+    z-index: 100;
+    border: 1px solid #1d1d1d;
+    background-color: #fff;
+    padding: 15px;
+}
+.footer .f_top .family_site ul li a {
+    display: block;
+    line-height: 35px;
+}
+.footer .f_top .family_site ul li a:hover {
+    font-weight: 400;
+}
+.footer .f_top .family_site .open,
+.footer .f_top .family_site .close {
+    padding: 5px 81px 5px 20px;
+    display: block;
+    border: 1px solid #1d1d1d;
+    position: relative;
+}
+.footer .f_top .family_site .close {
+    display: none;
+}
+.footer .f_top .family_site .open::after,
+.footer .f_top .family_site .close::after {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    width: 12px;
+    height: 6px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .f_top .family_site .open::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 6L0 0H12L6 6Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+}
+.footer .f_top .family_site .close::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='6' viewBox='0 0 12 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 0L12 6H0L6 0Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+}
+.footer .f_top .family_site.on .open {
+    display: none; /* 숨김 */
+}
+.footer .f_top .family_site.on .close {
+    display: block; /* 보임 */
+}
+.footer .f_top .family_site.on ul {
+    display: block; /* 보임 */
+}
+.footer .footer_nav ul {
+    display: flex;
+    justify-content: center;
+}
+.footer .footer_nav ul li {
+    margin: 50px 15px 0 15px;
+}
+.footer .footer_nav ul li:nth-child(2) a {
+    font-weight: 400;
+}
+.footer .footer_nav .f_info {
+    margin-top: 30px;
+    text-align: center;
+    line-height: 35px;
+}
+.footer .copyright {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #6D6D6D;
+}
+

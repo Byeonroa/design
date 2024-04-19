@@ -7,6 +7,13 @@ $(document).ready(function(){
             $('depth2').slideUp(200);
     }});
 
+	$('.header .gnb .gnb_open').on('click', function(){
+        $('.header .gnb').addClass('on')
+    })
+    $('.header .gnb .gnb_close').on('click', function(){
+        $('.header .gnb').removeClass('on')
+    });
+
     const cont_swiper = new Swiper('.cont .swiper', {
 	slidesPerView: 1, 
 	spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
@@ -20,7 +27,12 @@ $(document).ready(function(){
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
-});
-swiper.autoplay.stop();  /* 일시정지 기능 */
-swiper.autoplay.start();  /* 재생 기능 */
+	});
+
+	$('.footer .f_top .family_site .open').on('click', function(){
+        $('.footer .f_top .family_site').addClass('on')
+    })
+    $('.footer .f_top .family_site .close').on('click', function(){
+        $('.footer .f_top .family_site').removeClass('on')
+    });
 })
